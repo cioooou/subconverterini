@@ -19,8 +19,8 @@ surge_ruleset=🐟 Final,[]FINAL
 ;设置规则标志位
 
 ;设置分组标志位
-custom_proxy_group=🔰 Proxies`select`[]🔯 Failover`[]🤚 Manual`[]🇺🇲 US`[]🇨🇳 TW`[]🇭🇰 HK`[]🇸🇬 SG`[]🇯🇵 JP`[]🏳️‍🌈 Other`[]DIRECT
-custom_proxy_group=🔯 Failover`fallback`[]🇺🇲 US`[]🇨🇳 TW`[]🇭🇰 HK`[]🇸🇬 SG`[]🇯🇵 JP`[]🏳️‍🌈 Other`(?i:NO).*`http://www.gstatic.com/generate_204`6,,
+custom_proxy_group=🔰 Proxies`select`[]🌀 Load-balance`[]🤚 Manual`[]🇺🇲 US`[]🇨🇳 TW`[]🇭🇰 HK`[]🇸🇬 SG`[]🇯🇵 JP`[]🏳️‍🌈 Other`[]DIRECT
+custom_proxy_group=🌀 Load-balance`load-balance`[]🇺🇲 US`[]🇨🇳 TW`[]🇭🇰 HK`[]🇸🇬 SG`[]🇯🇵 JP`[]🏳️‍🌈 Other`(?i:NO).*`http://www.gstatic.com/generate_204`6,,
 ;custom_proxy_group=♻️ 自动选择`url-test`.*`http://www.gstatic.com/generate_204`60,3,20
 ;custom_proxy_group=🔯 故障转移`fallback`.*`http://www.gstatic.com/generate_204`6,,
 ;custom_proxy_group=🌀 负载均衡`load-balance`.(负载|均衡)`http://www.gstatic.com/generate_204`6,,
