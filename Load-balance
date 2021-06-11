@@ -32,7 +32,6 @@ custom_proxy_group=📲 Telegram`select`[]🔰 Proxies`[]DIRECT
 custom_proxy_group=📢 Google🇨🇳`select`[]🔰 Proxies`[]DIRECT
 custom_proxy_group=📢 Google`select`[]🔰 Proxies`[]DIRECT
 custom_proxy_group=📹 YouTube`select`[]🔰 Proxies`[]DIRECT
-;custom_proxy_group=📺 NETFLIX`select`[]📺 NF`[]DIRECT
 custom_proxy_group=🌏 ChinaMedia`select`[]DIRECT`[]🔰 Proxies
 custom_proxy_group=🌍 GlobalMedia`select`[]🔰 Proxies`[]DIRECT
 custom_proxy_group=🎯 GlobalDIRECT`select`[]DIRECT`[]🔰 Proxies
@@ -43,8 +42,6 @@ custom_proxy_group=🇭🇰 HK`load-balance`(港|HK|HONG|Hong|HGC).*`https://www
 custom_proxy_group=🇸🇬 SG`load-balance`(新|狮城|SG|Singa).*`https://www.gstatic.com/generate_204`300,,max-timeout = 1000,algorithm = pcc
 custom_proxy_group=🇯🇵 JP`load-balance`([^转]日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Jap|京日|杭日|青日).*`https://www.gstatic.com/generate_204`300,,max-timeout = 1000,algorithm = pcc
 custom_proxy_group=🏳️‍🌈 Other`load-balance`GCX`^((?!新|多伦多|哥伦布|纽约|弗里蒙特|Jap|Tai|Singa|狮城|SG|港|HK|HONG|Hong|HGC|台|新北|彰化|TW|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Jap|京日|杭日|青日|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US).)*$.*`https://www.gstatic.com/generate_204`300,,max-timeout = 1000,algorithm = pcc
-;custom_proxy_group=📺 NF`fallback`(NF|nf|解锁|Netflix|NETFLIX).*`https://www.gstatic.com/generate_204`300,,max-timeout = 1000,algorithm = pcc
-;设置分组标志位
 
 enable_rule_generator=true
 overwrite_original_rules=true
