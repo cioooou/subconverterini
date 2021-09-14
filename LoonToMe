@@ -40,7 +40,7 @@ Instagram = select,国际媒体,img-url = https://raw.githubusercontent.com/Orz-
 Pinterest = select,国际媒体,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
 Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
 微软服务 = select,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
-奈飞视频 = select,奈飞节点,节点选择,香港节点,狮城节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+奈飞视频 = select,节点选择,香港节点,狮城节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
 油管视频 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 巴哈姆特 = select,台湾节点,香港节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
 电报消息 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
@@ -54,7 +54,7 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 美国节点 = select,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 日本节点 = url-test,日本,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 国际媒体 = fallback,香港,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
-奈飞节点 = select,奈飞,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Netflix.png
+
 
 [Remote Filter]
 国际媒体 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
@@ -63,7 +63,7 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 台湾 = NameRegex, FilterKey = "(?i)(台|TW|Tai)"
 美国 = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
 日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
-奈飞 = NameRegex, FilterKey = "(?i)(网飞|奈飞|解锁|NF|Netflix)"
+
 
 
 
