@@ -118,13 +118,9 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=J
 [Plugin]
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokJP.plugin, proxy=日本节点, tag=Tiktok, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Host.plugin, tag=Host, enabled=true
-# > EmbyPremiere
 https://subweb.oss-cn-hongkong.aliyuncs.com/Module/embyUnlocked.plugin, tag=EmbyUnlocked, enabled=true
-# > YouTubeAdsTest
 https://raw.githubusercontent.com/HoCooo/Loon/main/YouTubeAd.plugin, tag=油管广告，enabled=true
-# > 开屏广告
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
-# > 知乎助手
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=Advertising, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=General, enabled=true
