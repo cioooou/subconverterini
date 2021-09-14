@@ -119,7 +119,7 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=J
 
 [Plugin]
 # > TikTok
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, tag=TikTokJP, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, proxy=日本节点, tag=Tiktok, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Host.plugin, tag=Host, enabled=true
 https://subweb.oss-cn-hongkong.aliyuncs.com/Module/embyUnlocked.plugin, tag=EmbyUnlocked, enabled=true
 https://raw.githubusercontent.com/mymoonyue/Loon/master/Plugin/YouTubeADs.plugin, tag=油管广告，enabled=true
