@@ -37,8 +37,8 @@ resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scr
 FINAL = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
 节点选择 = select,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
-Instagram = select,香港节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png
-Pinterest = select,香港节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
+Instagram = fallback,香港节点,url = http://bing.com/,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png
+Pinterest = fallback,香港节点,url = http://bing.com/,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
 Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
 微软服务 = select,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
 奈飞视频 = select,节点选择,狮城节点,香港节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
@@ -49,7 +49,7 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 国外媒体 = select,节点选择,狮城节点,香港节点,台湾节点,韩国节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
 国际抖音 = select,日本节点,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
 港台番剧 = select,DIRECT,台湾节点,香港节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingSE.png
-香港节点 = select,香港,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+香港节点 = url-test,香港,url = http://bing.com/,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 狮城节点 = select,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 台湾节点 = select,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 美国节点 = select,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
@@ -119,7 +119,7 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=J
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokJP.plugin, proxy=日本节点, tag=Tiktok, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Host.plugin, tag=Host, enabled=true
 https://subweb.oss-cn-hongkong.aliyuncs.com/Module/embyUnlocked.plugin, tag=EmbyUnlocked, enabled=true
-https://raw.githubusercontent.com/HoCooo/Loon/main/YouTubeAd.plugin, tag=Youtube广告，enabled=true
+https://raw.githubusercontent.com/HoCooo/Loon/main/YouTubeAd.plugin, tag=油管广告，enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=Advertising, enabled=true
