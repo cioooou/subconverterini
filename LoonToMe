@@ -42,12 +42,10 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 微软服务 = select,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
 奈飞视频 = select,节点选择,香港节点,狮城节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
 油管视频 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-巴哈姆特 = select,台湾节点,香港节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
 电报消息 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 国内媒体 = select,DIRECT,https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
 国外媒体 = select,节点选择,香港节点,狮城节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
 国际抖音 = select,日本节点,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
-港台番剧 = select,香港节点,台湾节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingSE.png
 香港节点 = url-test,香港,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 狮城节点 = select,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 台湾节点 = select,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
@@ -69,30 +67,24 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 
 
 [Remote Rule]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list, policy=REJECT, tag=去广告,enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Advertising/Advertising_Domain.list, policy=REJECT, tag=去广告,enabled=true
-# > BlockOTA屏蔽系统更新
-https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, enabled=false
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=全球直连, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=全球直连, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list, policy=Instagram, tag=Instagram, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list, policy=Instagram, tag=Instagram, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Pinterest/Pinterest.list, policy=Pinterest, tag=Pinterest, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list, policy=微软服务, tag=微软服务, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list, policy=微软服务, tag=微软服务, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby, tag=Emby, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list, policy=苹果服务, tag=苹果服务, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, enabled=true
 # > TikTok
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list, policy=微软服务, tag=微软服务, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list, policy=微软服务, tag=微软服务, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=国际抖音, tag=TikTok, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTube/YouTube.list, policy=油管视频, tag=油管视频, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Bahamut/Bahamut.list, policy=巴哈姆特, tag=巴哈姆特, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list, policy=油管视频, tag=油管视频, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list, policy=节点选择, tag=国外媒体, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, policy=港台番剧, tag=国内媒体, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list, policy=DIRECT, tag=国内媒体, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list, policy=节点选择, tag=全球规则, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, policy=节点选择, tag=全球规则,enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, policy=节点选择, tag=全球规则, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list, policy=DIRECT, tag=全球直连, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, enabled=true
 
@@ -112,7 +104,6 @@ enable = false
 enable = false
 
 [Remote Script]
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Fake_Vip.conf, tag=Fake-VIP, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Cookie.获取完一定要关闭, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Task, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=false
@@ -126,7 +117,6 @@ https://subweb.oss-cn-hongkong.aliyuncs.com/Module/embyUnlocked.plugin, tag=Emby
 https://raw.githubusercontent.com/mymoonyue/Loon/master/Plugin/YouTubeADs.plugin, tag=油管广告，enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=Advertising, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=General, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.tf.plugin, enabled=true
