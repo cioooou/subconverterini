@@ -139,20 +139,8 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Down
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.tf.plugin, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, tag=订阅解析器, enabled=false
 
-# 本地脚本
-[Script]
 
-# > TF下载
-http-request ^https?:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*/builds/\d*/install script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js, requires-body=true, timeout=10, enabled=ture tag=TF下载
 
-# 远程脚本 
-[Remote Script]
-
-# > 哔哩哔哩
-https://raw.githubusercontent.com/HoCooo/Loon/main/BiliBili.conf, tag=哔哩哔哩, enabled=true
-
-# > 脚本
-https://raw.githubusercontents.com/HoCooo/Loon/main/Script.conf, tag=脚本, enabled=true
 
 [MITM]
 enable = false
