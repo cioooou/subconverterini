@@ -52,13 +52,11 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 狮城节点 = select,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 台湾节点 = select,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 美国节点 = select,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-日本节点 = select,日本,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+日本节点 = url-test,日本,url = http://bing.com/,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 
 
 
 [Remote Filter]
-Instagram = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
-Pinterest = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
 香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
 新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
 台湾 = NameRegex, FilterKey = "(?i)(台|TW|Tai)"
@@ -119,7 +117,8 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, t
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=false
 
 [Plugin]
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, proxy=日本节点, tag=Tiktok, enabled=true
+https://raw.githubusercontent.com/Semporia/TikTok-Unlock/master/Loon/TikTokKR.plugin
+, proxy=日本节点, tag=Tiktok, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Host.plugin, tag=Host, enabled=true
 https://subweb.oss-cn-hongkong.aliyuncs.com/Module/embyUnlocked.plugin, tag=EmbyUnlocked, enabled=true
 https://raw.githubusercontent.com/mymoonyue/Loon/master/Plugin/YouTubeADs.plugin, tag=油管广告，enabled=true
