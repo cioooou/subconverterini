@@ -56,7 +56,6 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 
 # >本地分流规则
 [Rule]
-DOMAIN, rsshub.app, 全球直连
 GEOIP,CN,全球直连
 FINAL,漏网之鱼
 
