@@ -63,7 +63,7 @@ GEOIP,CN,全球直连
 FINAL,漏网之鱼
 
 [Remote Filter]
-排除 = NameRegex, exclude_remarks = (网址|到期|剩余流量|时间|官网|产品|加群|免费|本站|CCCAT|IPLC|网站|代理|下载|客服|私聊|推荐|公益|过期|UnblockMusic|有效期|无效|注册|回国|体验|广告位|请|群|Shadowsocks)
+exclude_remarks = (网址|到期|剩余流量|时间|官网|产品|加群|免费|本站|CCCAT|IPLC|网站|代理|下载|客服|私聊|推荐|公益|过期|UnblockMusic|有效期|无效|注册|回国|体验|广告位|请|群|Shadowsocks)
 手动筛选 = NameRegex, FilterKey = "(.*)" 
 国际媒体 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
 香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
