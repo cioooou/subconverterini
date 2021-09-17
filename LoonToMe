@@ -33,8 +33,9 @@ resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scr
 
 # 策略组
 [Proxy Group]
-FINAL = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
-节点选择 = select,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+节点选择 = select,故障转移,香港节点,狮城节点,美国节点,台湾节点日本节点,手动切换,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+故障转移 = fallback,香港节点,狮城节点,美国节点,台湾节点,日本节点,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Roundrobin.png
+手动切换 = select,手动筛选,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Static.png
 苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 Instagram = select,国际媒体,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png
 Pinterest = select,国际媒体,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
@@ -46,15 +47,23 @@ Emby = select,香港节点,狮城节点,美国节点,img-url = https://raw.githu
 国内媒体 = select,DIRECT,https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
 国外媒体 = select,节点选择,香港节点,狮城节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Streaming.png
 国际抖音 = select,日本节点,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
-香港节点 = url-test,香港,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+漏网之鱼 = select,节点选择,𝐃𝐢𝐫𝐞𝐜𝐭,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
+香港节点 = url-test,香港,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 狮城节点 = select,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 台湾节点 = select,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 美国节点 = select,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-日本节点 = url-test,日本,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-国际媒体 = fallback,香港,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
+日本节点 = url-test,日本,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+国际媒体 = fallback,香港,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
 
+# >本地分流规则
+[Rule]
+DOMAIN, rsshub.app, 全球直连
+GEOIP,CN,全球直连
+FINAL,漏网之鱼
 
 [Remote Filter]
+手动筛选 = NameRegex, FilterKey = "(.*)"
 国际媒体 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
 香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
 新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
@@ -89,10 +98,8 @@ https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, p
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list, policy=DIRECT, tag=全球直连, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, enabled=true
 
-[Rule]
-DOMAIN, rsshub.app, 节点选择
-GEOIP,CN,DIRECT
-FINAL,FINAL
+
+
 
 [URL Rewrite]
 enable = false
@@ -120,6 +127,9 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Lo
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.tf.plugin, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, tag=订阅解析器, enabled=false
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingLite/AdvertisingLite.plugin, enabled=true
 
 
 
