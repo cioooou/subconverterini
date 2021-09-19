@@ -53,7 +53,7 @@ Emby = select,节点选择,香港节点,狮城节点,美国节点,img-url = http
 台湾节点 = select,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 美国节点 = select,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 日本节点 = url-test,日本,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-国际媒体 = fallback,香港,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Apple_News.png
+国际媒体 = fallback,香港,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Discovery.png
 
 # >本地分流规则
 [Rule]
