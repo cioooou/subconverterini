@@ -35,7 +35,7 @@ resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/scr
 [Host]
 
 host = 127.0.0.1
-
+# 本地节点
 [Proxy]
 
 [Remote Proxy]
@@ -50,8 +50,6 @@ host = 127.0.0.1
 美国 = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
 日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
 
-# 本地节点
-[Proxy]
 
 直接连接 = DIRECT
 
