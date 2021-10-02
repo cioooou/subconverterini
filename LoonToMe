@@ -130,16 +130,20 @@ enable = false
 # 京东比价Fix
 ^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start url reject-200
 
-# 订阅重写
 [Remote Rewrite]
+
+[Script]
+enable = false
+
+# 订阅重写
+[Remote Script]
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Cookie.获取完一定要关闭, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Task, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=false
 
 
-[Script]
-enable = false
+
 
 
 # 插件
