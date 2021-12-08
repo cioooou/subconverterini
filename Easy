@@ -1,4 +1,4 @@
-surge_ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.listsurge_ruleset=DIRECT,rules/ACL4SSR/Clash/LocalAreaNetwork.list
+surge_ruleset=DIRECT,rules/ACL4SSR/Clash/LocalAreaNetwork.list
 surge_ruleset=DIRECT,rules/ConnersHua/Surge/Ruleset/Unbreak.list
 surge_ruleset=DIRECT,rules/ACL4SSR/Clash/ChinaDomain.list
 ;surge_ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
@@ -46,4 +46,3 @@ custom_proxy_group=🇯🇵 日本节点`url-test`(日本|川日|东京|大阪|�
 enable_rule_generator=true
 overwrite_original_rules=true
 exclude_remarks = (网址|到期|剩余流量|时间|官网|产品|加群|免费|本站|CCCAT|IPLC|网站|代理|下载|客服|私聊|推荐|公益|过期|UnblockMusic|有效期|无效|注册|回国|体验|广告位|请|群|Shadowsocks)
-
