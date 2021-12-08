@@ -1,6 +1,6 @@
+surge_ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
 surge_ruleset=DIRECT,rules/LocalAreaNetwork.list
 surge_ruleset=DIRECT,rules/ConnersHua/Surge/Ruleset/Unbreak.list
-surge_ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
 surge_ruleset=📹 YouTube,rules/ConnersHua/Surge/Ruleset/Media/YouTube.list
 surge_ruleset=📲 电报吹水,rules/ConnersHua/Surge/Ruleset/Telegram.list
 surge_ruleset=🌍 国外媒体,rules/ConnersHua/Surge/Ruleset/GlobalMedia.list
