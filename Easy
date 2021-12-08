@@ -8,7 +8,6 @@ surge_ruleset=🍎 苹果服务,rules/ACL4SSR/Clash/Apple.list
 surge_ruleset=📲 电报吹水,rules/ConnersHua/Surge/Ruleset/Telegram.list
 surge_ruleset=📹 油管视频,rules/ConnersHua/Surge/Ruleset/Media/YouTube.list
 surge_ruleset=🌍 国外媒体,rules/ConnersHua/Surge/Ruleset/GlobalMedia.list
-surge_ruleset=🔰 节点选择,rules/ACL4SSR/Clash/ProxyLite.list
 ;surge_ruleset=🔰 节点选择,rules/ConnersHua/Surge/Ruleset/Global.list
 ;surge_ruleset=🔰 节点选择,rules/PROXY.list
 ;surge_ruleset=🎯 全球直连,rules/ConnersHua/Surge/Ruleset/China.list
@@ -22,6 +21,7 @@ surge_ruleset=🔰 节点选择,rules/ACL4SSR/Clash/ProxyLite.list
 surge_ruleset=DIRECT,rules/ACL4SSR/Clash/ChinaCompanyIp.list
 surge_ruleset=DIRECT,rules/NobyDa/Surge/Download.list
 surge_ruleset=DIRECT,[]GEOIP,CN
+surge_ruleset=🔰 节点选择,rules/ACL4SSR/Clash/ProxyLite.list
 surge_ruleset=🐟 漏网之鱼,[]FINAL
 
 
