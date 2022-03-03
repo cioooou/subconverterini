@@ -1,24 +1,35 @@
 ;设置规则标志位
-surge_rulesett=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
-surge_rulesett=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
-surge_rulesett=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
-surge_rulesett=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
-surge_rulesett=🌏 ChinaMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
-surge_rulesett=🌍 GlobalMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
-surge_rulesett=🔰 Proxies,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
-surge_rulesett=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
-surge_rulesett=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
-surge_rulesett=🎯 GlobalDIRECT,[]GEOIP,CN
-surge_rulesett=🐟 Final,[]FINAL
+ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+ruleset=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+ruleset=🍎 Apple,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+ruleset=📲 Telegram,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+ruleset=📹 YouTube,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
+ruleset=🌏 ChinaMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
+ruleset=🌍 GlobalMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=📢 Google🇨🇳,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list
+ruleset=📢 Google,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list
+ruleset=🔰 Proxies,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
+ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+ruleset=🎯 GlobalDIRECT,[]GEOIP,CN
+ruleset=🐟 Final,[]FINAL
 ;设置规则标志位
 
 ;设置分组标志位
-custom_proxy_group=🔰 Proxies`select`[]♻️ 自动选择`[]🤚 Manual`[]DIRECT
+custom_proxy_group=🔰 Proxies`select`[]♻️ 自动选择`[]🌀 负载均衡`[]🤚 Manual`[]DIRECT
 custom_proxy_group=♻️ 自动选择`url-test`.*`http://www.gstatic.com/generate_204`300,2,50
+custom_proxy_group=🌀 负载均衡`load-balance`.*`http://www.gstatic.com/generate_204`300,2,50
 custom_proxy_group=🤚 Manual`select`.*
 custom_proxy_group=Ⓜ️ Microsoft`select`[]🔰 Proxies
-custom_proxy_group=🌍 GlobalMedia`select`[]🔰 Proxies
+custom_proxy_group=🍎 Apple`select`[]🔰 Proxies
+custom_proxy_group=📲 Telegram`select`[]🔰 Proxies
+custom_proxy_group=📢 Google🇨🇳`select`[]🔰 Proxies
+custom_proxy_group=📢 Google`select`[]🔰 Proxies
+custom_proxy_group=📹 YouTube`select`[]🔰 Proxies
 custom_proxy_group=🌏 ChinaMedia`select`[]DIRECT
+custom_proxy_group=🌍 GlobalMedia`select`[]🔰 Proxies
 custom_proxy_group=🎯 GlobalDIRECT`select`[]DIRECT
 custom_proxy_group=🐟 Final`select`[]🔰 Proxies
 ;设置分组标志位
@@ -27,4 +38,3 @@ enable_rule_generator=true
 overwrite_original_rules=true
 exclude_remarks = (到期|节点|剩余流量|时间|官网|网址|产品|加群|免费|本站|CCCAT|网站|代理|下载|客服|私聊|推荐|公益|过期|有效期|无效|注册|回国|体验|广告位|请|群)
 
-;clash_rule_base = https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GeneralClashConfig.yml
