@@ -1,13 +1,18 @@
 ;设置规则标志位
 ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=🙂 Social,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list
+ruleset=🙂 Social,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
+ruleset=🛃 Amazon,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Amazon/Amazon.list
+ruleset=🛃 Amazon,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/AmazonPrimeVideo/AmazonPrimeVideo.list
 ruleset=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
 ruleset=Ⓜ️ Microsoft,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
 ruleset=🍎 Apple,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
 ruleset=📲 Telegram,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
 ruleset=📹 YouTube,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
-ruleset=🌏 ChinaMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
+ruleset=🌍 GlobalMedia,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Pinterest/Pinterest.list
 ruleset=🌍 GlobalMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+ruleset=🌏 ChinaMedia,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
 ruleset=📢 Google🇨🇳,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list
 ruleset=📢 Google,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list
 ruleset=🔰 Proxies,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list
@@ -22,14 +27,16 @@ custom_proxy_group=🔰 Proxies`select`[]♻️ 自动选择`[]🌀 负载均衡
 custom_proxy_group=♻️ 自动选择`url-test`.*`http://www.gstatic.com/generate_204`300,2,50
 custom_proxy_group=🌀 负载均衡`load-balance`.*`http://www.gstatic.com/generate_204`300,2,50
 custom_proxy_group=🤚 Manual`select`.*
+custom_proxy_group=🙂 Social`fallback`(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US).*`http://www.gstatic.com/generate_204`6,,
+custom_proxy_group=🛃 Amazon`fallback`(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US).*`http://www.gstatic.com/generate_204`6,,
 custom_proxy_group=Ⓜ️ Microsoft`select`[]🔰 Proxies
 custom_proxy_group=🍎 Apple`select`[]🔰 Proxies
 custom_proxy_group=📲 Telegram`select`[]🔰 Proxies
 custom_proxy_group=📢 Google🇨🇳`select`[]🔰 Proxies
 custom_proxy_group=📢 Google`select`[]🔰 Proxies
 custom_proxy_group=📹 YouTube`select`[]🔰 Proxies
-custom_proxy_group=🌏 ChinaMedia`select`[]DIRECT
 custom_proxy_group=🌍 GlobalMedia`select`[]🔰 Proxies
+custom_proxy_group=🌏 ChinaMedia`select`[]DIRECT
 custom_proxy_group=🎯 GlobalDIRECT`select`[]DIRECT
 custom_proxy_group=🐟 Final`select`[]🔰 Proxies
 ;设置分组标志位
