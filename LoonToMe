@@ -40,7 +40,7 @@ Instagram = select,社交网络,img-url = https://raw.githubusercontent.com/Orz-
 Emby = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
 微软服务 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
 奈飞视频 = select,节点选择,香港节点,狮城节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
-油管视频 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+谷歌服务 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Google.png
 电报消息 = select,节点选择,香港节点,狮城节点,美国节点,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 国内媒体 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
 国外媒体 = select,节点选择,香港节点,狮城节点,台湾节点,美国节点,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
@@ -79,17 +79,15 @@ https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=全球直连, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Privacy/Privacy_Domain.list, policy=REJECT, tag=隐私防护, enabled=false
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list, policy=Instagram, tag=Instagram, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list, policy=Instagram, tag=Instagram, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby, tag=Emby, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list, policy=微软服务, tag=微软服务, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list, policy=微软服务, tag=微软服务, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=国际抖音, tag=TikTok, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list, policy=油管视频, tag=油管视频, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list, policy=DIRECT, tag=国内媒体, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list, policy=节点选择, tag=国外媒体, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, policy=节点选择, tag=节点选择, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list, policy=DIRECT, tag=全球直连, enabled=true
