@@ -47,7 +47,7 @@ Emby = select,节点选择,香港节点,狮城节点,美国节点,img-url = http
 国际抖音 = select,日本节点,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
 全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
 漏网之鱼 = select,节点选择,𝐃𝐢𝐫𝐞𝐜𝐭,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
-香港节点 = url-test,香港,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+香港节点 = url-test,香港,url = http://www.qualcomm.cn/generate_204,interval = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 狮城节点 = select,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 台湾节点 = select,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 美国节点 = select,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
@@ -85,6 +85,7 @@ https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, polic
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=国际抖音, tag=TikTok, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, enabled=true
@@ -125,7 +126,7 @@ https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, t
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingLite/AdvertisingLite.plugin, enabled=true
-
+https://raw.githubusercontent.com/HoCooo/Loon/main/Auto-Policy.plugin, tag=节点自动切换, enabled=false
 
 
 
