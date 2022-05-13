@@ -75,8 +75,12 @@ FINAL,漏网之鱼
 [Remote Rule]
 # > BlockOTA屏蔽系统更新
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, enabled=false
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, policy=DIRECT, tag=全球直连, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=全球直连, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=全球直连, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list, policy=DIRECT, tag=全球直连, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Privacy/Privacy_Domain.list, policy=REJECT, tag=隐私防护, enabled=false
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list, policy=Instagram, tag=Instagram, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby, tag=Emby, enabled=true
@@ -88,11 +92,9 @@ https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, po
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list, policy=节点选择, tag=国外媒体, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, policy=节点选择, tag=节点选择, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list, policy=DIRECT, tag=全球直连, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, enabled=true
+
 
 
 
