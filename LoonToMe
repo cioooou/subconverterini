@@ -65,7 +65,6 @@ dl.l.google.com = server:119.29.29.29
 
 [Remote Proxy]
 机场订阅 = https://suo.yt/W7BkpTS
-网易解锁 = https://git.io/JfNq3, parser-enable = true
 
 # 策略组
 [Proxy Group]
