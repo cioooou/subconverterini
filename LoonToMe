@@ -108,28 +108,29 @@ Emby = select,节点选择,香港节点,狮城节点,美国节点,img-url = http
 
 
 [Remote Rule]
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list, policy=REJECT, tag=隐私保护, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TencentVideo/TencentVideo.list, policy=DIRECT, tag=腾讯视频, parser-enable=true, enabled=true
 # > BlockOTA屏蔽系统更新
-https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, enabled=false
-https://raw.githubusercontent.com/bunizao/TutuBetterRules/tutu/RuleList/DOMAlN/Anti-IPCheck.list, policy=REJECT, tag=隐藏真是IP, enabled=false
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Tencent/Tencent.list, policy=腾讯服务, tag=腾讯服务, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, policy=腾讯服务, tag=腾讯服务, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=全球直连, enabled=true
-# https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=全球直连, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list, policy=Instagram, tag=Instagram, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby, tag=Emby, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=国际抖音, tag=TikTok, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list, policy=节点选择, tag=国外媒体, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY.list, policy=节点选择, tag=节点选择, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, enabled=true
+https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Tencent/Tencent.list, policy=腾讯服务, tag=腾讯服务, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, policy=腾讯服务, tag=腾讯服务, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
+# https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list, policy=Instagram, tag=Instagram, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby, tag=Emby, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=国际抖音, tag=TikTok, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list, policy=节点选择, tag=国外媒体, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY.list, policy=节点选择, tag=节点选择, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, parser-enable=true, enabled=true
 
 [Rule]
 GEOIP,CN,DIRECT
@@ -156,18 +157,37 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, t
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=false
 
 [Plugin]
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/MitM.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Weather.beta.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Siri.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Location.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Weather.plugin, enabled=true
+https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Account.plugin, tag=TestFlight账户管理脚本, enabled=true
+https://raw.githubusercontent.com/yqc007/QuantumultX/master/PleasantVideoCrack.js, policy=REJECT, tag=悦色脚本, enabled=true
+https://raw.githubusercontent.com/Coldvvater/Loon/master/Plugin/Bili_Auto_Regions.plugin, enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/EMBY.plugin, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Historical%20Price.plugin, tag=淘宝京东比价, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, tag=BoxJs, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Loon/Plugin/BilibiliAds.plugin, tag=Bilibili 去广告, enabled=true
+https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/AutoPolicy/auto-policy.plugin, tag=自动策略, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=广告插件, enabled=false
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Upgrade/Upgrade.plugin, tag=屏蔽app更新检测, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, tag=Loon Gallery, enabled=true
+https://raw.githubusercontent.com/yqc007/QuantumultX/master/SJSPCrack.js, tag=色界脚本, enabled=true
+https://raw.githubusercontent.com/zqzess/rule_for_quantumultX/master/Loon/Plugin/bilibili.plugin, policy=香港节点, tag=bilibili 插件, enabled=false
+https://raw.githubusercontent.com/app2smile/rules/master/plugin/spotify.plugin, tag=Spotify(iOS15), enabled=true
 # > TikTok
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, proxy=日本节点, tag=Tiktok, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, policy=日本节点, tag=Tiktok, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Host.plugin, tag=Host, enabled=true
 https://subweb.oss-cn-hongkong.aliyuncs.com/Module/embyUnlocked.plugin, tag=EmbyUnlocked, enabled=true
-https://raw.githubusercontent.com/mymoonyue/Loon/master/Plugin/YouTubeADs.plugin, tag=油管广告，enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=General, enabled=true
+https://raw.githubusercontent.com/mymoonyue/Loon/master/Plugin/YouTubeADs.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=General, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
-https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.tf.plugin, enabled=true
-https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, tag=订阅解析器, enabled=false
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.tf.plugin, tag=BoxJs, enabled=true
+https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, tag=Sub-Store, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingLite/AdvertisingLite.plugin, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingLite/AdvertisingLite.plugin, enabled=false
 https://raw.githubusercontent.com/HoCooo/Loon/main/Auto-Policy.plugin, tag=节点自动切换, enabled=false
 
 
