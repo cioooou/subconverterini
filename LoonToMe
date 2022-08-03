@@ -108,7 +108,6 @@ Emby = select,节点选择,香港节点,狮城节点,美国节点,img-url = http
 
 
 [Remote Rule]
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list, policy=REJECT, tag=隐私保护, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TencentVideo/TencentVideo.list, policy=DIRECT, tag=腾讯视频, parser-enable=true, enabled=true
 # > BlockOTA屏蔽系统更新
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, parser-enable=true, enabled=true
