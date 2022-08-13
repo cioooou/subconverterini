@@ -75,23 +75,22 @@ dl.l.google.com = server:119.29.29.29
 
 # 策略组
 [Proxy Group]
-FINAL = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
 节点选择 = select,港,坡,美,台,日,手动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 手动选择 = select,手动筛选,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Find_My.png
 微信服务 = select,社交网络,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
-苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 Instagram = select,社交网络,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png
-Emby = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
+bilibili番区 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
+Emby视频 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
+苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 微软服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
 奈飞视频 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
 谷歌服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Google_Search.png
 电报消息 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-bilibili番区 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
-国内媒体 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
 国外媒体 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
 国际抖音 = select,日,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
+国内媒体 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
 全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
-漏网之鱼 = select,节点选择,𝐃𝐢𝐫𝐞𝐜𝐭,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Final.png
+FINAL = select,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
 港 = url-test,香港,url = http://www.qualcomm.cn/generate_204,interval = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 坡 = url-test,新加坡,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 台 = url-test,台湾,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
@@ -126,7 +125,7 @@ https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list, policy=Instagram, tag=Instagram, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby, tag=Emby, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby视频, tag=Emby视频, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
