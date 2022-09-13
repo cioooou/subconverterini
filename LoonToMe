@@ -110,22 +110,6 @@ FINAL = select,节点选择,DIRECT,img-url = https://raw.githubusercontent.com/K
 日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
 
 
-
-
-
-
-[Remote Filter]
-手动筛选 = NameRegex, FilterKey = "^(?!.*(网址|节点|到期|剩余流量|流量计算|距离下次重置剩余|时间|官网|产品|加群|免费|本站|CCCAT|网站|代理|下载|客服|私聊|推荐|公益|过期|有效期|无效|注册|回国|体验|广告位|请|群|Traffic|Expire))(.*)"
-香港故障转移 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
-香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
-新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
-台湾 = NameRegex, FilterKey = "(?i)(台|TW|Tai)"
-美国 = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
-日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
-
-
-
-
 [Remote Rule]
 https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list, policy=bilibili番区, tag=bilibili 番区, parser-enable=true, enabled=true
 # > BlockOTA屏蔽系统更新
