@@ -77,8 +77,9 @@ dl.l.google.com = server:119.29.29.29
 [Proxy Group]
 节点选择 = select,港,坡,美,台,日,手动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 手动选择 = select,手动筛选,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Find_My.png
-微信服务 = select,社交网络,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
+微信服务 = select,社交网络,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
 bilibili番区 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
+TikTok = select,日,美,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
 Instagram = select,社交网络,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png
 Emby视频 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
 苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
@@ -87,15 +88,14 @@ Emby视频 = select,节点选择,港,坡,美,img-url = https://raw.githubusercon
 谷歌服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Google_Search.png
 电报消息 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 国外媒体 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
-国际抖音 = select,日,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
 国内媒体 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
 全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
-FINAL = select,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
-港 = url-test,香港,url = http://www.qualcomm.cn/generate_204,interval = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-坡 = url-test,新加坡,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-台 = url-test,台湾,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
-美 = url-test,美国,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-日 = url-test,日本,url = http://www.qualcomm.cn/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+FINAL = select,节点选择,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+港 = fallback,香港,url = http://www.qualcomm.cn/generate_204,interval = 60,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+坡 = fallback,新加坡,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+台 = fallback,台湾,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+美 = fallback,美国,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+日 = fallback,日本,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 社交网络 = fallback,香港故障转移,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Bot.png
 
 
@@ -110,6 +110,18 @@ FINAL = select,节点选择,img-url = https://raw.githubusercontent.com/Koolson/
 日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
 
 
+
+
+
+
+[Remote Filter]
+手动筛选 = NameRegex, FilterKey = "^(?!.*(网址|节点|到期|剩余流量|流量计算|距离下次重置剩余|时间|官网|产品|加群|免费|本站|CCCAT|网站|代理|下载|客服|私聊|推荐|公益|过期|有效期|无效|注册|回国|体验|广告位|请|群|Traffic|Expire))(.*)"
+香港故障转移 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
+香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
+新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
+台湾 = NameRegex, FilterKey = "(?i)(台|TW|Tai)"
+美国 = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
+日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
 
 
 
@@ -129,7 +141,8 @@ https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/E
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=国际抖音, tag=TikTok, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=TikTok, tag=TikTok, enabled=true
+
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
@@ -163,36 +176,37 @@ http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness
 
 
 
+
+
+
 [Remote Script]
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Fake_Vip.conf, tag=Fake-VIP, enabled=true
-https://raw.githubusercontents.com/yqc007/QuantumultX/master/Script/BiLiBiLiBVIPCrack.conf, tag=哔哩哔哩解锁脚本, enabled=true
+https://raw.githubusercontents.com/yqc007/QuantumultX/master/Script/BiLiBiLiBVIPCrack.conf, tag=哔哩哔哩解锁脚本, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Cookie.获取完一定要关闭, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Task, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=true
 
 [Plugin]
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/skip-proxy.plugin, enabled=true
-https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/ASN/ASN.sgmodule, enabled=false
 https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Weather.plugin, enabled=true
-https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/MitM.plugin, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Block/YouTubeAdsTest.plugin, enabled=true
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, enabled=true
+https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/KuWoMusic/KuWoMusic.Loon.plugin, enabled=true
+https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/AutoPolicy/auto-policy.plugin, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/skip-proxy.plugin, enabled=true
+https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/ASN/ASN.sgmodule, enabled=true
 https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Siri.plugin, enabled=true
 https://raw.githubusercontent.com/VirgilClyne/iRingo/main/plugin/Location.plugin, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Account.plugin, tag=TestFlight账户管理脚本, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/EMBY.plugin, enabled=true
-https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, tag=BoxJs, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/EMBY.plugin, enabled=false
 https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Loon/Plugin/BilibiliAds.plugin, tag=Bilibili 去广告, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=广告插件, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Upgrade/Upgrade.plugin, tag=屏蔽app更新检测, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, tag=Loon Gallery, enabled=true
 # > TikTok
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, policy=日本节点, tag=Tiktok, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Host.plugin, tag=Host, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, policy=TikTok, tag=Tiktok, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
-https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, tag=Sub-Store, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
-
 
 
 [MITM]
