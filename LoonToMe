@@ -73,18 +73,21 @@ dl.l.google.com = server:119.29.29.29
 
 # 策略组
 [Proxy Group]
-节点选择 = select,港,坡,美,台,日,手动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+节点选择 = fallback,港,坡,美,台,日,手动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 手动选择 = select,手动筛选,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Find_My.png
 微信服务 = select,社交网络,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
 bilibili番区 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
 TikTok = select,日,美,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
 Instagram = select,社交网络,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png
+WhatsApp = select,美,港,坡,img-url = https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/767px-WhatsApp.svg.png
 Emby视频 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
 苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 微软服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
 奈飞视频 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
 谷歌服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Google_Search.png
-电报消息 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+电报SG = select,坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+电报US = select,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+电报NL = select,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 国外媒体 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
 国内媒体 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
 全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
@@ -109,6 +112,10 @@ FINAL = select,节点选择,DIRECT,img-url = https://raw.githubusercontent.com/K
 
 
 [Remote Rule]
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Whatsapp/Whatsapp.list, policy=社交网络, tag=WhatsApp, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramSG/TelegramSG.list, policy=坡, tag=电报SG, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramUS/TelegramUS.list, policy=美, tag=电报US, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramNL/TelegramNL.list, policy=美, tag=电报NL, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list, policy=bilibili番区, tag=bilibili 番区, parser-enable=true, enabled=true
 # > BlockOTA屏蔽系统更新
 https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, parser-enable=true, enabled=true
@@ -125,7 +132,7 @@ https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, polic
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=TikTok, tag=TikTok, enabled=true
 
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, parser-enable=true, enabled=true
+
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, parser-enable=true, enabled=true
