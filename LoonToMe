@@ -1,199 +1,498 @@
-#借鉴Loon烧烤哥，ACL大佬  拼接缝合
-#借鉴Loon烧烤哥，ACL大佬  拼接缝合
-  # Loon全局配置 by Tartarus
-# 作者GitHub： https://github.com/Tartarus2014
-# 脚本库GitHub： https://github.com/Tartarus2014/Loon-Script
-# Loon教程链接：https://github.com/TiyNa/LoonManual
-# Loon规则GitHub：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Loon
+# Loon全局配置 by Tartarus 
 
-# 导入配置后,添加机场订阅链接,之后更新订阅规则。
-# 点击配置-证书管理-生成新的CA证书，之后进入「设置」>「通用」>「描述文件」, 安装Loon的证书, 并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对Loon证书的信任。
-# 开启并更新脚本和插件。
+# 作者GitHub： https://github.com/Tartarus2014 
 
-# 全分组
-# 去广告插件, VIP脚本, 签到, cookie,
-# 云音乐解锁规则, 节点远程订阅, 默认直连, 可在策略组手动开启。
-# 请使用 Safari 浏览器访问 https://cdn.jsdelivr.net/gh/nondanee/UnblockNeteaseMusic@master/ca.crt 。首先下载证书, 进入「设置」>「通用」>「描述文件」, 安装「UnblockNeteaseMusic Root CA」, 并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
+# 脚本库GitHub： https://github.com/Tartarus2014/Loon-Script 
 
-[General]
-# IPv6 支持
-ipv6 = false
-# > 跳过某个域名或者IP段
-skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local, passenger.t3go.cn,passenger.t3go.cn
-bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
-# DNS 服务器
-dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5
-# Wi-Fi 访问
-# > 允许 Wi-Fi 网络下其它设备访问
-allow-udp-proxy = false
-allow-wifi-access = false
-wifi-access-http-port = 7222
-wifi-access-socket5-port = 7221
-# > 代理测速 URL
-proxy-test-url = http://www.gstatic.com/generate_204
-# > 测速超时 (s)
-test-timeout = 5
-# > 解决一些ip请求无法匹配域名类规则的问题。real-ip指定的域名将不返回fake ip响应，直接将dns请求发往目标dns服务器
-real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
-# 解析器
-resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/dist/sub-store-parser.loon.min.js
-# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy） 
-# ssid-trigger="default":rule,"cellular":rule,"ASUS":direct,"TPLINK":proxy 
+# Loon教程链接：https://github.com/TiyNa/LoonManual 
 
-[Host]
-*.taobao.com = server:223.5.5.5
-*.tmall.com = server:223.5.5.5
-*.jd.com = server:119.28.28.28
-*.qq.com = server:119.28.28.28
-*.tencent.com = server:119.28.28.28
-*.alicdn.com = server:223.5.5.5
-*.aliyun.com = server:223.5.5.5
-*.weixin.com = server:119.28.28.28
-*.163.com = server:119.29.29.29
-*.126.com = server:119.29.29.29
-*.126.net = server:119.29.29.29
-*.127.net = server:119.29.29.29
-*.netease.com = server:119.29.29.29
-*.mi.com = server:119.29.29.29
-*.xiaomi.com = server:119.29.29.29
-*.bilibili.com = server:119.29.29.29
-*testflight.apple.com = server:8.8.4.4
-mtalk.google.com = 108.177.125.188
-dl.google.com = server:119.29.29.29
-dl.l.google.com = server:119.29.29.29
+# Loon规则GitHub：https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Loon 
 
-[Proxy]
+ 
+
+# 导入配置后,添加机场订阅链接,之后更新订阅规则。 
+
+# 点击配置-证书管理-生成新的CA证书，之后进入「设置」>「通用」>「描述文件」, 安装Loon的证书, 并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对Loon证书的信任。 
+
+# 开启并更新脚本和插件。 
+
+ 
+
+# 全分组 
+
+# 去广告插件, VIP脚本, 签到, cookie, 
+
+# 云音乐解锁规则, 节点远程订阅, 默认直连, 可在策略组手动开启。 
+
+# 请使用 Safari 浏览器访问 https://cdn.jsdelivr.net/gh/nondanee/UnblockNeteaseMusic@master/ca.crt 。首先下载证书, 进入「设置」>「通用」>「描述文件」, 安装「UnblockNeteaseMusic Root CA」, 并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。 
+
+ 
+
+[General] 
+
+# IPv6 支持 
+
+ipv6 = false 
+
+# > 跳过某个域名或者IP段 
+
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,localhost,*.local,passenger.t3go.cn,passenger.t3go.cn 
+
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.18.0.0/15,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32 
+
+# DNS 服务器 
+
+dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5 
+
+# Wi-Fi 访问 
+
+# > 允许 Wi-Fi 网络下其它设备访问 
+
+allow-udp-proxy = false 
+
+allow-wifi-access = false 
+
+wifi-access-http-port = 7222 
+
+wifi-access-socks5-port = 7221 
+
+# > 代理测速 URL 
+
+proxy-test-url = http://www.gstatic.com/generate_204 
+
+# > 测速超时 (s) 
+
+test-timeout = 5 
+
+interface-mode = auto 
+
+# 节点连续失败几次后进行节点切换 
+
+switch-node-after-failure-times = 3 
+
+# > 解决一些ip请求无法匹配域名类规则的问题。real-ip指定的域名将不返回fake ip响应，直接将dns请求发往目标dns服务器 
+
+real-ip = msftconnecttest.com, msftncsi.com, *.msftconnecttest.com, *.msftncsi.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net 
+
+# 解析器 
+
+resource-parser = https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/dist/sub-store-parser.loon.min.js 
+
+# ssid-trigger参数，用于指定SSID下流量模式切换，（default表示默认，cellular表示蜂窝，目前支持三种值：rule，direct，proxy）  
+
+# ssid-trigger="default":rule,"cellular":rule,"ASUS":direct,"TPLINK":proxy  
+
+ 
+
+[Host] 
+
+*.taobao.com = server:223.5.5.5 
+
+*.tmall.com = server:223.5.5.5 
+
+*.jd.com = server:119.28.28.28 
+
+*.qq.com = server:119.28.28.28 
+
+*.tencent.com = server:119.28.28.28 
+
+*.alicdn.com = server:223.5.5.5 
+
+*.aliyun.com = server:223.5.5.5 
+
+*.weixin.com = server:119.28.28.28 
+
+*.163.com = server:119.29.29.29 
+
+*.126.com = server:119.29.29.29 
+
+*.126.net = server:119.29.29.29 
+
+*.127.net = server:119.29.29.29 
+
+*.netease.com = server:119.29.29.29 
+
+*.mi.com = server:119.29.29.29 
+
+*.xiaomi.com = server:119.29.29.29 
+
+*.bilibili.com = server:119.29.29.29 
+
+*testflight.apple.com = server:8.8.4.4 
+
+mtalk.google.com = 108.177.125.188 
+
+dl.google.com = server:119.29.29.29 
+
+dl.l.google.com = server:119.29.29.29 
+
+ 
+
+ssid:PHICOMM_5G = server:10.0.0.1 
+
+ 
+
+[Proxy] 
+
+ 
+
+
 
 [Remote Proxy]
+机场订阅 = https://suo.yt/W7BkpTS
 
-机场订阅 = https://suo.yt/W7BkpTS,udp=false,fast-open=false,vmess-aead=true,enabled=true
+ 
+
+ 
+
+ 
+
+ 
+
+# 策略组 
+
+[Proxy Group] 
+
+节点选择 = select,港,坡,美,台,日,手动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png 
+
+手动选择 = select,手动筛选,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Find_My.png 
+
+微信服务 = select,社交网络,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png 
+
+bilibili番区 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png 
+
+TikTok = select,日,美,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png 
+
+Instagram = select,社交网络,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png 
+
+WhatsApp = select,美,港,坡,img-url = https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/767px-WhatsApp.svg.png 
+
+Emby视频 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png 
+
+苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png 
+
+微软服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png 
+
+奈飞视频 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png 
+
+谷歌服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Google_Search.png 
+
+电报SG = select,坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png 
+
+电报US = select,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png 
+
+电报NL = select,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png 
+
+国外媒体 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png 
+
+国内媒体 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png 
+
+全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png 
+
+FINAL = select,节点选择,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png 
+
+港 = url-test,香港,url = http://www.qualcomm.cn/generate_204,interval = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png 
+
+坡 = url-test,新加坡,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png 
+
+台 = fallback,台湾,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png 
+
+美 = url-test,美国,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png 
+
+日 = fallback,日本,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png 
+
+社交网络 = fallback,香港故障转移,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Bot.png 
+
+ 
+
+ 
+
+ 
+
+[Remote Filter] 
+
+手动筛选 = NameRegex, FilterKey = "^(?!.*(网址|节点|到期|剩余流量|流量计算|距离下次重置剩余|时间|官网|产品|加群|免费|本站|CCCAT|网站|代理|下载|客服|私聊|推荐|公益|过期|有效期|无效|注册|回国|体验|广告位|请|群|Traffic|Expire))(.*)" 
+
+香港故障转移 = NameRegex, FilterKey = "(?i)(港|HK|Hong)" 
+
+香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)" 
+
+新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)" 
+
+台湾 = NameRegex, FilterKey = "(?i)(台|TW|Tai)" 
+
+美国 = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)" 
+
+日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)" 
+
+ 
+
+ 
+
+[Remote Rule] 
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Whatsapp/Whatsapp.list, policy=社交网络, tag=WhatsApp, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramSG/TelegramSG.list, policy=电报SG, tag=电报SG, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramUS/TelegramUS.list, policy=电报US, tag=电报US, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramNL/TelegramNL.list, policy=电报NL, tag=电报NL, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list, policy=bilibili番区, tag=bilibili 番区, parser-enable=true, enabled=true 
+
+# > BlockOTA屏蔽系统更新 
+
+https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, policy=微信服务, tag=微信服务, parser-enable=true, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Rule/ChinaASN.list, policy=全球直连, tag=China ASN, enabled=true 
+
+https://raw.githubusercontent.com/lwd-temp/anti-ip-attribution/main/generated/surge.list, policy=DIRECT, tag=国内社交平台IP归属地, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true 
+
+# https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list, policy=Instagram, tag=Instagram, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby视频, tag=Emby视频, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=TikTok, tag=TikTok, enabled=true 
+
+ 
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list, policy=节点选择, tag=国外媒体, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY.list, policy=节点选择, tag=节点选择, parser-enable=true, enabled=true 
+
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, parser-enable=true, enabled=true 
+
+
+
+ 
+
+ 
+
+ 
+
+# > 本地规则 
+
+[Rule] 
+
+#GEOIP,CN,DIRECT 
+
+FINAL,FINAL 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+# > 重写规则 
+
+[URL Rewrite] 
+
+enable = false 
+
+# 京东比价Fix 
+
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start reject-200 
+
+ 
+
+# > 订阅重写 
+
+[Remote Rewrite] 
+
+ 
+
+ 
+
+ 
+
+# > 脚本 
+
+[Script] 
+
+ 
+
+ 
+
+enable = false 
+
+http-response ^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/v\d\/search\/defaultwords)\?access_key script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js, requires-body=true, timeout=10, tag=bili自动地区 
+
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jf_Convert.js, requires-body=true, timeout=10, enabled=false, tag=京粉转链 
+
+http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, requires-body=true, timeout=10, tag=京东比价 
+
+
+
+ 
+
+ 
+
+ 
+
+http-response ^https?:\/\/api\.revenuecat\.com\/v1\/(receipts|subscribers\/.{36}|subscribers\/\w{14})$ script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/SparkMailProCrack.js, requires-body=true, timeout=10, tag=SparkMailProCrack 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+# > 订阅脚本 
+
+[Remote Script] 
+
+# > 获取Cookie 
+
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=GetCookie, enabled=false 
+
+https://raw.githubusercontents.com/yqc007/QuantumultX/master/Script/BiLiBiLiBVIPCrack.conf, tag=哔哩哔哩解锁脚本, enabled=false 
+
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Cookie.获取完一定要关闭, enabled=true 
+
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Task, enabled=true 
+
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=true 
+
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=true 
+
+ 
+
+ 
+
+# > 插件 
+
+[Plugin] 
+
+https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/RunningMode/running-mode.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Tieba_remove_ads.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/smzdm_remove_ads.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/JD_Price.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/TestFlight.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Bilibili_remove_ads.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/WeChat_Official_Accounts_remove_ads.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Remove_splash_screen_ads.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Amap_remove_ads.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/YouTube_remove_ads.plugin, enabled=true 
+
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/NeteaseCloudMusic_remove_ads.plugin, enabled=true 
+
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/SpotifyPremium.plugin, enabled=true 
+
+https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Loon/Plugin/Tool/GoogleRedirect.plugin, enabled=true 
+
+# plugin-url tag=tag,proxy=插件中PROXY所指向的策略,enable=true 
+
+# plugin策略可设置为DIRECT,REJECT,PROXY，其中PROXY为用户在app中手动映射的策略，rule后不跟随策略默认使用PROXY 
+
+# example:  
+
+
+# > 哔哩哔哩自动换区 
+
+https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Loon/Plugin/Streaming/Bili_Auto_Regions.plugin, tag=BiliBili Auto Regions, enabled=true 
+
+
+
+# > Loon插件仓库 
+
+https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, tag=Loon Gallery, enabled=true 
+
+
+
+# > 知乎App去广告 
+
+https://raw.githubusercontent.com/app2smile/rules/master/plugin/zhihu.plugin, tag=ZhihuAds, enabled=true 
 
 
 
 
-# 策略组
-[Proxy Group]
-节点选择 = fallback,港,坡,美,台,日,手动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
-手动选择 = select,手动筛选,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Find_My.png
-微信服务 = select,社交网络,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
-bilibili番区 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
-TikTok = select,日,美,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
-Instagram = select,社交网络,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Instagram.png
-WhatsApp = select,美,港,坡,img-url = https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/767px-WhatsApp.svg.png
-Emby视频 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Emby.png
-苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
-微软服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
-奈飞视频 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
-谷歌服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Google_Search.png
-电报SG = select,坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-电报US = select,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-电报NL = select,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-国外媒体 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
-国内媒体 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/StreamingCN.png
-全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
-FINAL = select,节点选择,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
-港 = fallback,香港,url = http://www.qualcomm.cn/generate_204,interval = 60,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-坡 = fallback,新加坡,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-台 = fallback,台湾,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
-美 = fallback,美国,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-日 = fallback,日本,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-社交网络 = fallback,香港故障转移,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Bot.png
 
+# > BoxJS 
 
+https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.tf.plugin, tag=BoxJs, enabled=true 
 
-[Remote Filter]
-手动筛选 = NameRegex, FilterKey = "^(?!.*(网址|节点|到期|剩余流量|流量计算|距离下次重置剩余|时间|官网|产品|加群|免费|本站|CCCAT|网站|代理|下载|客服|私聊|推荐|公益|过期|有效期|无效|注册|回国|体验|广告位|请|群|Traffic|Expire))(.*)"
-香港故障转移 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
-香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
-新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
-台湾 = NameRegex, FilterKey = "(?i)(台|TW|Tai)"
-美国 = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
-日本 = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
+# > 高级订阅工具 
 
+https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Loon_rewrite_converter.plugin, enabled=true 
 
-[Remote Rule]
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Whatsapp/Whatsapp.list, policy=社交网络, tag=WhatsApp, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramSG/TelegramSG.list, policy=坡, tag=电报SG, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramUS/TelegramUS.list, policy=美, tag=电报US, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramNL/TelegramNL.list, policy=美, tag=电报NL, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/NobyDa/Script/master/Surge/Bilibili.list, policy=bilibili番区, tag=bilibili 番区, parser-enable=true, enabled=true
-# > BlockOTA屏蔽系统更新
-https://raw.githubusercontent.com/nzw9314/Surge/master/Ruleset/BlockOTA.list, policy=REJECT, tag=屏蔽iOS更新, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, policy=微信服务, tag=微信服务, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/lwd-temp/anti-ip-attribution/main/generated/surge.list, policy=DIRECT, tag=国内社交平台IP归属地, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
-# https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Facebook.list, policy=Instagram, tag=Instagram, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Ruleset/Emby/Emby.list, policy=Emby视频, tag=Emby视频, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=TikTok, tag=TikTok, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/egdd.plugin, enabled=false 
 
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/cp.plugin, enabled=false 
 
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=谷歌服务, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=奈飞视频, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list, policy=节点选择, tag=国外媒体, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY.list, policy=节点选择, tag=节点选择, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=DIRECT, tag=国内媒体, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/absqgs.plugin, enabled=false 
 
-[Rule]
-DOMAIN-SUFFIX,applvn.com,REJECT
-DOMAIN-SUFFIX,applovin.com,REJECT
-GEOIP,CN,DIRECT
-FINAL,FINAL
+https://raw.githubusercontent.com/deezertidal/private/master/plugallery/colorweather.plugin, enabled=true 
 
+https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/KuWoMusic/KuWoMusic.Loon.plugin, enabled=true 
 
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/skip-proxy.plugin, enabled=true 
 
+https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Account.plugin, tag=TestFlight账户管理脚本, enabled=true 
 
-[URL Rewrite]
-enable = false
-# 京东比价Fix
-^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=start reject-200
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/EMBY.plugin, enabled=true 
 
-[Remote Rewrite]
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Upgrade/Upgrade.plugin, tag=屏蔽app更新检测, enabled=true 
 
-[Script]
-enable = false
-http-response ^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/v\d\/search\/defaultwords)\?access_key script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js, requires-body=true, timeout=10, tag=bili自动地区
-http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jf_Convert.js, requires-body=true, timeout=10, enabled=false, tag=京粉转链
-http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jd_price_lite.js, requires-body=true, timeout=10, tag=京东比价
+# > TikTok 
 
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, policy=TikTok, tag=Tiktok, enabled=true 
 
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true 
 
+ 
 
-
-
-
-[Remote Script]
-https://raw.githubusercontents.com/yqc007/QuantumultX/master/Script/BiLiBiLiBVIPCrack.conf, tag=哔哩哔哩解锁脚本, enabled=false
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Cookie.conf, tag=Cookie.获取完一定要关闭, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Task.conf, tag=Task, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, tag=Script, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=true
-
-[Plugin]
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Block/YouTubeAdsTest.plugin, enabled=true
-https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, enabled=true
-https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/KuWoMusic/KuWoMusic.Loon.plugin, enabled=true
-https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/AutoPolicy/auto-policy.plugin, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/skip-proxy.plugin, enabled=true
-https://raw.githubusercontent.com/VirgilClyne/VirgilClyne/main/modules/ASN/ASN.sgmodule, enabled=true
-https://raw.githubusercontent.com/NobyDa/Script/master/Loon/Loon_TF_Account.plugin, tag=TestFlight账户管理脚本, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/EMBY.plugin, enabled=false
-https://raw.githubusercontent.com/Tartarus2014/For-own-use/master/Loon/Plugin/BilibiliAds.plugin, tag=Bilibili 去广告, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Upgrade/Upgrade.plugin, tag=屏蔽app更新检测, enabled=true
-https://raw.githubusercontent.com/Peng-YM/Loon-Gallery/master/loon-gallery.plugin, tag=Loon Gallery, enabled=true
-# > TikTok
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokKR.plugin, policy=TikTok, tag=Tiktok, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.lnplugin, tag=开屏广告, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.lnplugin, tag=知乎助手&去广告及体验增强, enabled=true
-
+ 
 
 [MITM]
 enable = false
 skip-server-cert-verify = true
+
+ 
