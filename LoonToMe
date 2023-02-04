@@ -62,13 +62,13 @@ proxy-test-url = http://www.gstatic.com/generate_204
 
 # > 测速超时 (s) 
 
-test-timeout = 5 
+test-timeout = 2
 
 interface-mode = auto 
 
-# 节点连续失败几次后进行节点切换 
+switch-node-after-failure-times = 3
 
-switch-node-after-failure-times = 3 
+
 
 # > 解决一些ip请求无法匹配域名类规则的问题。real-ip指定的域名将不返回fake ip响应，直接将dns请求发往目标dns服务器 
 
@@ -191,17 +191,17 @@ Emby视频 = select,节点选择,港,坡,美,img-url = https://raw.githubusercon
 
 FINAL = select,节点选择,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png 
 
-港 = url-test,香港,url = http://www.qualcomm.cn/generate_204,interval = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png 
+港 = url-test,香港,url = http://www.gstatic.com/generate_204, interval = 60, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 
-坡 = url-test,新加坡,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png 
+坡 = url-test,新加坡,url = http://www.gstatic.com/generate_204, interval = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png 
 
-台 = fallback,台湾,url = http://www.gstatic.com/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png 
+台 = fallback,台湾,url = http://www.gstatic.com/generate_204, interval = 60,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png 
 
-美 = url-test,美国,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png 
+美 = url-test,美国,url = http://www.gstatic.com/generate_204, interval = 60,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png 
 
-日 = fallback,日本,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png 
+日 = fallback,日本,url = http://www.gstatic.com/generate_204, interval = 60,max-timeout = 3000,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png 
 
-社交网络 = fallback,香港故障转移,url = http://www.qualcomm.cn/generate_204,interval = 600,max-timeout = 3000,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Bot.png 
+社交网络 = fallback,香港故障转移,url = http://www.gstatic.com/generate_204, interval = 60,max-timeout = 3000,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Bot.png 
 
  
 
