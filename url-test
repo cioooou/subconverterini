@@ -1,6 +1,7 @@
 ;设置规则标志位
 ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 ruleset=🎯 GlobalDIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+ruleset=🛑 Block,https://raw.githubusercontent.com/cioooou/subconverterini/main/Block.list
 ruleset=🙂 Social,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Instagram/Instagram.list
 ruleset=🙂 Social,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Facebook/Facebook.list
 ruleset=🛃 Amazon,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Amazon/Amazon.list
@@ -38,6 +39,7 @@ custom_proxy_group=📹 YouTube`select`[]🔰 Proxies
 custom_proxy_group=🌍 GlobalMedia`select`[]🔰 Proxies
 custom_proxy_group=🌏 ChinaMedia`select`[]DIRECT
 custom_proxy_group=🎯 GlobalDIRECT`select`[]DIRECT
+custom_proxy_group=🛑 Block`select`[]REJECT`[]DIRECT
 custom_proxy_group=🐟 Final`select`[]🔰 Proxies
 ;设置分组标志位
 
