@@ -30,7 +30,7 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 节点选择 = select,港,坡,美,台,日,手动选择,WARP,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
 手动选择 = select,手动筛选,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Find_My.png
 # 应用策略组
-微信服务 = select,港,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
+微信服务 = select,DIRECT,港,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
 哔哩哔哩 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
 AI智能 = select,美,日,台,坡,img-url = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/Website_icon/80px/OpenAI.png
 TikTok = select,日,美,节点选择,直接连接,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
@@ -77,7 +77,7 @@ Spotify = select,坡,美,台,日,img-url = https://raw.githubusercontent.com/Koo
 
 [Remote Rule]
 
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, policy=微信服务, tag=微信服务, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/WeChat/WeChat.list, policy=微信服务, tag=微信服务, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list, policy=哔哩哔哩, tag=哔哩哔哩, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list, policy=哔哩哔哩, tag=哔哩哔哩HMT, enabled=true
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=全球直连, tag=下载直连, enabled=true
