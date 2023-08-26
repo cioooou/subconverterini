@@ -1,2 +1,3 @@
 payload:
-  - DOMAIN-KEYWORD,visa.visitsaudi.com
+  - DOMAIN-KEYWORD,visa
+  - DOMAIN-SUFFIX,visa.visitsaudi.com
