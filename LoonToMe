@@ -41,9 +41,9 @@ WARP = wireguard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:85f9:8b17:
 哔哩哔哩 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
 AI智能 = select,美国,代理链,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png
 TikTok = select,节点选择,日,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
-Spotify = select,节点选择,美,港,坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+Spotify = select,美,港,坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
 脸书服务 = select,港,坡,台,美,日,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Facebook.png
-YouTube = select,节点选择,美,坡,港,台,日,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/YouTube.png
+YouTube = select,美,节点选择,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/YouTube.png
 谷歌服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Google_Search.png
 苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 微软服务 = select,节点选择,港,坡,美,日,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
