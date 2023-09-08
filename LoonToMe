@@ -85,7 +85,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge
 
 https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Local-LAN.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
 
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=false
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
 
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=全球直连, tag=下载直连, enabled=true
 
@@ -118,7 +118,7 @@ https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Pr
 
 https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Sub-Store.plugin, policy=节点选择, tag=Substore, parser-enable=true, enabled=true
 
-https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Domestic.list, policy=全球直连, tag=中国域名, parser-enable=true, enabled=false
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Domestic.list, policy=全球直连, tag=中国域名, parser-enable=true, enabled=true
 
 https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Rule/RULE_REGION, policy=DIRECT, tag=CN REGION, enabled=true
 
