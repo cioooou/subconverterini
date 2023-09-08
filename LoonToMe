@@ -10,7 +10,7 @@ disable-udp-ports = 443
 allow-wifi-access = false
 wifi-access-http-port = 7222
 wifi-access-socks5-port = 7221
-proxy-test-url = http://www.apple.com/library/test/success.html
+proxy-test-url = http://www.gstatic.com/generate_204
 test-timeout = 2
 interface-mode = auto
 sni-sniffing = false
@@ -25,10 +25,7 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 WARP = wireguard,interface-ip=172.16.0.2,interface-ipv6=2606:4700:110:85f9:8b17:5728:9d6b:8af0,private-key="iC/Jx++8BgWmFld02arT3hYfCUPyHs5GkXD+uNXAhVw=",mtu=1280,dns=162.159.36.1,dnsv6=2606:4700:4700::1111,keepalive=45,peers=[{public-key="bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",allowed-ips="0.0.0.0/0,::/0",endpoint=162.159.195.47:5279,reserved=[185,179,139]}]
 
 [Remote Proxy]
-Boochi = https://cdn.bocchi.ooo/api/v1/client/subscribe?token=06463b9a1425b317d81de37855669eae,parser-enabled = true,udp=true,fast-open=false,vmess-aead=false,enabled=true
-Free = https://gist.githubusercontent.com/cioooou/313daa5ec32f8b53e4818c6d95eeabf4/raw/Free,parser-enabled = true,udp=false,fast-open=false,vmess-aead=false,enabled=false
-Your = https://gist.githubusercontent.com/cioooou/313daa5ec32f8b53e4818c6d95eeabf4/raw/Yours,parser-enabled = true,udp=false,fast-open=false,vmess-aead=true,enabled=false
-WE = https://gist.githubusercontent.com/cioooou/313daa5ec32f8b53e4818c6d95eeabf4/raw/We,parser-enabled = true,udp=false,fast-open=false,vmess-aead=true,enabled=false
+
 机场订阅 = https://suo.yt/W7BkpTS,udp=false,fast-open=false,vmess-aead=true,enabled=false
 
 
@@ -42,7 +39,7 @@ WE = https://gist.githubusercontent.com/cioooou/313daa5ec32f8b53e4818c6d95eeabf4
 # 应用策略组
 微信服务 = select,DIRECT,港,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png
 哔哩哔哩 = select,DIRECT,港,台,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/bilibili_3.png
-AI智能 = select,节点选择,美,日,台,坡,img-url = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/Website_icon/80px/OpenAI.png
+AI智能 = select,美国,代理链,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bot.png
 TikTok = select,节点选择,日,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/TikTok.png
 Spotify = select,节点选择,美,港,坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
 脸书服务 = select,港,坡,台,美,日,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Facebook.png
@@ -50,9 +47,9 @@ YouTube = select,节点选择,美,坡,港,台,日,img-url = https://raw.githubus
 谷歌服务 = select,节点选择,港,坡,美,img-url = https://raw.githubusercontent.com/namelessup/Koolson-Qure/master/IconSet/Color/Google_Search.png
 苹果服务 = select,DIRECT,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 微软服务 = select,节点选择,港,坡,美,日,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
-奈飞视频 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
-电报信息 = select,节点选择,手动选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-国外媒体 = select,节点选择,港,坡,台,美,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Streaming.png
+电报SG = select,坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+电报US = select,美,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+电报NL = select,美,节点选择,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 # 全球直连
 全球直连 = select,DIRECT,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
 #隐私防护
@@ -85,35 +82,44 @@ YouTube = select,节点选择,美,坡,港,台,日,img-url = https://raw.githubus
 
 [Remote Rule]
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/WeChat/WeChat.list, policy=微信服务, tag=微信服务, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Local-LAN.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/DMCA-Sensitive.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
 
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/CCC-CN.list, policy=全球直连, tag=中国公司IP, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Domestic.list, policy=全球直连, tag=中国域名, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=全球直连, tag=下载直连, enabled=false
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=本地网络, enabled=false
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=全球直连, tag=UnBreak, enabled=false
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list, policy=AI智能, tag=AI智能, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list, policy=奈飞视频, tag=Netflix, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list, policy=YouTube, tag=YouTube, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTubeMusic.list, policy=YouTube, tag=YouTube Music, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY/Google.list, policy=谷歌服务, tag=Google, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=Google, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Spotify/Spotify.list, policy=Spotify, tag=Spotify, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=TikTok, tag=TikTok, enabled=true
-#https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list, policy=电报信息, tag=电报信息, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Local-LAN.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=false
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list, policy=全球直连, tag=下载直连, enabled=true
+
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Bilibili.list, policy=哔哩哔哩, tag=哔哩哔哩, enabled=true
+
+https://raw.githubusercontent.com/cioooou/subconverterini/main/AiGPT.list, policy=AI智能, tag=AI智能, parser-enable=true, enabled=true
+
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Facebook/Facebook.list, policy=脸书服务, tag=Facebook, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
-https://gitlab.com/lodepuly/proxy_tool_resources/-/raw/master/rule/Loon/TestFlight/TestFlight.list, policy=苹果服务, tag=TestFlight.list, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list, policy=哔哩哔哩, tag=哔哩哔哩, enabled=true
-https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list, policy=哔哩哔哩, tag=哔哩哔哩HMT, enabled=false
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/GlobalMedia.list, policy=国外媒体, tag=国外媒体, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/PROXY.list, policy=节点选择, tag=GFW代理, parser-enable=true, enabled=true
-https://raw.githubusercontent.com/LM-Firefly/Rules/master/CCC-Global.list, policy=节点选择, tag=GFW代理, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TikTok/TikTok.list, policy=TikTok, tag=TikTok, enabled=true
+
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramUS/TelegramUS.list, policy=电报US, tag=电报US, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramSG/TelegramSG.list, policy=电报SG, tag=电报SG, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramNL/TelegramNL.list, policy=电报NL, tag=电报NL, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/Spotify.list, policy=Spotify, tag=Spotify, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list, policy=谷歌服务, tag=Google, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list, policy=谷歌服务, tag=Google, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list, policy=谷歌服务, tag=Google, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/YouTube.list, policy=YouTube, tag=YouTube, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Media/YouTube%20Music.list, policy=YouTube, tag=YouTube Music, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Proxy.list, policy=节点选择, tag=GFW代理, parser-enable=true, enabled=true
 
 https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Plugin/Sub-Store.plugin, policy=节点选择, tag=Substore, parser-enable=true, enabled=true
+
+https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Domestic.list, policy=全球直连, tag=中国域名, parser-enable=true, enabled=false
+
 https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Tool/Loon/Rule/RULE_REGION, policy=DIRECT, tag=CN REGION, enabled=true
 
 
@@ -149,6 +155,8 @@ enable = false
 
 # > 脚本
 [Script]
+http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/jdjf_price.js, requires-body=true, timeout=10, enabled=false, tag=京东比价
+
 
 
 
@@ -216,6 +224,8 @@ https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tools/RunningMode/running
 # > TestFlight账户管理
 # > 哔哩哔哩自动换区
 # > 超级搜索引擎
+
+
 # > Loon插件仓库
 # > TestFlight解锁区域限制
 # > 知乎App去广告
@@ -233,5 +243,6 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Down
 
 [MITM]
 hostname = vip1.kuwo.cn
+hostname = api.m.jd.com
 hostname = *.kuwo.cn
 hostname = app.weilaixushi.com,api.orientlion.com,app.qdjdswkj.com,api.0954auto.com,appapi.xmblgg.com,api.czbt.cc,api.jtshuzhiwa.com,appapi.17gwl.com,api.saiyijiaju.com,api.ddoukids.com,appapi.mnghx.info,appapi.zdxclr.com,auth.aliyundrive.com,api.revenuecat.com,-weather-data.apple.com
