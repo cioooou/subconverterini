@@ -8,6 +8,17 @@ DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN, cdn.auth0.com
+DOMAIN, o33249.ingest.sentry.io
+DOMAIN-SUFFIX, challenges.cloudflare.com
+DOMAIN-SUFFIX, identrust.com
+DOMAIN-SUFFIX, stripe.com
+DOMAIN-SUFFIX, poe.com
+DOMAIN-SUFFIX, intercom.io
+DOMAIN-SUFFIX, featuregates.org
+DOMAIN-SUFFIX, events.statsigapi.net
+DOMAIN-SUFFIX, intercomcdn.com
+DOMAIN-SUFFIX, openaicom.imgix.net
 
 # > New Bing
 DOMAIN-SUFFIX,bing.com
@@ -19,3 +30,5 @@ DOMAIN-SUFFIX,claude.ai
 
 # > Bard
 DOMAIN,bard.google.com
+
+
