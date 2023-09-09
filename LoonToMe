@@ -81,7 +81,7 @@ YouTube = select,美,节点选择,img-url = https://raw.githubusercontent.com/Or
 
 
 [Remote Rule]
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/WeChat/WeChat.list, policy=微信服务, tag=微信服务, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/WeChat/WeChat.list, policy=微信服务, tag=微信服务, enabled=true
 
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Lan/Lan.list, policy=DIRECT, tag=全球直连, parser-enable=true, enabled=true
 
@@ -95,7 +95,7 @@ https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/
 
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Microsoft/Microsoft.list, policy=微软服务, tag=微软服务, parser-enable=true, enabled=true
 
-https://raw.githubusercontent.com/dler-io/Rules/main/Surge/Surge%203/Provider/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list, policy=苹果服务, tag=苹果服务, parser-enable=true, enabled=true
 
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TelegramSG/TelegramSG.list, policy=电报SG, tag=电报SG, parser-enable=true, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TelegramUS/TelegramUS.list, policy=电报US, tag=电报US, parser-enable=true, enabled=true
