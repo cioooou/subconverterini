@@ -11,22 +11,11 @@ DOMAIN-SUFFIX,origin-mc.corel.com
 DOMAIN-SUFFIX,iws.corel.com
 
 
-
-# SublimeText激活屏蔽
-DOMAIN-SUFFIX,sublimetext.com
-DOMAIN-SUFFIX,license.sublimehq.com
-# Remote Desktop Manager Enterprise 激活屏蔽
-DOMAIN-SUFFIX,crm.devolutions.net
 # 迅雷敏感资源屏蔽
 DOMAIN-SUFFIX,hub5btmain.sandai.net
 DOMAIN-SUFFIX,hub5emu.sandai.net
 DOMAIN-SUFFIX,upgrade.xl9.xunlei.com
-## XSHell
-DOMAIN-SUFFIX,transact.netsarang.com
-DOMAIN-SUFFIX,update.netsarang.com
-DOMAIN-SUFFIX,netsarang.com
-DOMAIN-SUFFIX,netsarang.co.kr
-DOMAIN-SUFFIX,sales.netsarang.com
+
 
 ## MindJet
 DOMAIN-SUFFIX,mindjet.com
@@ -139,19 +128,4 @@ DOMAIN-SUFFIX,mairuan.com
 DOMAIN-SUFFIX,mairuan.cn
 DOMAIN-SUFFIX,mairuan.net
 DOMAIN-SUFFIX,mairuan.com.cn
-
-#软件屏蔽
-DOMAIN-SUFFIX,techsmith.com
-DOMAIN-SUFFIX,updater.techsmith.com
-DOMAIN-SUFFIX,camtasiatudi.techsmith.com
-DOMAIN-SUFFIX,tsccloud.cloudapp.net
-DOMAIN-SUFFIX,assets.cloud.techsmith.com
-DOMAIN-SUFFIX,activation.cloud.techsmith.com
-DOMAIN-SUFFIX,acdid.acdsystems.com
-DOMAIN-SUFFIX,l.qq.com
-DOMAIN-SUFFIX,ra.gtimg.com
-DOMAIN-SUFFIX,c.l.qq.com
-DOMAIN-SUFFIX,livep.l.qq.com
-DOMAIN-SUFFIX,lives.l.qq.com
-DOMAIN-SUFFIX,livec.l.qq.com
 
