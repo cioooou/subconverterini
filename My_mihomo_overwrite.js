@@ -372,12 +372,6 @@ function main(config) {
       "behavior": "classical",
       "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Direct.list",
       "path": "./rules/Direct.list"
-    },                     
-    "ProxyGFW": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/ProxyGFW.list",
-      "path": "./rules/ProxyGFW.list"
     },
     "ChinaDomain": {
       ...ruleProviderCommon,
@@ -402,11 +396,9 @@ function main(config) {
     "RULE-SET,TikTokCici,TikTok服务",
     "RULE-SET,Spotify,Spotify音乐",
     "RULE-SET,Emby,Emby影视",
-    "RULE-SET,Spotify,🔰 节点选择",
     "GEOSITE,onedrive,微软服务",
     "GEOSITE,github,微软服务",
     "GEOSITE,microsoft,微软服务",
-    "GEOSITE,gfw,🔰 节点选择",
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
