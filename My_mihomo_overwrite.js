@@ -27,66 +27,6 @@ function main(config) {
     throw new Error("配置文件中未找到任何代理");
   }
 
-  // 覆盖通用配置
-  config["mixed-port"] = "7890";
-  config["tcp-concurrent"] = true;
-  config["allow-lan"] = true;
-  config["ipv6"] = false;
-  config["log-level"] = "info";
-  config["unified-delay"] = "true";
-  config["find-process-mode"] = "strict";
-  config["global-client-fingerprint"] = "chrome";
-
-  // 覆盖 dns 配置
-  config["dns"] = {
-    "enable": true,
-    "listen": "0.0.0.0:1053",
-    "ipv6": false,
-    "enhanced-mode": "fake-ip",
-    "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-    "default-nameserver": ["system"],
-    "nameserver": ["223.5.5.5", "119.29.29.29", "180.184.1.1"],
-    "nameserver-policy": {
-      "geosite:cn": "system",
-      "geosite:gfw,geolocation-!cn": ["quic://223.5.5.5", "quic://223.6.6.6", "https://1.12.12.12/dns-query", "https://120.53.53.53/dns-query"]
-    }
-  };
-
-  // 覆盖 geodata 配置
-  config["geodata-mode"] = true;
-  config["geox-url"] = {
-    "geoip": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat",
-    "geosite": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
-    "mmdb": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb",
-    "asn": "https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
-  };
-
-  // 覆盖 sniffer 配置
-  config["sniffer"] = {
-    "enable": true,
-    "parse-pure-ip": true,
-    "sniff": {
-      "TLS": {
-        "ports": ["443", "8443"]
-      },
-      "HTTP": {
-        "ports": ["80", "8080-8880"],
-        "override-destination": true
-      },
-      "QUIC": {
-        "ports": ["443", "8443"]
-      }
-    }
-  };
-
-  // 覆盖 tun 配置
-  config["tun"] = {
-    "enable": true,
-    "stack": "mixed",
-    "dns-hijack": ["any:53"]
-  };
-
   // 覆盖策略组
   config["proxy-groups"] = [
     {
@@ -239,7 +179,7 @@ function main(config) {
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|TG|tg|群组|频道|订阅|ISP|流量|到期|重置|付费|网址|更新|Emby|0.01x|0.2x|0.01×",         
+      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|TG|tg|群组|频道|订阅|ISP|流量|到期|重置|付费|网址|更新|Emby|0.01x|0.2x",         
       "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"   
     }    
@@ -372,6 +312,12 @@ function main(config) {
       "behavior": "classical",
       "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Direct.list",
       "path": "./rules/Direct.list"
+    },                     
+    "ProxyGFW": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/ProxyGFW.list",
+      "path": "./rules/ProxyGFW.list"
     },
     "ChinaDomain": {
       ...ruleProviderCommon,
@@ -396,9 +342,11 @@ function main(config) {
     "RULE-SET,TikTokCici,TikTok服务",
     "RULE-SET,Spotify,Spotify音乐",
     "RULE-SET,Emby,Emby影视",
+    "RULE-SET,Spotify,🔰 节点选择",
     "GEOSITE,onedrive,微软服务",
     "GEOSITE,github,微软服务",
     "GEOSITE,microsoft,微软服务",
+    "GEOSITE,gfw,🔰 节点选择",
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
