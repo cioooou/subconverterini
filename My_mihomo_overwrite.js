@@ -91,21 +91,21 @@ function main(config) {
   config["proxy-groups"] = [
     {
       ...groupBaseOption,
-      "name": "节点选择",
+      "name": "🔰 节点选择",
       "type": "select",
-      "proxies": ["故障转移", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点", "手动切换", "DIRECT"],
+      "proxies": ["🔯 故障转移", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "📌 手动切换", "DIRECT"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"
     },  
     {
       ...groupBaseOption,
-      "name": "故障转移",
+      "name": "🔯 故障转移",
       "type": "fallback",
-      "proxies": ["香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"],
+      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Find_My.png"
     },  
     {
       ...groupBaseOption,
-      "name": "手动切换",
+      "name": "📌 手动切换",
       "type": "select",
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Domestic.png"
@@ -114,7 +114,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "微信服务",
       "type": "select",
-      "proxies": ["DIRECT", "香港节点"],
+      "proxies": ["DIRECT", "🇭🇰 香港节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/WeChat.png"
     },  
     {
@@ -135,35 +135,35 @@ function main(config) {
       ...groupBaseOption,
       "name": "TikTok服务",
       "type": "select",
-      "proxies": ["节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"],
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png"
     },       
     {
       ...groupBaseOption,
       "name": "苹果服务",
       "type": "select",
-      "proxies": ["节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点", "DIRECT"],
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png"
     },
     {
       ...groupBaseOption,
       "name": "微软服务",
       "type": "select",
-      "proxies": ["节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"],
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"
     },
     {
       ...groupBaseOption,
       "name": "谷歌服务",
       "type": "select",
-      "proxies": ["节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"],
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"
     },
     {
       ...groupBaseOption,
       "name": "电报消息",
       "type": "select",
-      "proxies": ["节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"],
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },
     {
@@ -172,15 +172,14 @@ function main(config) {
       "type": "select",
       "include-all": true,
       "filter": "(?i)0.01x|Emby|0.2x",      
-      "proxies": ["节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"],
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
     },
     {
       ...groupBaseOption,
       "name": "Spotify音乐",
       "type": "select",
-      "include-all": true,
-      "proxies": ["狮城节点", "美国节点"],
+      "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Spotify.png"
     },    
     {
@@ -194,13 +193,13 @@ function main(config) {
       ...groupBaseOption,
       "name": "漏网之鱼",
       "type": "select",
-      "proxies": ["节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"],
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
     },
     // 地区分组
     {
       ...groupBaseOption,
-      "name": "香港节点",
+      "name": "🇭🇰 香港节点",
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
@@ -209,7 +208,7 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "台湾节点",
+      "name": "🇹🇼 台湾节点",
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
@@ -218,7 +217,7 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "日本节点",
+      "name": "🇯🇵 日本节点",
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
@@ -227,7 +226,7 @@ function main(config) {
     },        
     {
       ...groupBaseOption,
-      "name": "狮城节点",
+      "name": "🇸🇬 狮城节点",
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
@@ -236,7 +235,7 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "美国节点",
+      "name": "🇺🇸 美国节点",
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
@@ -373,13 +372,7 @@ function main(config) {
       "behavior": "classical",
       "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Direct.list",
       "path": "./rules/Direct.list"
-    },  
-    "Geo": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_All_Surge.list",
-      "path": "./rules/Geo_AS_IP_CN_All_Surge.list"
-    },                   
+    },                     
     "ProxyGFW": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -409,16 +402,15 @@ function main(config) {
     "RULE-SET,TikTokCici,TikTok服务",
     "RULE-SET,Spotify,Spotify音乐",
     "RULE-SET,Emby,Emby影视",
-    "RULE-SET,Spotify,节点选择",
+    "RULE-SET,Spotify,🔰 节点选择",
     "GEOSITE,onedrive,微软服务",
     "GEOSITE,github,微软服务",
     "GEOSITE,microsoft,微软服务",
-    "GEOSITE,gfw,节点选择",
+    "GEOSITE,gfw,🔰 节点选择",
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
     "RULE-SET,Direct,DIRECT",
-    "RULE-SET,Geo,DIRECT",
     "RULE-SET,ChinaDomain,DIRECT",
     "GEOIP,lan,DIRECT",
     "GEOIP,CN,DIRECT",
