@@ -239,7 +239,7 @@ function main(config) {
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|TG|tg|群组|频道|订阅|ISP|流量|到期|重置|付费|网址|更新|Emby|0.01x|0.2x",         
+      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|TG|tg|群组|频道|订阅|ISP|流量|到期|重置|付费|网址|更新|Emby|0.01x|0.2x|0.01×",         
       "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"   
     }    
