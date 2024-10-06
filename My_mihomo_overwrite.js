@@ -52,63 +52,63 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "微信服务",
+      "name": "✅微信服务",
       "type": "select",
       "proxies": ["DIRECT", "🇭🇰 香港节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/WeChat.png"
     },  
     {
       ...groupBaseOption,
-      "name": "脸书服务",
+      "name": "😀脸书服务",
       "type": "select",
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
     },         
     {
       ...groupBaseOption,
-      "name": "AI服务",
+      "name": "🤖AI服务",
       "type": "select",
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png"
     }, 
     {
       ...groupBaseOption,
-      "name": "TikTok服务",
+      "name": "🎶TikTok服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png"
     },       
     {
       ...groupBaseOption,
-      "name": "苹果服务",
+      "name": "🍎苹果服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png"
     },
     {
       ...groupBaseOption,
-      "name": "微软服务",
+      "name": "Ⓜ️微软服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"
     },
     {
       ...groupBaseOption,
-      "name": "谷歌服务",
+      "name": "📢谷歌服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"
     },
     {
       ...groupBaseOption,
-      "name": "电报消息",
+      "name": "📲电报消息",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },
     {
       ...groupBaseOption,
-      "name": "Emby影视",
+      "name": "📺️Emby影视",
       "type": "select",
       "include-all": true,
       "filter": "(?i)0.01x|Emby|0.2x",      
@@ -117,21 +117,21 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "Spotify音乐",
+      "name": "🎧Spotify音乐",
       "type": "select",
       "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Spotify.png"
     },    
     {
       ...groupBaseOption,
-      "name": "广告拦截",
+      "name": "🛑广告拦截",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
     },
     {
       ...groupBaseOption,
-      "name": "漏网之鱼",
+      "name": "🐟漏网之鱼",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
@@ -217,18 +217,30 @@ function main(config) {
       "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Apple.list",
       "path": "./rules/Apple.list"
     },
+    "GoogleCN": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list",
+      "path": "./rules/GoogleCN.list"
+    },
     "Google": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Google.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list",
       "path": "./rules/Google.list"
     },
-    "YouTube": {
+    "GoogleCNProxyIP": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/YouTube.list",
-      "path": "./rules/YouTube.list"
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list",
+      "path": "./rules/GoogleCNProxyIP.list"
     },
+    "GoogleFCM": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list",
+      "path": "./rules/GoogleFCM.list"
+    },                
     "Telegram": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -313,48 +325,49 @@ function main(config) {
       "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Direct.list",
       "path": "./rules/Direct.list"
     },                     
-    "ProxyGFW": {
+    "Proxy": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/ProxyGFW.list",
-      "path": "./rules/ProxyGFW.list"
+      "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Proxy.list",
+      "path": "./rules/Proxy.list"
     },
-    "ChinaDomain": {
+    "Geo": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/ChinaDomain.list",
-      "path": "./rules/ChinaDomain.list"
+      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_All_Surge.list",
+      "path": "./rules/Geo_AS_IP_CN_All_Surge.list"
     }
   };
 
   // 覆盖规则
   config["rules"] = [
-    "RULE-SET,Block,广告拦截",
-    "RULE-SET,WeChat,微信服务",
-    "RULE-SET,AI,AI服务",
-    "RULE-SET,Facebook,脸书服务",
-    "RULE-SET,Instagram,脸书服务",
-    "RULE-SET,Apple,苹果服务",
-    "RULE-SET,YouTube,谷歌服务",
-    "RULE-SET,Google,谷歌服务",
-    "RULE-SET,Telegram,电报消息",
-    "RULE-SET,TikTok,TikTok服务",
-    "RULE-SET,TikTokCici,TikTok服务",
-    "RULE-SET,Spotify,Spotify音乐",
-    "RULE-SET,Emby,Emby影视",
-    "RULE-SET,Spotify,🔰 节点选择",
-    "GEOSITE,onedrive,微软服务",
-    "GEOSITE,github,微软服务",
-    "GEOSITE,microsoft,微软服务",
-    "GEOSITE,gfw,🔰 节点选择",
+    "RULE-SET,Block,🛑广告拦截",
+    "RULE-SET,WeChat,✅微信服务",
+    "RULE-SET,Facebook,😀脸书服务",
+    "RULE-SET,Instagram,😀脸书服务",    
+    "RULE-SET,AI,🤖AI服务",
+    "RULE-SET,TikTok,🎶TikTok服务",
+    "RULE-SET,TikTokCici,🎶TikTok服务",    
+    "RULE-SET,Apple,🍎苹果服务",
+    "RULE-SET,GoogleCN,📢谷歌服务",
+    "RULE-SET,Google,📢谷歌服务",
+    "RULE-SET,GoogleCNProxyIP,📢谷歌服务",
+    "RULE-SET,GoogleFCM,📢谷歌服务",
+    "RULE-SET,Telegram,📲电报消息",
+    "RULE-SET,Emby,📺️Emby影视",
+    "RULE-SET,Spotify,🎧Spotify音乐",
+    "GEOSITE,onedrive,Ⓜ️微软服务",
+    "GEOSITE,github,Ⓜ️微软服务",
+    "GEOSITE,microsoft,Ⓜ️微软服务",
+    "RULE-SET,Proxy,🔰 节点选择",
+    "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
     "RULE-SET,Direct,DIRECT",
-    "RULE-SET,ChinaDomain,DIRECT",
-    "GEOIP,lan,DIRECT",
-    "GEOIP,CN,DIRECT",
-    "MATCH,漏网之鱼"
+    "RULE-SET,Geo,DIRECT",
+//"GEOIP,CN,DIRECT",
+    "MATCH,🐟漏网之鱼"
   ];
 
   // 返回修改后的配置
