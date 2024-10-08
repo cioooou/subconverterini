@@ -365,8 +365,8 @@ function main(config) {
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
     "RULE-SET,Direct,DIRECT",
-    "RULE-SET,Geo,DIRECT",
-//"GEOIP,CN,DIRECT",
+//"RULE-SET,Geo,DIRECT",
+    "GEOIP,CN,DIRECT",
     "MATCH,🐟漏网之鱼"
   ];
 
