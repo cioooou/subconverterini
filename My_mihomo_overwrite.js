@@ -250,7 +250,7 @@ function main(config) {
     "TikTok": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/TikTok.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/TikTok.list",
       "path": "./rules/TikTok.list"
     },
     "TikTokCici": {
@@ -318,18 +318,12 @@ function main(config) {
       "behavior": "classical",
       "url": "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Alibaba/Alibaba_Resolve.list",
       "path": "./Alibaba_Resolve.list"
-    },
-    "Direct": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Direct.list",
-      "path": "./rules/Direct.list"
-    },                     
+    },                   
     "Proxy": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Tool/Loon/Rule/Proxy.list",
-      "path": "./rules/Proxy.list"
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyLite.list",
+      "path": "./rules/ProxyLite.list"
     },
     "Geo": {
       ...ruleProviderCommon,
@@ -364,7 +358,6 @@ function main(config) {
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
-    "RULE-SET,Direct,DIRECT",
 //"RULE-SET,Geo,DIRECT",
     "GEOIP,CN,DIRECT",
     "MATCH,🐟漏网之鱼"
