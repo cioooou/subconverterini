@@ -85,6 +85,13 @@ function main(config) {
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png"
     },
+        {
+      ...groupBaseOption,
+      "name": "⌨️ GitHub",
+      "type": "select",
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/GitHub.png"
+    },
     {
       ...groupBaseOption,
       "name": "Ⓜ️微软服务",
@@ -277,6 +284,12 @@ function main(config) {
       "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Spotify.list",
       "path": "./rules/Spotify.list"
     },
+    "GitHub": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list",
+      "path": "./rules/GitHub.list"
+    },
     "OneDrive": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -350,6 +363,7 @@ function main(config) {
     "RULE-SET,Telegram,📲电报消息",
     "RULE-SET,Emby,📺️Emby影视",
     "RULE-SET,Spotify,🎧Spotify音乐",
+    "RULE-SET,Github,⌨️ GitHub",
     "GEOSITE,onedrive,Ⓜ️微软服务",
     "GEOSITE,github,Ⓜ️微软服务",
     "GEOSITE,microsoft,Ⓜ️微软服务",
