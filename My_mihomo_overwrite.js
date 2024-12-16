@@ -117,9 +117,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "📺️Emby影视",
       "type": "select",
-      "include-all": true,
-      "filter": "(?i)0.01x|Emby|0.2x",      
-      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
+      "proxies": ["DIRECT", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
     },
     {
@@ -186,7 +184,6 @@ function main(config) {
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|TG|tg|群组|频道|订阅|ISP|流量|到期|重置|付费|网址|更新|Emby|0.01x|0.2x",         
       "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"   
     }    
