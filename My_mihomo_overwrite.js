@@ -30,11 +30,13 @@ function main(config) {
   // 覆盖策略组
   config["proxy-groups"] = [
     {
-      ...groupBaseOption,
+      ...groupBaseOption,   
       "name": "🔰 节点选择",
       "type": "select",
-      "proxies": ["🔯 故障转移", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "📌 手动切换", "DIRECT"],
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"
+      "proxies": ["🔯 故障转移", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],     
+      "include-all": true,
+      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|企业",
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"   
     },  
     {
       ...groupBaseOption,
@@ -43,13 +45,6 @@ function main(config) {
       "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Find_My.png"
     },  
-    {
-      ...groupBaseOption,
-      "name": "📌 手动切换",
-      "type": "select",
-      "include-all": true,
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Domestic.png"
-    },
     {
       ...groupBaseOption,
       "name": "✅微信服务",
