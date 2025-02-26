@@ -263,11 +263,11 @@ function main(config) {
       "behavior": "classical",
       "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list",
       "path": "./rules/AI.list"
-    },
+    },  
     "Emby": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Emby.list",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Emby.list",
       "path": "./rules/Emby.list"
     },
     "Spotify": {
@@ -364,7 +364,7 @@ function main(config) {
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
-//"RULE-SET,Geo,DIRECT",
+  //"RULE-SET,Geo,DIRECT",
     "GEOIP,CN,DIRECT",
     "MATCH,🐟漏网之鱼"
   ];
