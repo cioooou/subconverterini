@@ -364,7 +364,7 @@ function main(config) {
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
-  //"RULE-SET,Geo,DIRECT",
+    "RULE-SET,Geo,DIRECT",
     "GEOIP,CN,DIRECT",
     "MATCH,🐟漏网之鱼"
   ];
