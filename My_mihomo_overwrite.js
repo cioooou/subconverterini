@@ -131,6 +131,13 @@ function main(config) {
     },
     {
       ...groupBaseOption,
+      "name": "🍀 应用净化",
+      "type": "select",
+      "proxies": ["REJECT", "DIRECT"],
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Hijacking.png"
+    },    
+    {
+      ...groupBaseOption,
       "name": "🐟漏网之鱼",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
@@ -192,6 +199,18 @@ function main(config) {
       "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/Block.list",
       "path": "./rules/Block.list"
     },
+    "BanAD": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list",
+      "path": "./rules/BanAD.list"
+    },
+    "BanProgramAD": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list",
+      "path": "./rules/BanProgramAD.list"
+    },       
     "WeChat": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -341,6 +360,8 @@ function main(config) {
   // 覆盖规则
   config["rules"] = [
     "RULE-SET,Block,🛑广告拦截",
+    "RULE-SET,BanAD,🛑广告拦截",
+    "RULE-SET,BanProgramAD,🍀 应用净化",
     "RULE-SET,WeChat,✅微信服务",
     "RULE-SET,Facebook,😀脸书服务",
     "RULE-SET,Instagram,😀脸书服务",    
