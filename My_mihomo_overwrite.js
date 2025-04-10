@@ -229,6 +229,18 @@ function main(config) {
       "url": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Clash/Rules/Instagram.list",
       "path": "./rules/Instagram.list"           
     },    
+    "AI": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list",
+      "path": "./rules/AI.list"
+    },  
+    "AIGPT": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/AIGPT.list",
+      "path": "./rules/AIGPT.list"
+    },      
     "Apple": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -277,12 +289,6 @@ function main(config) {
       "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/TikTokCici.list",
       "path": "./rules/TikTokCici.list"
     },    
-    "AI": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list",
-      "path": "./rules/AI.list"
-    },  
     "Emby": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -366,6 +372,7 @@ function main(config) {
     "RULE-SET,Facebook,😀脸书服务",
     "RULE-SET,Instagram,😀脸书服务",    
     "RULE-SET,AI,🤖AI服务",
+    "RULE-SET,AIGPT,🤖AI服务",    
     "RULE-SET,TikTok,🎶TikTok服务",
     "RULE-SET,TikTokCici,🎶TikTok服务",    
     "RULE-SET,Apple,🍎苹果服务",
