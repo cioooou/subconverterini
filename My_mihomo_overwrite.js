@@ -280,14 +280,8 @@ function main(config) {
     "TikTok": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/TikTok.list",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list",
       "path": "./rules/TikTok.list"
-    },
-    "TikTokCici": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/TikTokCici.list",
-      "path": "./rules/TikTokCici.list"
     },    
     "Emby": {
       ...ruleProviderCommon,
@@ -374,7 +368,6 @@ function main(config) {
     "RULE-SET,AI,🤖AI服务",
     "RULE-SET,AIGPT,🤖AI服务",    
     "RULE-SET,TikTok,🎶TikTok服务",
-    "RULE-SET,TikTokCici,🎶TikTok服务",    
     "RULE-SET,Apple,🍎苹果服务",
     "RULE-SET,GoogleCN,📢谷歌服务",
     "RULE-SET,Google,📢谷歌服务",
