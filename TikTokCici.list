@@ -1,10 +1,10 @@
 # ===============================
-# NAME: TikTok Global + Douyin Direct
-# PURPOSE: 区分 TikTok 和 抖音，TikTok 走代理，抖音强制直连
+# NAME: TikTok Global Only
+# PURPOSE: 精准匹配 TikTok 国际版，不包含抖音
 # AUTHOR: 整理 by ChatGPT
 # ===============================
 
-# === TikTok 专属分流（走代理） ===
+# === TikTok 专属分流（推荐走代理） ===
 DOMAIN,lf16-effectcdn.byteeffecttos-g.com
 DOMAIN,lf16-pkgcdn.pitaya-clientai.com
 DOMAIN,p16-tiktokcdn-com.akamaized.net
@@ -33,12 +33,3 @@ DOMAIN-SUFFIX,ttwebview.com
 DOMAIN-KEYWORD,musical.ly
 DOMAIN-KEYWORD,tiktok
 USER-AGENT,TikTok*
-
-# === 抖音/国内字节系强制直连（不走代理） ===
-DOMAIN-SUFFIX,douyin.com,DIRECT
-DOMAIN-SUFFIX,amemv.com,DIRECT
-DOMAIN-SUFFIX,ixigua.com,DIRECT
-DOMAIN-SUFFIX,bdstatic.com,DIRECT
-DOMAIN-KEYWORD,douyin,DIRECT
-DOMAIN-KEYWORD,ixigua,DIRECT
-
