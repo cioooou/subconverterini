@@ -103,11 +103,25 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "📲电报消息",
+      "name": "📲电报SG",
       "type": "select",
-      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点", "🔰 节点选择"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },
+    {
+      ...groupBaseOption,
+      "name": "📲电报US",
+      "type": "select",
+      "proxies": [ "🇺🇸 美国节点", "🇸🇬 狮城节点", "🔰 节点选择"],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
+    },    
+    {
+      ...groupBaseOption,
+      "name": "📲电报NL",
+      "type": "select",
+      "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点", "🔰 节点选择"],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
+    },       
     {
       ...groupBaseOption,
       "name": "📺️Emby影视",
@@ -271,12 +285,24 @@ function main(config) {
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list",
       "path": "./rules/GoogleFCM.list"
     },                
-    "Telegram": {
+    "TelegramSG": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Telegram.list",
-      "path": "./rules/Telegram.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramSG/TelegramSG.list",
+      "path": "./rules/TelegramSG.list"
     },
+    "TelegramUS": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramUS/TelegramUS.list",
+      "path": "./rules/TelegramUS.list"
+    },
+    "TelegramNL": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramNL/TelegramNL.list",
+      "path": "./rules/TelegramNL.list"
+    },        
     "TikTok": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -373,7 +399,9 @@ function main(config) {
     "RULE-SET,Google,📢谷歌服务",
     "RULE-SET,GoogleCNProxyIP,📢谷歌服务",
     "RULE-SET,GoogleFCM,📢谷歌服务",
-    "RULE-SET,Telegram,📲电报消息",
+    "RULE-SET,TelegramSG,📲电报SG",
+    "RULE-SET,TelegramUS,📲电报US",
+    "RULE-SET,TelegramNL,📲电报NL",        
     "RULE-SET,Emby,📺️Emby影视",
     "RULE-SET,Spotify,🎧Spotify音乐",
     "RULE-SET,Github,⌨️ GitHub",
