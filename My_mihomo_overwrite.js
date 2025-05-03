@@ -2,7 +2,7 @@
 //
 // Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 0.5.8)
 //
-// 最后更新时间: 2024-09-28 22:50
+// 最后更新时间: 2024-10-26 23:00
 
 // 规则集通用配置
 const ruleProviderCommon = {
@@ -26,6 +26,61 @@ function main(config) {
   if (proxyCount === 0 && proxyProviderCount === 0) {
     throw new Error("配置文件中未找到任何代理");
   }
+
+  // 覆盖通用配置
+  config["mixed-port"] = "7890";
+  config["tcp-concurrent"] = true;
+  config["allow-lan"] = true;
+  config["ipv6"] = true;
+  config["log-level"] = "info";
+  config["unified-delay"] = "true";
+  config["find-process-mode"] = "strict";
+  config["global-client-fingerprint"] = "chrome";
+
+  // 覆盖 dns 配置
+  config["dns"] = {
+    "enable": true,
+    "listen": "0.0.0.0:1053",
+    "ipv6": false,
+    "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/16",
+    "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
+    "nameserver": ["https://223.5.5.5/dns-query", "https://doh.pub/dns-query"]
+  };
+
+  // 覆盖 geodata 配置
+  config["geodata-mode"] = true;
+  config["geox-url"] = {
+    "geoip": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat",
+    "geosite": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
+    "mmdb": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb",
+    "asn": "https://mirror.ghproxy.com/https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+  };
+
+  // 覆盖 sniffer 配置
+  config["sniffer"] = {
+    "enable": true,
+    "parse-pure-ip": true,
+    "sniff": {
+      "TLS": {
+        "ports": ["443", "8443"]
+      },
+      "HTTP": {
+        "ports": ["80", "8080-8880"],
+        "override-destination": true
+      },
+      "QUIC": {
+        "ports": ["443", "8443"]
+      }
+    }
+  };
+
+  // 覆盖 tun 配置
+  config["tun"] = {
+    "enable": true,
+    "stack": "gVisor",
+    "dns-hijack": ["any:53"]
+  };
 
   // 覆盖策略组
   config["proxy-groups"] = [
@@ -52,6 +107,13 @@ function main(config) {
       "proxies": ["DIRECT", "🇭🇰 香港节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/WeChat.png"
     },  
+    {
+      ...groupBaseOption,
+      "name": "🏳️‍🌈IP归属地伪装",
+      "type": "select",
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "icon": "https://img.icons8.com/?size=144&id=9A9UJY1V3Zw9&format=png&color=000000"
+    },    
     {
       ...groupBaseOption,
       "name": "😀脸书服务",
@@ -224,7 +286,13 @@ function main(config) {
       "behavior": "classical",
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list",
       "path": "./rules/BanProgramAD.list"
-    },       
+    },  
+    "IPfake": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/SunsetMkt/anti-ip-attribution/refs/heads/main/generated/surge.list",
+      "path": "./rules/IPfake.list"
+    },         
     "WeChat": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -388,6 +456,7 @@ function main(config) {
     "RULE-SET,Block,🛑广告拦截",
     "RULE-SET,BanAD,🛑广告拦截",
     "RULE-SET,BanProgramAD,🍀 应用净化",
+    "RULE-SET,IPfake,🏳️‍🌈IP归属地伪装",    
     "RULE-SET,WeChat,✅微信服务",
     "RULE-SET,Facebook,😀脸书服务",
     "RULE-SET,Instagram,😀脸书服务",    
