@@ -111,7 +111,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "🏳️‍🌈IP归属地伪装",
       "type": "select",
-      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "proxies": ["DIRECT", "🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://img.icons8.com/?size=144&id=9A9UJY1V3Zw9&format=png&color=000000"
     },    
     {
