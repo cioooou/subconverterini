@@ -48,14 +48,6 @@ function main(config) {
     "nameserver": ["https://223.5.5.5/dns-query", "https://doh.pub/dns-query"]
   };
 
-  // 覆盖 geodata 配置
-  config["geodata-mode"] = true;
-  config["geox-url"] = {
-    "geoip": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip-only-cn-private.dat",
-    "geosite": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite-lite.dat",
-    "mmdb": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/country.mmdb",
-    "asn": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN-China.mmdb"
-  };
 
   // 覆盖 sniffer 配置
   config["sniffer"] = {
