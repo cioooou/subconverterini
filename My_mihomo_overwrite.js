@@ -8,14 +8,16 @@
 const ruleProviderCommon = {
   "type": "http",
   "format": "text",
-  "interval": 86400
+  "interval": 43200 // 每12小时更新规则
 };
 
 // 策略组通用配置
 const groupBaseOption = {
   "interval": 300,
   "url": "http://connectivitycheck.gstatic.com/generate_204",
-  "max-failed-times": 3,
+  "max-failed-times": 2, // 设置容错为 2 次
+  "include-all": true,
+  "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|企业",
 };
 
 // 程序入口
@@ -32,12 +34,12 @@ function main(config) {
   config["tcp-concurrent"] = true;
   config["allow-lan"] = true;
   config["ipv6"] = true;
-  config["log-level"] = "info";
+  config["log-level"] = "info"; // 你可以设置为 "debug" 来获取更详细的日志
   config["unified-delay"] = "true";
   config["find-process-mode"] = "strict";
   config["global-client-fingerprint"] = "chrome";
 
-  // 覆盖 dns 配置
+  // 覆盖 DNS 配置
   config["dns"] = {
     "enable": true,
     "listen": "0.0.0.0:1053",
@@ -45,9 +47,14 @@ function main(config) {
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-    "nameserver": ["https://223.5.5.5/dns-query", "https://doh.pub/dns-query"]
+    "nameserver": [
+      "https://223.5.5.5/dns-query", 
+      "https://doh.pub/dns-query",
+      "https://dns.google/dns-query", 
+      "https://1.1.1.1/dns-query"
+    ],
+    "fallback": ["https://8.8.8.8/dns-query"]
   };
-
 
   // 覆盖 sniffer 配置
   config["sniffer"] = {
