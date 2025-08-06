@@ -104,6 +104,9 @@ function main(config) {
       "name": "⚖️ 负载均衡",
       "type": "load-balance",
       "interval": "300",
+      "url": "http://www.gstatic.com/generate_204",
+      "timeout": 1500,
+      "strategy": "consistent-hashing",
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Available.png"
     },      
