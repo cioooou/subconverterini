@@ -87,7 +87,7 @@ function main(config) {
       ...groupBaseOption,   
       "name": "🔰 节点选择",
       "type": "select",
-      "proxies": ["🔯 故障转移", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],     
+      "proxies": ["🔯 故障转移", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "⚖️ 负载均衡"],     
       "include-all": true,
       "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|企业",
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"   
@@ -96,9 +96,17 @@ function main(config) {
       ...groupBaseOption,
       "name": "🔯 故障转移",
       "type": "fallback",
-      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "⚖️ 负载均衡"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Find_My.png"
     },  
+    {
+      ...groupBaseOption,
+      "name": "⚖️ 负载均衡",
+      "type": "load-balance",
+      "interval": "300",
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Available.png"
+    },      
     {
       ...groupBaseOption,
       "name": "✅微信服务",
