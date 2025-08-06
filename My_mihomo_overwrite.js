@@ -2,7 +2,7 @@
 //
 // Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 0.5.8)
 //
-// 最后更新时间: 2025-08-07
+// 最后更新时间: 2024-10-26 23:00
 
 // 规则集通用配置
 const ruleProviderCommon = {
@@ -15,146 +15,10 @@ const ruleProviderCommon = {
 const groupBaseOption = {
   "interval": 300,
   "url": "http://connectivitycheck.gstatic.com/generate_204",
-  "max-failed-times": 2,
+  "max-failed-times": 2, // 设置容错为 2 次
   "include-all": true,
   "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|企业",
 };
-
-// 覆写 fake-ip-filter
-function overwriteFakeIpFilter(params) {
-  const fakeIpFilter = [
-    "*",
-    "+.lan",
-    "+.local",
-    "+.direct",
-    "+.msftconnecttest.com",
-    "+.msftncsi.com",
-    "+.internal",
-    "+.localdomain",
-    "+.home.arpa",
-    "dns.msftncsi.com",
-    "*.srv.nintendo.net",
-    "*.stun.playstation.net",
-    "xbox.*.microsoft.com",
-    "*.xboxlive.com",
-    "*.turn.twilio.com",
-    "*.stun.twilio.com",
-    "stun.syncthing.net",
-    "stun.*",
-    "*.sslip.io",
-    "*.nip.io",
-    "router.asus.com",
-    "repeater.asus.com",
-    "+.asusrouter.com",
-    "+.routerlogin.net",
-    "+.routerlogin.com",
-    "+.tplinkwifi.net",
-    "+.tplogin.cn",
-    "+.tplinkap.net",
-    "+.tplinkmodem.net",
-    "+.tplinkplclogin.net",
-    "+.tplinkrepeater.net",
-    "*.huaweimobilewifi.com",
-    "console.gl-inet.com",
-    "homerouter.cpe",
-    "mobile.hotspot",
-    "ntt.setup",
-    "pi.hole",
-    "*.plex.direct",
-    "+.10.in-addr.arpa",
-    "+.16.172.in-addr.arpa",
-    "+.17.172.in-addr.arpa",
-    "+.18.172.in-addr.arpa",
-    "+.19.172.in-addr.arpa",
-    "+.20.172.in-addr.arpa",
-    "+.21.172.in-addr.arpa",
-    "+.22.172.in-addr.arpa",
-    "+.23.172.in-addr.arpa",
-    "+.24.172.in-addr.arpa",
-    "+.25.172.in-addr.arpa",
-    "+.26.172.in-addr.arpa",
-    "+.27.172.in-addr.arpa",
-    "+.28.172.in-addr.arpa",
-    "+.29.172.in-addr.arpa",
-    "+.30.172.in-addr.arpa",
-    "+.31.172.in-addr.arpa",
-    "+.168.192.in-addr.arpa",
-    "+.254.169.in-addr.arpa",
-    "+.apple.com",
-    "+.icloud.com",
-    "+.itunes.com",
-    "+.me.com",
-    "202561.a-ss256ss.wan-wan-ni-suansuande.com"
-  ];
-  params.dns["fake-ip-filter"] = fakeIpFilter;
-}
-
-// 覆写 nameserver-policy
-function overwriteNameserverPolicy(params) {
-  const nameserverPolicy = {
-    "*.lan": "system",
-    "*.local": "system",
-    "*.internal": "system",
-    "*.localdomain": "system",
-    "*.home.arpa": "system",
-    "router.asus.com": "system",
-    "repeater.asus.com": "system",
-    "+.asusrouter.com": "system",
-    "+.routerlogin.net": "system",
-    "+.routerlogin.com": "system",
-    "+.tplinkwifi.net": "system",
-    "+.tplogin.cn": "system",
-    "+.tplinkap.net": "system",
-    "+.tplinkmodem.net": "system",
-    "+.tplinkplclogin.net": "system",
-    "+.tplinkrepeater.net": "system",
-    "*.huaweimobilewifi.com": "system",
-    "console.gl-inet.com": "system",
-    "homerouter.cpe": "system",
-    "mobile.hotspot": "system",
-    "ntt.setup": "system",
-    "pi.hole": "system",
-    "*.plex.direct": "system",
-    "+.alibaba.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "*.alicdn.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.aliyun.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "*.aliyuncs.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.alipay.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "*.alipayobjects.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.taobao.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.tmall.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.youku.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.ele.me": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.dingtalk.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.cainiao.com": ["quic://dns.alidns.com:853", "223.5.5.5"],
-    "+.bilibili.com": ["https://doh.pub/dns-query", "1.12.12.12"],
-    "*.bilivideo.com": ["https://doh.pub/dns-query", "1.12.12.12"],
-    "*.hdslb.com": ["https://doh.pub/dns-query", "1.12.12.12"],
-    "+.qq.com": ["https://doh.pub/dns-query", "1.12.12.12"],
-    "*.myqcloud.com": ["https://doh.pub/dns-query", "1.12.12.12"],
-    "+.tencent.com": ["https://doh.pub/dns-query", "1.12.12.12"],
-    "+.weixin.com": ["https://doh.pub/dns-query", "1.12.12.12"],
-    "+.douyin.com": ["180.184.2.2", "114.114.114.114"],
-    "+.ixigua.com": ["180.184.2.2", "114.114.114.114"],
-    "+.toutiao.com": ["180.184.2.2", "114.114.114.114"],
-    "+.feishu.cn": ["180.184.2.2", "114.114.114.114"],
-    "+.baidu.com": ["180.76.76.76", "114.114.114.114"],
-    "*.bdstatic.com": ["180.76.76.76", "114.114.114.114"],
-    "*.bdimg.com": ["180.76.76.76", "114.114.114.114"],
-    "+.iqiyi.com": ["180.76.76.76", "114.114.114.114"],
-    "+.360.cn": ["https://doh.360.cn/dns-query", "101.198.198.198"],
-    "+.so.com": ["https://doh.360.cn/dns-query", "101.198.198.198"],
-    "+.google.com": ["https://dns.google/dns-query", "8.8.8.8"],
-    "+.youtube.com": ["https://dns.google/dns-query", "8.8.8.8"],
-    "+.gstatic.com": ["https://dns.google/dns-query", "8.8.8.8"],
-    "+.apple.com": ["https://1.1.1.1/dns-query", "1.0.0.1"],
-    "+.icloud.com": ["https://1.1.1.1/dns-query", "1.0.0.1"],
-    "+.itunes.com": ["https://1.1.1.1/dns-query", "1.0.0.1"],
-    "202561.a-ss256ss.wan-wan-ni-suansuande.com": ["https://dns.google/dns-query", "8.8.8.8", "1.1.1.1"],
-    "default": ["https://dns.google/dns-query", "https://1.1.1.1/dns-query", "114.114.114.114"]
-  };
-  params.dns["nameserver-policy"] = nameserverPolicy;
-}
 
 // 程序入口
 function main(config) {
@@ -170,7 +34,7 @@ function main(config) {
   config["tcp-concurrent"] = true;
   config["allow-lan"] = true;
   config["ipv6"] = true;
-  config["log-level"] = "debug"; // 保持 debug 模式
+  config["log-level"] = "info"; // 你可以设置为 "debug" 来获取更详细的日志
   config["unified-delay"] = "true";
   config["find-process-mode"] = "strict";
   config["global-client-fingerprint"] = "chrome";
@@ -182,22 +46,15 @@ function main(config) {
     "ipv6": false,
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": [],
+    "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
     "nameserver": [
-      "https://dns.google/dns-query",
-      "https://1.1.1.1/dns-query",
-      "114.114.114.114"
+      "https://223.5.5.5/dns-query", 
+      "https://doh.pub/dns-query",
+      "https://dns.google/dns-query", 
+      "https://1.1.1.1/dns-query"
     ],
-    "fallback": [
-      "https://8.8.8.8/dns-query",
-      "https://1.0.0.1/dns-query"
-    ],
-    "nameserver-policy": {}
+    "fallback": ["https://8.8.8.8/dns-query"]
   };
-
-  // 调用覆写函数
-  overwriteFakeIpFilter(config);
-  overwriteNameserverPolicy(config);
 
   // 覆盖 sniffer 配置
   config["sniffer"] = {
@@ -208,21 +65,20 @@ function main(config) {
         "ports": ["443", "8443"]
       },
       "HTTP": {
-        "ports": ["80", "8080", "8880"],
+        "ports": ["80", "8080-8880"],
         "override-destination": true
       },
       "QUIC": {
-        "ports": ["443", "8443", "8080"]
+        "ports": ["443", "8443"]
       }
     }
   };
 
-  // TUN 配置
+  // 覆盖 tun 配置
   config["tun"] = {
     "enable": true,
     "stack": "gVisor",
-    "dns-hijack": ["tcp://any:53", "udp://any:53"],
-    "mtu": 1500
+    "dns-hijack": ["any:53"]
   };
 
   // 覆盖策略组
@@ -615,8 +471,8 @@ function main(config) {
     "Geo": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_V4_Surge.list",
-      "path": "./rules/Geo_AS_IP_CN_V4_Surge.list"
+      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_All_Surge.list",
+      "path": "./rules/Geo_AS_IP_CN_All_Surge.list"
     }
   };
 
@@ -652,7 +508,6 @@ function main(config) {
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
     "RULE-SET,Geo,DIRECT",
-    "GEOIP,CN,DIRECT", // 使用 GeoIP 规则
     "MATCH,🐟漏网之鱼"
   ];
 
