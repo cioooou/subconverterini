@@ -471,8 +471,8 @@ function main(config) {
     "Geo": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_All_Surge.list",
-      "path": "./rules/Geo_AS_IP_CN_All_Surge.list"
+      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_V4_Surge.list",
+      "path": "./rules/Geo_AS_IP_CN_V4_Surge.list"
     }
   };
 
