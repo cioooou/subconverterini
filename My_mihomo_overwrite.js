@@ -97,6 +97,9 @@ function main(config) {
       "name": "🔯 故障转移",
       "type": "fallback",
       "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "⚖️ 负载均衡"],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": 60,
+      "timeout": 1500,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Find_My.png"
     },  
     {
