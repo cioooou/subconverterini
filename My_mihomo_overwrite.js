@@ -15,9 +15,7 @@ const ruleProviderCommon = {
 const groupBaseOption = {
   "interval": 300,
   "url": "http://1.1.1.1/generate_204",
-  "max-failed-times": 3, // 设置容错为 3 次
-  "include-all": true,
-  "exclude-filter": "(?i)GB|网址|节点|到期|剩余流量|流量计算|距离下次重置剩余|时间|官网|产品|加群|免费|本站|CCCAT|网站|代理|下载|客服|私聊|推荐|公益|过期|有效期|无效|注册|回国|体验|广告位|请|群|Traffic|Expire",
+  "max-failed-times": 3,
 };
 
 // 程序入口
@@ -39,7 +37,7 @@ function main(config) {
   config["find-process-mode"] = "strict";
   config["global-client-fingerprint"] = "chrome";
 
-  // 覆盖 DNS 配置
+  // 覆盖 dns 配置
   config["dns"] = {
     "enable": true,
     "listen": "0.0.0.0:1053",
@@ -47,13 +45,7 @@ function main(config) {
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-    "nameserver": [
-      "https://223.5.5.5/dns-query", 
-      "https://doh.pub/dns-query",
-      "https://dns.google/dns-query", 
-      "https://1.1.1.1/dns-query"
-    ],
-    "fallback": ["https://8.8.8.8/dns-query"]
+    "nameserver": ["223.5.5.5", "119.29.29.29"]
   };
 
   // 覆盖 geodata 配置
@@ -86,7 +78,7 @@ function main(config) {
   // 覆盖 tun 配置
   config["tun"] = {
     "enable": true,
-    "stack": "gVisor",
+    "stack": "mixed",
     "dns-hijack": ["any:53"]
   };
 
@@ -124,35 +116,35 @@ function main(config) {
     },      
     {
       ...groupBaseOption,
-      "name": "✅微信服务",
+      "name": "✅ 微信服务",
       "type": "select",
       "proxies": ["DIRECT", "🇭🇰 香港节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/WeChat.png"
     },    
     {
       ...groupBaseOption,
-      "name": "😀脸书服务",
+      "name": "😀 脸书服务",
       "type": "select",
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
     },         
     {
       ...groupBaseOption,
-      "name": "🤖AI服务",
+      "name": "🤖 AI服务",
       "type": "select",
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png"
     }, 
     {
       ...groupBaseOption,
-      "name": "🎶TikTok服务",
+      "name": "🎶 TikTok服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png"
     },       
     {
       ...groupBaseOption,
-      "name": "🍎苹果服务",
+      "name": "🍎 苹果服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png"
@@ -166,56 +158,56 @@ function main(config) {
     },
     {
       ...groupBaseOption,
-      "name": "Ⓜ️微软服务",
+      "name": "Ⓜ️ 微软服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"
     },
     {
       ...groupBaseOption,
-      "name": "📢谷歌服务",
+      "name": "📢 谷歌服务",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"
     },
     {
       ...groupBaseOption,
-      "name": "📲电报SG",
+      "name": "📲 电报SG",
       "type": "select",
       "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点", "🔰 节点选择"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },
     {
       ...groupBaseOption,
-      "name": "📲电报US",
+      "name": "📲 电报US",
       "type": "select",
       "proxies": ["🇺🇸 美国节点", "🇸🇬 狮城节点", "🔰 节点选择"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },    
     {
       ...groupBaseOption,
-      "name": "📲电报NL",
+      "name": "📲 电报NL",
       "type": "select",
       "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点", "🔰 节点选择"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },       
     {
       ...groupBaseOption,
-      "name": "📺️Emby影视",
+      "name": "📺️ Emby影视",
       "type": "select",
       "proxies": ["DIRECT", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
     },
     {
       ...groupBaseOption,
-      "name": "🎧Spotify音乐",
+      "name": "🎧 Spotify音乐",
       "type": "select",
       "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Spotify.png"
     },    
     {
       ...groupBaseOption,
-      "name": "🛑广告拦截",
+      "name": "🛑 广告拦截",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
@@ -229,7 +221,7 @@ function main(config) {
     },    
     {
       ...groupBaseOption,
-      "name": "🐟漏网之鱼",
+      "name": "🐟 漏网之鱼",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
@@ -477,39 +469,38 @@ function main(config) {
 
   // 覆盖规则
   config["rules"] = [
-    "RULE-SET,prevent_dns_leak,🐟漏网之鱼",
-    "RULE-SET,Block,🛑广告拦截",
-    "RULE-SET,BanAD,🛑广告拦截",
+    "RULE-SET,prevent_dns_leak,🔰 节点选择",    
+    "RULE-SET,Block,🛑 广告拦截",
+    "RULE-SET,BanAD,🛑 广告拦截",
     "RULE-SET,BanProgramAD,🍀 应用净化",    
-    "RULE-SET,WeChat,✅微信服务",
-    "RULE-SET,Facebook,😀脸书服务",
-    "RULE-SET,Instagram,😀脸书服务",    
-    "RULE-SET,AI,🤖AI服务",
-    "RULE-SET,AIGPT,🤖AI服务",    
-    "RULE-SET,TikTok,🎶TikTok服务",
-    "RULE-SET,Apple,🍎苹果服务",
-    "RULE-SET,GoogleCN,📢谷歌服务",
-    "RULE-SET,Google,📢谷歌服务",
-    "RULE-SET,GoogleCNProxyIP,📢谷歌服务",
-    "RULE-SET,GoogleFCM,📢谷歌服务",
-    "RULE-SET,TelegramSG,📲电报SG",
-    "RULE-SET,TelegramUS,📲电报US",
-    "RULE-SET,TelegramNL,📲电报NL",        
-    "RULE-SET,Emby,📺️Emby影视",
-    "RULE-SET,Spotify,🎧Spotify音乐",
+    "RULE-SET,WeChat,✅ 微信服务",
+    "RULE-SET,Facebook,😀 脸书服务",
+    "RULE-SET,Instagram,😀 脸书服务",    
+    "RULE-SET,AI,🤖 AI服务",
+    "RULE-SET,AIGPT,🤖 AI服务",    
+    "RULE-SET,TikTok,🎶 TikTok服务",
+    "RULE-SET,Apple,🍎 苹果服务",
+    "RULE-SET,GoogleCN,📢 谷歌服务",
+    "RULE-SET,Google,📢 谷歌服务",
+    "RULE-SET,GoogleCNProxyIP,📢 谷歌服务",
+    "RULE-SET,GoogleFCM,📢 谷歌服务",
+    "RULE-SET,TelegramSG,📲 电报SG",
+    "RULE-SET,TelegramUS,📲 电报US",
+    "RULE-SET,TelegramNL,📲 电报NL",        
+    "RULE-SET,Emby,📺️ Emby影视",
+    "RULE-SET,Spotify,🎧 Spotify音乐",
     "RULE-SET,GitHub,⌨️ GitHub",
-    "GEOSITE,onedrive,Ⓜ️微软服务",
-    "GEOSITE,github,Ⓜ️微软服务",
-    "GEOSITE,microsoft,Ⓜ️微软服务",
+    "GEOSITE,onedrive,Ⓜ️ 微软服务",
+    "GEOSITE,github,Ⓜ️ 微软服务",
+    "GEOSITE,microsoft,Ⓜ️ 微软服务",
     "RULE-SET,Proxy,🔰 节点选择",
     "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
-    "RULE-SET,prevent_dns_leak,DIRECT",
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
-    "MATCH,🐟漏网之鱼"
+    "MATCH,🐟 漏网之鱼"
   ];
 
   // 返回修改后的配置
