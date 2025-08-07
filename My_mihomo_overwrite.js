@@ -1,23 +1,23 @@
 // 参考 Verge Rev 示例 Script 配置
 //
-// Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 0.5.8)
+// Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 1.5.10)
 //
-// 最后更新时间: 2024-10-26 23:00
+// 最后更新时间: 2025-02-27 23:00
 
 // 规则集通用配置
 const ruleProviderCommon = {
   "type": "http",
   "format": "text",
-  "interval": 43200 // 每12小时更新规则
+  "interval": 86400
 };
 
 // 策略组通用配置
 const groupBaseOption = {
   "interval": 300,
-  "url": "http://connectivitycheck.gstatic.com/generate_204",
-  "max-failed-times": 2, // 设置容错为 2 次
+  "url": "http://1.1.1.1/generate_204",
+  "max-failed-times": 3, // 设置容错为 3 次
   "include-all": true,
-  "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|企业",
+  "exclude-filter": "(?i)GB|网址|节点|到期|剩余流量|流量计算|距离下次重置剩余|时间|官网|产品|加群|免费|本站|CCCAT|网站|代理|下载|客服|私聊|推荐|公益|过期|有效期|无效|注册|回国|体验|广告位|请|群|Traffic|Expire",
 };
 
 // 程序入口
@@ -33,8 +33,8 @@ function main(config) {
   config["mixed-port"] = "7890";
   config["tcp-concurrent"] = true;
   config["allow-lan"] = true;
-  config["ipv6"] = true;
-  config["log-level"] = "info"; // 你可以设置为 "debug" 来获取更详细的日志
+  config["ipv6"] = false;
+  config["log-level"] = "info";
   config["unified-delay"] = "true";
   config["find-process-mode"] = "strict";
   config["global-client-fingerprint"] = "chrome";
@@ -54,6 +54,15 @@ function main(config) {
       "https://1.1.1.1/dns-query"
     ],
     "fallback": ["https://8.8.8.8/dns-query"]
+  };
+
+  // 覆盖 geodata 配置
+  config["geodata-mode"] = true;
+  config["geox-url"] = {
+    "geoip": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat",
+    "geosite": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
+    "mmdb": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb",
+    "asn": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb"
   };
 
   // 覆盖 sniffer 配置
@@ -119,13 +128,6 @@ function main(config) {
       "type": "select",
       "proxies": ["DIRECT", "🇭🇰 香港节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/WeChat.png"
-    },  
-    {
-      ...groupBaseOption,
-      "name": "🏳️‍🌈IP归属地伪装",
-      "type": "select",
-      "proxies": ["DIRECT", "🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
-      "icon": "https://img.icons8.com/?size=144&id=9A9UJY1V3Zw9&format=png&color=000000"
     },    
     {
       ...groupBaseOption,
@@ -155,7 +157,7 @@ function main(config) {
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png"
     },
-        {
+    {
       ...groupBaseOption,
       "name": "⌨️ GitHub",
       "type": "select",
@@ -187,7 +189,7 @@ function main(config) {
       ...groupBaseOption,
       "name": "📲电报US",
       "type": "select",
-      "proxies": [ "🇺🇸 美国节点", "🇸🇬 狮城节点", "🔰 节点选择"],
+      "proxies": ["🇺🇸 美国节点", "🇸🇬 狮城节点", "🔰 节点选择"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },    
     {
@@ -233,7 +235,7 @@ function main(config) {
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
     },
     // 地区分组
-   {
+    {
       ...groupBaseOption,
       "name": "🇭🇰 香港节点",
       "type": "load-balance",
@@ -314,13 +316,7 @@ function main(config) {
       "behavior": "classical",
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list",
       "path": "./rules/BanProgramAD.list"
-    },  
-    "IPfake": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/SunsetMkt/anti-ip-attribution/refs/heads/main/generated/surge.list",
-      "path": "./rules/IPfake.list"
-    },         
+    },          
     "WeChat": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -471,20 +467,20 @@ function main(config) {
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyLite.list",
       "path": "./rules/ProxyLite.list"
     },
-    "Geo": {
+    "prevent_dns_leak": {
       ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_All_Surge.list",
-      "path": "./rules/Geo_AS_IP_CN_All_Surge.list"
+      "behavior": "domain",
+      "url": "https://raw.githubusercontent.com/xishang0128/rules/main/clash%20or%20stash/prevent_dns_leak/prevent_dns_leak_domain.list",
+      "path": "./rules/prevent_dns_leak_domain.list"
     }
   };
 
   // 覆盖规则
   config["rules"] = [
+    "RULE-SET,prevent_dns_leak,🐟漏网之鱼",
     "RULE-SET,Block,🛑广告拦截",
     "RULE-SET,BanAD,🛑广告拦截",
-    "RULE-SET,BanProgramAD,🍀 应用净化",
-    "RULE-SET,IPfake,🏳️‍🌈IP归属地伪装",    
+    "RULE-SET,BanProgramAD,🍀 应用净化",    
     "RULE-SET,WeChat,✅微信服务",
     "RULE-SET,Facebook,😀脸书服务",
     "RULE-SET,Instagram,😀脸书服务",    
@@ -501,7 +497,7 @@ function main(config) {
     "RULE-SET,TelegramNL,📲电报NL",        
     "RULE-SET,Emby,📺️Emby影视",
     "RULE-SET,Spotify,🎧Spotify音乐",
-    "RULE-SET,Github,⌨️ GitHub",
+    "RULE-SET,GitHub,⌨️ GitHub",
     "GEOSITE,onedrive,Ⓜ️微软服务",
     "GEOSITE,github,Ⓜ️微软服务",
     "GEOSITE,microsoft,Ⓜ️微软服务",
@@ -510,7 +506,9 @@ function main(config) {
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
-    "RULE-SET,Geo,DIRECT",
+    "RULE-SET,prevent_dns_leak,DIRECT",
+    "GEOIP,private,DIRECT",
+    "GEOIP,cn,DIRECT",
     "MATCH,🐟漏网之鱼"
   ];
 
