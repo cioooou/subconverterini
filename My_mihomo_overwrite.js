@@ -478,6 +478,12 @@ config["log-level"] = "debug";
       "behavior": "domain",
       "url": "https://raw.githubusercontent.com/xishang0128/rules/main/clash%20or%20stash/prevent_dns_leak/prevent_dns_leak_domain.list",
       "path": "./rules/prevent_dns_leak_domain.list"
+    },
+    "ChinaIp": {
+      ...ruleProviderCommon,
+      "behavior": "domain",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list",
+      "path": "./rules/ChinaIp.list"
     }
   };
 
@@ -513,6 +519,7 @@ config["log-level"] = "debug";
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
     "GEOIP,private,DIRECT",
+    "RULE-SET,ChinaIp,DIRECT",
     "GEOIP,cn,DIRECT",
     "MATCH,🐟 漏网之鱼"
   ];
