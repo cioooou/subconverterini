@@ -460,13 +460,7 @@ config["log-level"] = "debug";
       "behavior": "classical",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.list",
       "path": "./rules/Download.list"
-    },
-    "Alibaba": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Surge/Alibaba/Alibaba_Resolve.list",
-      "path": "./Alibaba_Resolve.list"
-    },                   
+    },              
     "Proxy": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -484,18 +478,6 @@ config["log-level"] = "debug";
       "behavior": "domain",
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.list",
       "path": "./rules/Cloudflare.list"
-    },
-    "Cloudflarecn": {
-      ...ruleProviderCommon,
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflarecn/Cloudflarecn.list",
-      "path": "./rules/Cloudflarecn.list"
-    },        
-    "Geo": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_V4_Surge.list",
-      "path": "./rules/Geo_AS_IP_CN_V4_Surge.list"
     }
   };
 
@@ -525,15 +507,13 @@ config["log-level"] = "debug";
     "GEOSITE,onedrive,Ⓜ️ 微软服务",
     "GEOSITE,github,Ⓜ️ 微软服务",
     "GEOSITE,microsoft,Ⓜ️ 微软服务",
-    "RULE-SET,Cloudflare,🔰 节点选择",
-    "RULE-SET,Cloudflarecn,🔰 节点选择",     
+    "RULE-SET,Cloudflare,🔰 节点选择",    
     "RULE-SET,Proxy,🔰 节点选择",
     "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
-    "RULE-SET,Alibaba,DIRECT",
     "GEOIP,private,DIRECT",
-    "RULE-SET,Geo,DIRECT",
+    "GEOIP,cn,DIRECT",
     "MATCH,🐟 漏网之鱼"
   ];
 
