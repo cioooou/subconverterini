@@ -479,11 +479,23 @@ config["log-level"] = "debug";
       "url": "https://raw.githubusercontent.com/xishang0128/rules/main/clash%20or%20stash/prevent_dns_leak/prevent_dns_leak_domain.list",
       "path": "./rules/prevent_dns_leak_domain.list"
     },
-    "ChinaIp": {
+    "Cloudflare": {
       ...ruleProviderCommon,
       "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list",
-      "path": "./rules/ChinaIp.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.list",
+      "path": "./rules/Cloudflare.list"
+    },
+    "Cloudflarecn": {
+      ...ruleProviderCommon,
+      "behavior": "domain",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflarecn/Cloudflarecn.list",
+      "path": "./rules/Cloudflarecn.list"
+    },        
+    "Geo": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_V4_Surge.list",
+      "path": "./rules/Geo_AS_IP_CN_V4_Surge.list"
     }
   };
 
@@ -513,14 +525,15 @@ config["log-level"] = "debug";
     "GEOSITE,onedrive,Ⓜ️ 微软服务",
     "GEOSITE,github,Ⓜ️ 微软服务",
     "GEOSITE,microsoft,Ⓜ️ 微软服务",
+    "RULE-SET,Cloudflare,🔰 节点选择",
+    "RULE-SET,Cloudflarecn,🔰 节点选择",     
     "RULE-SET,Proxy,🔰 节点选择",
     "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,Alibaba,DIRECT",
     "GEOIP,private,DIRECT",
-    "RULE-SET,ChinaIp,DIRECT",
-    "GEOIP,cn,DIRECT",
+    "RULE-SET,Geo,DIRECT",
     "MATCH,🐟 漏网之鱼"
   ];
 
