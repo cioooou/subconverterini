@@ -38,15 +38,41 @@ function main(config) {
   config["global-client-fingerprint"] = "chrome";
 
   // 覆盖 dns 配置
-  config["dns"] = {
-    "enable": true,
-    "listen": "0.0.0.0:1053",
-    "ipv6": false,
-    "enhanced-mode": "fake-ip",
-    "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-    "nameserver": ["223.5.5.5", "119.29.29.29"]
-  };
+    config["dns"] = {
+  "enable": true,
+  "listen": "0.0.0.0:1053",
+  "ipv6": false,
+  "enhanced-mode": "fake-ip",
+  "fake-ip-range": "198.18.0.1/16",
+  "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
+  "default-nameserver": ["1.1.1.1", "8.8.8.8"],
+  "nameserver": ["1.1.1.1", "8.8.8.8"],
+  "fallback": ["1.1.1.1", "8.8.8.8"],
+  "nameserver-policy": {
+    "geosite:cn": ["223.5.5.5", "119.29.29.29"],
+    "geosite:geolocation-!cn": ["1.1.1.1", "8.8.8.8"]
+  },
+  "fallback-filter": {
+    "geoip": true,
+    "geoip-code": "CN",
+    "domain": [
+      "+.google.com",
+      "+.facebook.com",
+      "+.youtube.com",
+      "+.dnsleaktest.com",
+      "+.nordvpn.com",
+      "+.surfshark.com"
+    ]
+  }
+};
+
+config["tun"] = {
+  "enable": true,
+  "stack": "gVisor", // 可尝试 "gVisor" 如果系统支持
+  "dns-hijack": ["any:53"]
+};
+
+config["log-level"] = "debug";
 
   // 覆盖 geodata 配置
   config["geodata-mode"] = true;
@@ -78,7 +104,7 @@ function main(config) {
   // 覆盖 tun 配置
   config["tun"] = {
     "enable": true,
-    "stack": "mixed",
+    "stack": "gVisor",
     "dns-hijack": ["any:53"]
   };
 
