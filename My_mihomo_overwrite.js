@@ -51,18 +51,6 @@ function main(config) {
   "nameserver-policy": {
     "geosite:cn": ["223.5.5.5", "119.29.29.29"],
     "geosite:geolocation-!cn": ["1.1.1.1", "8.8.8.8"]
-  },
-  "fallback-filter": {
-    "geoip": true,
-    "geoip-code": "CN",
-    "domain": [
-      "+.google.com",
-      "+.facebook.com",
-      "+.youtube.com",
-      "+.dnsleaktest.com",
-      "+.nordvpn.com",
-      "+.surfshark.com"
-    ]
   }
 };
 
