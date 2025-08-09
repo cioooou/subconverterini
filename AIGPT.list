@@ -17,80 +17,72 @@ DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,grok.com
 
-# === Poe & Claude & Anthropic ===
-DOMAIN-SUFFIX,poe.com
-DOMAIN-SUFFIX,poecdn.net
+# === Claude & Anthropic ===
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,servd-anthropic-website.b-cdn.net
 
-# === Google AI / Gemini / Bard / NotebookLM 全家桶 ===
+# === Google AI / Gemini / Bard / NotebookLM ===
 DOMAIN-SUFFIX,ai.google.dev
-DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
-DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,notebooklm.google
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-SUFFIX,makersuite.google.com
-DOMAIN-SUFFIX,geller-pa.googleapis.com
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,generativeai.google
 
-# === HuggingFace & Perplexity & Groq 等 AI 平台 ===
-DOMAIN-SUFFIX,hf.co
-DOMAIN-SUFFIX,huggingface.co
+# === Perplexity AI ===
 DOMAIN-SUFFIX,pplx.ai
 DOMAIN-SUFFIX,pplx-res.cloudinary.com
 DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,groq.com
-DOMAIN-SUFFIX,openrouter.ai
-DOMAIN-SUFFIX,openart.ai
-DOMAIN-SUFFIX,meta.ai
-DOMAIN-SUFFIX,sora.com
-DOMAIN-SUFFIX,x.ai
-
-# === Cursor AI 系列 ===
-DOMAIN-SUFFIX,cursorapi.com
-DOMAIN-SUFFIX,cursor-cdn.com
-DOMAIN-SUFFIX,cursor.sh
-DOMAIN-SUFFIX,cursor.com
-
-# === 其他知名 AI 平台与工具 ===
-DOMAIN-SUFFIX,dify.ai
-DOMAIN-SUFFIX,jasper.ai
-DOMAIN-SUFFIX,clipdrop.co
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,chat.com
-DOMAIN-SUFFIX,grok.com
 
 # === LiveKit 实时音视频 (ChatGPT 多模态协作) ===
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
 
-# === 第三方服务依赖 (统计 / 身份验证 / CDN等) ===
-DOMAIN-SUFFIX,algolia.net
+# === PalCloud 身份验证服务 (强制走代理，覆盖所有端口) ===
+DOMAIN-SUFFIX,palcloud.top,PROXY
+DOMAIN-SUFFIX,palcloud.cn,PROXY
+DOMAIN,ct.palcloud.top,PROXY
+DOMAIN,cu.palcloud.top,PROXY
+IP-CIDR,120.233.154.201/32,PROXY,no-resolve  # 保留作为备份，确保已知 IP 走代理
+
+# === 云身份验证服务 (主流服务) ===
 DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,okta.com
+DOMAIN-SUFFIX,entrust.com
+DOMAIN-SUFFIX,id.me
+DOMAIN-SUFFIX,onfido.com
+DOMAIN-SUFFIX,jumio.com
+DOMAIN-SUFFIX,twilio.com
+DOMAIN-SUFFIX,plaid.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,cloudflare.com
+
+# === 云服务基础设施 ===
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,cdn.cloudflare.net
+DOMAIN-SUFFIX,gateway.ai.cloudflare.com
+
+# === 第三方服务依赖 (统计 / 安全) ===
 DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,events.statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,launchdarkly.com
-DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
-DOMAIN-SUFFIX,gateway.ai.cloudflare.com
 
 # === IP-CIDR 精准识别 ===
 IP-CIDR,24.199.123.28/32,no-resolve
@@ -114,5 +106,7 @@ IP-CIDR6,2001:19f0:7001:1149:5400:4ff:feac:a0b3/128,no-resolve
 IP-CIDR6,2401:c080:1000:47c5:5400:4ff:feab:f724/128,no-resolve
 
 # === ASN 段 ===
-IP-ASN,14061,no-resolve
-IP-ASN,20473,no-resolve
+IP-ASN,13335,no-resolve  # Cloudflare
+IP-ASN,16509,no-resolve  # AWS
+IP-ASN,8075,no-resolve   # Microsoft Azure
+IP-ASN,15169,no-resolve  # Google
