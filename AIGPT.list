@@ -1,94 +1,67 @@
-# === OpenAI & ChatGPT 全家桶 ===
-DOMAIN,api.statsig.com
-DOMAIN,browser-intake-datadoghq.com
-DOMAIN,cdn.openai.com
-DOMAIN,chat.openai.com
-DOMAIN,chat.openai.com.cdn.cloudflare.net
-DOMAIN,ios.chat.openai.com
-DOMAIN,o33249.ingest.sentry.io
-DOMAIN,openai-api.arkoselabs.com
-DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
-DOMAIN,openaicomproductionae4b.blob.core.windows.net
-DOMAIN,production-openaicom-storage.azureedge.net
-DOMAIN,static.cloudflareinsights.com
-DOMAIN,openaicom.imgix.net
+# === OpenAI & ChatGPT ===
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
-DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
+DOMAIN,api.statsig.com
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,o33249.ingest.sentry.io
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,api.openai.com
 
-# === Poe & Claude & Anthropic ===
-DOMAIN-SUFFIX,poe.com
-DOMAIN-SUFFIX,poecdn.net
+# === Claude & Anthropic ===
 DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,servd-anthropic-website.b-cdn.net
 
-# === Google AI / Gemini / Bard / NotebookLM 全家桶 ===
+# === Google AI / Gemini / Bard / NotebookLM ===
 DOMAIN-SUFFIX,ai.google.dev
-DOMAIN-SUFFIX,alkalicore-pa.clients6.google.com
-DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,notebooklm.google.com
-DOMAIN-SUFFIX,notebooklm.google
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-SUFFIX,makersuite.google.com
-DOMAIN-SUFFIX,geller-pa.googleapis.com
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,googlecloud.com
+DOMAIN,accounts.google.com
 
-# === HuggingFace & Perplexity & Groq 等 AI 平台 ===
-DOMAIN-SUFFIX,hf.co
-DOMAIN-SUFFIX,huggingface.co
+# === Perplexity AI ===
 DOMAIN-SUFFIX,pplx.ai
-DOMAIN-SUFFIX,pplx-res.cloudinary.com
 DOMAIN-SUFFIX,perplexity.ai
-DOMAIN-SUFFIX,groq.com
-DOMAIN-SUFFIX,openrouter.ai
-DOMAIN-SUFFIX,openart.ai
-DOMAIN-SUFFIX,meta.ai
-DOMAIN-SUFFIX,sora.com
-DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,pplx-res.cloudinary.com
 
-# === Cursor AI 系列 ===
-DOMAIN-SUFFIX,cursorapi.com
-DOMAIN-SUFFIX,cursor-cdn.com
-DOMAIN-SUFFIX,cursor.sh
-DOMAIN-SUFFIX,cursor.com
-
-# === 其他知名 AI 平台与工具 ===
-DOMAIN-SUFFIX,dify.ai
-DOMAIN-SUFFIX,jasper.ai
-DOMAIN-SUFFIX,clipdrop.co
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,chat.com
-DOMAIN-SUFFIX,grok.com
-
-# === LiveKit 实时音视频 (ChatGPT 多模态协作) ===
+# === LiveKit 实时音视频 ===
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
+DOMAIN-SUFFIX,livekit.io
 
-# === 第三方服务依赖 (统计 / 身份验证 / CDN等) ===
-DOMAIN-SUFFIX,algolia.net
+# === PalCloud 身份验证服务 ===
+DOMAIN-SUFFIX,palcloud.top
+DOMAIN-SUFFIX,palcloud.cn
+
+
+# === 云身份验证服务 ===
 DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,cdn.cloudflare.net
-DOMAIN-SUFFIX,challenges.cloudflare.com
-DOMAIN-SUFFIX,client-api.arkoselabs.com
-DOMAIN-SUFFIX,events.statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,launchdarkly.com
-DOMAIN-SUFFIX,segment.io
-DOMAIN-SUFFIX,sentry.io
-DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,okta.com
+DOMAIN-SUFFIX,entrust.com
+DOMAIN-SUFFIX,id.me
+DOMAIN-SUFFIX,onfido.com
+DOMAIN-SUFFIX,jumio.com
+DOMAIN-SUFFIX,twilio.com
+DOMAIN-SUFFIX,plaid.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,pingidentity.com
+
+# === 云服务基础设施 ===
+DOMAIN-SUFFIX,azure.com
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,gateway.ai.cloudflare.com
-
-
