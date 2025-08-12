@@ -139,7 +139,7 @@ config["log-level"] = "debug";
       ...groupBaseOption,
       "name": "😀 脸书服务",
       "type": "select",
-      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
     },         
     {
@@ -225,14 +225,7 @@ config["log-level"] = "debug";
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
-    },
-    {
-      ...groupBaseOption,
-      "name": "🍀 应用净化",
-      "type": "select",
-      "proxies": ["REJECT", "DIRECT"],
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Hijacking.png"
-    },    
+    },   
     {
       ...groupBaseOption,
       "name": "🐟 漏网之鱼",
@@ -244,8 +237,11 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇭🇰 香港节点",
-      "type": "url-test",
-      "tolerance": 0,
+      "type": "load-balance",
+      "interval": 300,
+      "url": "http://www.gstatic.com/generate_204",
+      "timeout": 1500,
+      "strategy": "consistent-hashing",
       "include-all": true,
       "filter": "(?i)🇭🇰|香港|(\b(HK|Hong)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
@@ -253,8 +249,11 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇹🇼 台湾节点",
-      "type": "url-test",
-      "tolerance": 0,
+      "type": "load-balance",
+      "interval": 300,
+      "url": "http://www.gstatic.com/generate_204",
+      "timeout": 1500,
+      "strategy": "consistent-hashing",
       "include-all": true,
       "filter": "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
@@ -262,8 +261,11 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇯🇵 日本节点",
-      "type": "url-test",
-      "tolerance": 0,
+      "type": "load-balance",
+      "interval": 300,
+      "url": "http://www.gstatic.com/generate_204",
+      "timeout": 1500,
+      "strategy": "consistent-hashing",
       "include-all": true,
       "filter": "(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"
@@ -271,8 +273,11 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇸🇬 狮城节点",
-      "type": "url-test",
-      "tolerance": 0,
+      "type": "load-balance",
+      "interval": 300,
+      "url": "http://www.gstatic.com/generate_204",
+      "timeout": 1500,
+      "strategy": "consistent-hashing",
       "include-all": true,
       "filter": "(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"
@@ -280,8 +285,11 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇺🇸 美国节点",
-      "type": "url-test",
-      "tolerance": 0,
+      "type": "load-balance",
+      "interval": 300,
+      "url": "http://www.gstatic.com/generate_204",
+      "timeout": 1500,
+      "strategy": "consistent-hashing",
       "include-all": true,
       "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"   
@@ -295,19 +303,7 @@ config["log-level"] = "debug";
       "behavior": "classical",
       "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/Block.list",
       "path": "./rules/Block.list"
-    },
-    "BanAD": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list",
-      "path": "./rules/BanAD.list"
-    },
-    "BanProgramAD": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list",
-      "path": "./rules/BanProgramAD.list"
-    },          
+    },       
     "WeChat": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -457,21 +453,13 @@ config["log-level"] = "debug";
       "behavior": "domain",
       "url": "https://raw.githubusercontent.com/xishang0128/rules/main/clash%20or%20stash/prevent_dns_leak/prevent_dns_leak_domain.list",
       "path": "./rules/prevent_dns_leak_domain.list"
-    },
-    "Cloudflare": {
-      ...ruleProviderCommon,
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Cloudflare/Cloudflare.list",
-      "path": "./rules/Cloudflare.list"
     }
   };
 
   // 覆盖规则
   config["rules"] = [
     "RULE-SET,prevent_dns_leak,🔰 节点选择",    
-    "RULE-SET,Block,🛑 广告拦截",
-    "RULE-SET,BanAD,🛑 广告拦截",
-    "RULE-SET,BanProgramAD,🍀 应用净化",    
+    "RULE-SET,Block,🛑 广告拦截", 
     "RULE-SET,WeChat,✅ 微信服务",
     "RULE-SET,Facebook,😀 脸书服务",
     "RULE-SET,Instagram,😀 脸书服务",    
@@ -491,8 +479,7 @@ config["log-level"] = "debug";
     "RULE-SET,GitHub,⌨️ GitHub",
     "GEOSITE,onedrive,Ⓜ️ 微软服务",
     "GEOSITE,github,Ⓜ️ 微软服务",
-    "GEOSITE,microsoft,Ⓜ️ 微软服务",
-    "RULE-SET,Cloudflare,🔰 节点选择",    
+    "GEOSITE,microsoft,Ⓜ️ 微软服务",  
     "RULE-SET,Proxy,🔰 节点选择",
     "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
