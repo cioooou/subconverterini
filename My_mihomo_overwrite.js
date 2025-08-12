@@ -139,7 +139,7 @@ config["log-level"] = "debug";
       ...groupBaseOption,
       "name": "😀 脸书服务",
       "type": "select",
-      "include-all": true,
+      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
     },         
     {
@@ -237,11 +237,8 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇭🇰 香港节点",
-      "type": "load-balance",
-      "interval": 300,
-      "url": "http://www.gstatic.com/generate_204",
-      "timeout": 1500,
-      "strategy": "consistent-hashing",
+      "type": "url-test",
+      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇭🇰|香港|(\b(HK|Hong)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
@@ -249,11 +246,8 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇹🇼 台湾节点",
-      "type": "load-balance",
-      "interval": 300,
-      "url": "http://www.gstatic.com/generate_204",
-      "timeout": 1500,
-      "strategy": "consistent-hashing",
+      "type": "url-test",
+      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
@@ -261,11 +255,8 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇯🇵 日本节点",
-      "type": "load-balance",
-      "interval": 300,
-      "url": "http://www.gstatic.com/generate_204",
-      "timeout": 1500,
-      "strategy": "consistent-hashing",
+      "type": "url-test",
+      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"
@@ -273,11 +264,8 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇸🇬 狮城节点",
-      "type": "load-balance",
-      "interval": 300,
-      "url": "http://www.gstatic.com/generate_204",
-      "timeout": 1500,
-      "strategy": "consistent-hashing",
+      "type": "url-test",
+      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"
@@ -285,11 +273,8 @@ config["log-level"] = "debug";
     {
       ...groupBaseOption,
       "name": "🇺🇸 美国节点",
-      "type": "load-balance",
-      "interval": 300,
-      "url": "http://www.gstatic.com/generate_204",
-      "timeout": 1500,
-      "strategy": "consistent-hashing",
+      "type": "url-test",
+      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"   
