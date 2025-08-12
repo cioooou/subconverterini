@@ -40,7 +40,5 @@ DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,livekit.io
 
-
-
-
-
+# === Other ===
+DOMAIN,ct.palcloud.top
