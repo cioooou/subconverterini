@@ -40,28 +40,7 @@ DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,livekit.io
 
-# === PalCloud 身份验证服务 ===
-DOMAIN-SUFFIX,palcloud.top
 
 
 
-# === 云身份验证服务 ===
-DOMAIN-SUFFIX,auth0.com
-DOMAIN-SUFFIX,okta.com
-DOMAIN-SUFFIX,entrust.com
-DOMAIN-SUFFIX,id.me
-DOMAIN-SUFFIX,onfido.com
-DOMAIN-SUFFIX,jumio.com
-DOMAIN-SUFFIX,twilio.com
-DOMAIN-SUFFIX,plaid.com
-DOMAIN-SUFFIX,arkoselabs.com
-DOMAIN-SUFFIX,pingidentity.com
 
-# === 云服务基础设施 ===
-DOMAIN-SUFFIX,azure.com
-DOMAIN-SUFFIX,azureedge.net
-DOMAIN-SUFFIX,cloudfront.net
-DOMAIN-SUFFIX,amazonaws.com
-DOMAIN-SUFFIX,googleapis.com
-DOMAIN-SUFFIX,cloudflare.com
-DOMAIN-SUFFIX,gateway.ai.cloudflare.com
