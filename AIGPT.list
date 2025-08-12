@@ -42,7 +42,7 @@ DOMAIN-SUFFIX,livekit.io
 
 # === PalCloud 身份验证服务 ===
 DOMAIN-SUFFIX,palcloud.top
-DOMAIN-SUFFIX,palcloud.cn
+
 
 
 # === 云身份验证服务 ===
