@@ -438,13 +438,7 @@ config["log-level"] = "debug";
       "behavior": "classical",
       "url": "https://gcore.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Mozilla/Mozilla.list",
       "path": "./rules/Mozilla.list"
-    },    
-    "China": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/China.list",
-      "path": "./rules/China.list"
-    },    
+    },       
     "prevent_dns_leak": {
       ...ruleProviderCommon,
       "behavior": "domain",
@@ -482,9 +476,9 @@ config["log-level"] = "debug";
     "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
-    "RULE-SET,China,DIRECT", 
     "GEOIP,private,DIRECT",
-  //"GEOIP,cn,DIRECT",
+    "GEOSITE,cn,DIRECT",    
+    "GEOIP,cn,DIRECT",
     "MATCH,🐟 漏网之鱼"
   ];
 
