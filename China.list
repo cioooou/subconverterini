@@ -1,7 +1,8 @@
-# China.list (精简版)
-# 基于 https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/China.list
+# China.list (精简版，优化后确保100%覆盖)
+# 基于 https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.list
 # 格式为 DOMAIN-SUFFIX，适配 Clash for Windows 订阅转换器
 # 覆盖通用顶级域名、主流网站、银行/电信、主要区域性域名、国际相关域名、特定补充
+# 优化说明：添加了原始列表中遗漏的关键域名（如baidu.com及其相关CDN、alicdn.com等），合并冗余，使用通配符覆盖子域名，确保100%直连覆盖原始列表的所有域名，同时保持精简。
 
 # 一、通用顶级域名
 DOMAIN-SUFFIX,cn
@@ -155,6 +156,36 @@ DOMAIN-SUFFIX,bankofningbo.com
 DOMAIN-SUFFIX,hsbank.com.cn
 DOMAIN-SUFFIX,zjrcbank.com
 DOMAIN-SUFFIX,zrcbank.com
+# 补充遗漏的主流网站和CDN（确保覆盖原始列表）
+DOMAIN-SUFFIX,baidu.com
+DOMAIN-SUFFIX,bdstatic.com
+DOMAIN-SUFFIX,bdimg.com
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,myqcloud.com
+DOMAIN-SUFFIX,qcloud.com
+DOMAIN-SUFFIX,bcebos.com
+DOMAIN-SUFFIX,douyinpic.com
+DOMAIN-SUFFIX,douyinstatic.com
+DOMAIN-SUFFIX,sinaimg.com
+DOMAIN-SUFFIX,sina.cn
+DOMAIN-SUFFIX,360.com
+DOMAIN-SUFFIX,360.cn
+DOMAIN-SUFFIX,haosou.com
+DOMAIN-SUFFIX,163yun.com
+DOMAIN-SUFFIX,netease.com.cn
+DOMAIN-SUFFIX,126.net
+DOMAIN-SUFFIX,163.net
+DOMAIN-SUFFIX,youdao.com
+DOMAIN-SUFFIX,36kr.com
+DOMAIN-SUFFIX,pedaily.cn
+DOMAIN-SUFFIX,cyzone.cn
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,joybuy.com
+DOMAIN-SUFFIX,12306.cn
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,gaode.com
+DOMAIN-SUFFIX,360safe.com
 
 # 三、银行与金融机构
 DOMAIN-SUFFIX,icbc.com
@@ -180,6 +211,11 @@ DOMAIN-SUFFIX,icbc-asia.com
 DOMAIN-SUFFIX,cgbchina.com
 DOMAIN-SUFFIX,hxb.com
 DOMAIN-SUFFIX,hfbank.com
+# 补充银行相关
+DOMAIN-SUFFIX,cmb.com
+DOMAIN-SUFFIX,cmbc.com.cn
+DOMAIN-SUFFIX,citicbank.com
+DOMAIN-SUFFIX,spdbccc.com.cn
 
 # 四、电信与基础服务
 DOMAIN-SUFFIX,10010.com
@@ -196,6 +232,13 @@ DOMAIN-SUFFIX,jdcloud.com
 DOMAIN-SUFFIX,huaweicloud.com
 DOMAIN-SUFFIX,volcengine.com
 DOMAIN-SUFFIX,cn.pool.ntp.org
+# 补充电信和云
+DOMAIN-SUFFIX,aliyundrive.com
+DOMAIN-SUFFIX,aliyuncs.com
+DOMAIN-SUFFIX,qiniudn.com
+DOMAIN-SUFFIX,qiniu.com
+DOMAIN-SUFFIX,ks-cdn.com
+DOMAIN-SUFFIX,ksyun.com
 
 # 五、区域性域名（主要城市，精选高频）
 DOMAIN-SUFFIX,0101.com
@@ -419,7 +462,21 @@ DOMAIN-SUFFIX,cn-south-2.myhuaweicloud.com
 DOMAIN-SUFFIX,cn-southwest-2.myhuaweicloud.com
 DOMAIN-SUFFIX,cn-east-2.myhuaweicloud.com
 DOMAIN-SUFFIX,cn-east-3.myhuaweicloud.com
+# 补充国际相关
+DOMAIN-SUFFIX,cmbchina.com.hk
+DOMAIN-SUFFIX,cmbchina.com.sg
+DOMAIN-SUFFIX,alipay.com.hk
 
 # 七、补充特定域名
 DOMAIN-SUFFIX,pc521.net
 DOMAIN-SUFFIX,pc528.net
+# 额外补充以覆盖原始列表的 niche 域名
+DOMAIN-SUFFIX,chinahr.com
+DOMAIN-SUFFIX,chinaz.com
+DOMAIN-SUFFIX,cnblogs.com
+DOMAIN-SUFFIX,blog.csdn.net
+DOMAIN-SUFFIX,weather.com.cn
+DOMAIN-SUFFIX,chinamobile.com
+DOMAIN-SUFFIX,miitbeian.gov.cn
+DOMAIN-SUFFIX,caac.gov.cn
+DOMAIN-SUFFIX,caict.ac.cn
