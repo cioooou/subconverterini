@@ -298,7 +298,7 @@ config["log-level"] = "debug";
     "Facebook": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/Facebook.list",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.list",
       "path": "./rules/Facebook.list"  
     },
     "Instagram": {
