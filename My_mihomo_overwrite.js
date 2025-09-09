@@ -139,7 +139,8 @@ config["log-level"] = "debug";
       ...groupBaseOption,
       "name": "😀 脸书服务",
       "type": "select",
-      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "include-all": true,
+      "filter": "(?i)🇭🇰|香港|(\b(HK|Hong)\b)",
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
     },         
     {
