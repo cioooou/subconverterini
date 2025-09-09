@@ -298,19 +298,19 @@ config["log-level"] = "debug";
     "Facebook": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Clash/Rules/Facebook.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/Facebook.list",
       "path": "./rules/Facebook.list"  
     },
     "Instagram": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Clash/Rules/Instagram.list",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.list",
       "path": "./rules/Instagram.list"           
     },    
     "AI": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/AI.list",
       "path": "./rules/AI.list"
     },  
     "AIGPT": {
@@ -322,7 +322,7 @@ config["log-level"] = "debug";
     "Apple": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Apple.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/Apple.list",
       "path": "./rules/Apple.list"
     },
     "GoogleCN": {
@@ -376,13 +376,13 @@ config["log-level"] = "debug";
     "Emby": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Emby.list",
+      "url": "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Emby.list",
       "path": "./rules/Emby.list"
     },
     "Spotify": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Spotify.list",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Shopify/Shopify.list",
       "path": "./rules/Spotify.list"
     },
     "GitHub": {
@@ -394,25 +394,19 @@ config["log-level"] = "debug";
     "OneDrive": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/OneDrive.list",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/OneDrive.list",
       "path": "./rules/OneDrive.list"
-    },
-    "Github": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Github.list",
-      "path": "./rules/Github.list"
     },
     "Microsoft": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Microsoft.list",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Microsoft.list",
       "path": "./rules/Microsoft.list"
     },
     "Lan": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/Clash/Rules/Lan.list",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Lan/Lan.list",
       "path": "./rules/Lan.list"
     },
     "UnBan": {
@@ -442,7 +436,7 @@ config["log-level"] = "debug";
     "prevent_dns_leak": {
       ...ruleProviderCommon,
       "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/xishang0128/rules/main/clash%20or%20stash/prevent_dns_leak/prevent_dns_leak_domain.list",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Prevent_dns.list",
       "path": "./rules/prevent_dns_leak_domain.list"
     }
   };
