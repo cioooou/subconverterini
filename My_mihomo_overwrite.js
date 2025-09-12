@@ -140,7 +140,6 @@ config["log-level"] = "debug";
       "name": "😀 脸书服务",
       "type": "select",
       "include-all": true,
-      "filter": "(?i)🇭🇰|香港|(\b(HK|Hong)\b)",
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
     },         
     {
