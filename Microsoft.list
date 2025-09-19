@@ -677,6 +677,3 @@ DOMAIN-KEYWORD,skydrive
 DOMAIN-KEYWORD,skydrive
 # 允许 OneDrive 主进程联网（同步功能）
 PROCESS-NAME,OneDrive
-# 拒绝 OneDrive 更新进程联网（禁止自动更新）
-PROCESS-NAME,OneDriveUpdater,REJECT
-DOMAIN-SUFFIX,onecollector.com,REJECT
