@@ -38,3 +38,10 @@ rules:
 
   # BrowserScan
   - DOMAIN,ip-scan.adspower.net
+
+  # 通用匹配所有包含 "lihi" 的域名，确保变体如 lihi4.cc、lihi5.com 自动走代理
+  - DOMAIN-KEYWORD,lihi
+  # 可选：更精确的正则规则，匹配 lihi + 数字/字母 + 常见顶级域名
+  - REGEX,lihi[0-9a-z]*\.(com|cc|me|io|net|co|org|info|biz)
+  # 确保 lihi.io 主域名也走代理（作为备用）
+  - DOMAIN-SUFFIX,lihi.io
