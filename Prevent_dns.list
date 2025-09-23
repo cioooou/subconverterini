@@ -1,43 +1,46 @@
-# 防止 DNS 泄漏规则 - Clash 格式
-# author: 非正常人类研究中心
-# 专为小白设计的防止DNS泄漏规则
+# NAME: DNSLeak
+# AUTHOR: 非正常人类研究中心
+# DESCRIPTION: 防止 DNS 泄漏的规则集
+# REPO: local
+# UPDATED: 2025-09-23 14:00:00
+# DOMAIN: 3
+# DOMAIN-SUFFIX: 19
+# DOMAIN-KEYWORD: 1
+# TOTAL: 23
 
-rules:
-  # DNS Leak test sites
-  - DOMAIN-SUFFIX,dnsleaktest.com
-  - DOMAIN-SUFFIX,dnsleak.com
-  - DOMAIN-SUFFIX,expressvpn.com
-  - DOMAIN-SUFFIX,nordvpn.com
-  - DOMAIN-SUFFIX,surfshark.com
-  - DOMAIN-SUFFIX,ipleak.net
-  - DOMAIN-SUFFIX,perfect-privacy.com
-  - DOMAIN-SUFFIX,browserleaks.com
-  - DOMAIN-SUFFIX,browserleaks.org
-  - DOMAIN-SUFFIX,vpnunlimited.com
-  - DOMAIN-SUFFIX,whoer.net
-  - DOMAIN-SUFFIX,whrq.net
+DOMAIN-SUFFIX,dnsleaktest.com
+DOMAIN-SUFFIX,dnsleak.com
+DOMAIN-SUFFIX,expressvpn.com
+DOMAIN-SUFFIX,nordvpn.com
+DOMAIN-SUFFIX,surfshark.com
+DOMAIN-SUFFIX,ipleak.net
+DOMAIN-SUFFIX,perfect-privacy.com
+DOMAIN-SUFFIX,browserleaks.com
+DOMAIN-SUFFIX,browserleaks.org
+DOMAIN-SUFFIX,vpnunlimited.com
+DOMAIN-SUFFIX,whoer.net
+DOMAIN-SUFFIX,whrq.net
 
-  # Astrill
-  - DOMAIN-SUFFIX,astrill.com
-  - DOMAIN-SUFFIX,astrill.org
-  - DOMAIN-SUFFIX,dnsleak.asn247.net
+# Astrill
+DOMAIN-SUFFIX,astrill.com
+DOMAIN-SUFFIX,astrill.org
+DOMAIN-SUFFIX,dnsleak.asn247.net
 
-  # Surfshark
-  - DOMAIN-SUFFIX,surfshark.com
-  - DOMAIN-SUFFIX,surfsharkdns.com
+# Surfshark
+DOMAIN-SUFFIX,surfsharkdns.com
 
-  # Pixelscan
-  - DOMAIN-SUFFIX,pixelscan.net
+# Pixelscan
+DOMAIN-SUFFIX,pixelscan.net
 
-  # PING0
-  - DOMAIN,ipv4.ping0.cc
-  - DOMAIN,ipv6.ping0.cc
+# PING0
+DOMAIN,ipv4.ping0.cc
+DOMAIN,ipv6.ping0.cc
 
-  # IPAPI.CO
-  - DOMAIN-SUFFIX,ipapi.co
+# IPAPI.CO
+DOMAIN-SUFFIX,ipapi.co
 
-  # BrowserScan
-  - DOMAIN,ip-scan.adspower.net
+# BrowserScan
+DOMAIN,ip-scan.adspower.net
 
-  # lihi.io
-  - DOMAIN-KEYWORD,lihi
+# lihi.io
+DOMAIN-KEYWORD,lihi
