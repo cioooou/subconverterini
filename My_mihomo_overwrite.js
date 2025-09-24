@@ -289,6 +289,12 @@ config["log-level"] = "debug";
       "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/Block.list",
       "path": "./rules/Block.list"
     },       
+    "Prevent_dns": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Prevent_dns.list",
+      "path": "./rules/Prevent_dns.list"
+    },       
     "WeChat": {
       ...ruleProviderCommon,
       "behavior": "classical",
@@ -432,18 +438,12 @@ config["log-level"] = "debug";
       "behavior": "classical",
       "url": "https://gcore.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Mozilla/Mozilla.list",
       "path": "./rules/Mozilla.list"
-    },       
-    "prevent_dns_leak": {
-      ...ruleProviderCommon,
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Prevent_dns.list",
-      "path": "./rules/prevent_dns_leak_domain.list"
     }
   };
 
   // 覆盖规则
   config["rules"] = [
-    "RULE-SET,prevent_dns_leak,🔰 节点选择",    
+    "RULE-SET,Prevent_dns,🔰 节点选择",    
     "RULE-SET,Block,🛑 广告拦截", 
     "RULE-SET,WeChat,✅ 微信服务",
     "RULE-SET,Facebook,😀 脸书服务",
