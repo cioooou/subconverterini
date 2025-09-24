@@ -3,9 +3,9 @@
 # DESCRIPTION: 防止 DNS 泄漏的规则集（兼容 CFW & Sparkle）
 # REPO: local
 # UPDATED: 2025-09-23 14:30:00
-# DOMAIN-SUFFIX: 21
+# DOMAIN-SUFFIX: 20
 # DOMAIN-KEYWORD: 1
-# TOTAL: 22
+# TOTAL: 21
 
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,dnsleak.com
@@ -40,5 +40,5 @@ DOMAIN-SUFFIX,ipapi.co
 # BrowserScan
 DOMAIN-SUFFIX,adspower.net
 
-# lihi.io
+# lihi (短链关键字)
 DOMAIN-KEYWORD,lihi
