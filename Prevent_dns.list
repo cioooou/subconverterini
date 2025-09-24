@@ -1,12 +1,11 @@
 # NAME: DNSLeak
 # AUTHOR: 非正常人类研究中心
-# DESCRIPTION: 防止 DNS 泄漏的规则集
+# DESCRIPTION: 防止 DNS 泄漏的规则集（兼容 CFW & Sparkle）
 # REPO: local
-# UPDATED: 2025-09-23 14:00:00
-# DOMAIN: 3
-# DOMAIN-SUFFIX: 19
+# UPDATED: 2025-09-23 14:30:00
+# DOMAIN-SUFFIX: 21
 # DOMAIN-KEYWORD: 1
-# TOTAL: 23
+# TOTAL: 22
 
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,dnsleak.com
@@ -24,7 +23,7 @@ DOMAIN-SUFFIX,whrq.net
 # Astrill
 DOMAIN-SUFFIX,astrill.com
 DOMAIN-SUFFIX,astrill.org
-DOMAIN-SUFFIX,dnsleak.asn247.net
+DOMAIN-SUFFIX,asn247.net
 
 # Surfshark
 DOMAIN-SUFFIX,surfsharkdns.com
@@ -33,14 +32,13 @@ DOMAIN-SUFFIX,surfsharkdns.com
 DOMAIN-SUFFIX,pixelscan.net
 
 # PING0
-DOMAIN,ipv4.ping0.cc
-DOMAIN,ipv6.ping0.cc
+DOMAIN-SUFFIX,ping0.cc
 
 # IPAPI.CO
 DOMAIN-SUFFIX,ipapi.co
 
 # BrowserScan
-DOMAIN,ip-scan.adspower.net
+DOMAIN-SUFFIX,adspower.net
 
 # lihi.io
 DOMAIN-KEYWORD,lihi
