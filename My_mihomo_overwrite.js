@@ -139,6 +139,7 @@ config["log-level"] = "debug";
       ...groupBaseOption,
       "name": "😀 脸书服务",
       "type": "select",
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
     },         
@@ -146,6 +147,7 @@ config["log-level"] = "debug";
       ...groupBaseOption,
       "name": "🤖 AI服务",
       "type": "select",
+      "proxies": ["🇺🇸 美国节点", "🇸🇬 狮城节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点"],      
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png"
     }, 
@@ -288,12 +290,6 @@ config["log-level"] = "debug";
       "behavior": "classical",
       "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/Block.list",
       "path": "./rules/Block.list"
-    },       
-    "Prevent_dns": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Prevent_dns.list",
-      "path": "./rules/Prevent_dns.list"
     },       
     "WeChat": {
       ...ruleProviderCommon,
@@ -438,12 +434,24 @@ config["log-level"] = "debug";
       "behavior": "classical",
       "url": "https://gcore.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Mozilla/Mozilla.list",
       "path": "./rules/Mozilla.list"
+    },    
+    "China": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/China.list",
+      "path": "./rules/China.list"
+    },     
+    "prevent_dns_leak": {
+      ...ruleProviderCommon,
+      "behavior": "domain",
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Prevent_dns.list",
+      "path": "./rules/prevent_dns_leak_domain.list"
     }
   };
 
   // 覆盖规则
   config["rules"] = [
-    "RULE-SET,Prevent_dns,🔰 节点选择",    
+    "RULE-SET,prevent_dns_leak,🔰 节点选择",    
     "RULE-SET,Block,🛑 广告拦截", 
     "RULE-SET,WeChat,✅ 微信服务",
     "RULE-SET,Facebook,😀 脸书服务",
@@ -470,8 +478,9 @@ config["log-level"] = "debug";
     "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,Download,DIRECT",
+    "RULE-SET,China,DIRECT",
     "GEOIP,private,DIRECT",
-    "GEOSITE,cn,DIRECT",    
+   // "GEOSITE,cn,DIRECT",    
     "GEOIP,cn,DIRECT",
     "MATCH,🐟 漏网之鱼"
   ];
