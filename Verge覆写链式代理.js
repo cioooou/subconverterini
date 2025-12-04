@@ -1,8 +1,8 @@
 // 参考 Verge Rev 示例 Script 配置
 //
 // Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 1.5.10)
-//
-// 最后更新时间: 2025-02-27 23:00
+// 加入了链式代理 dialer-proxy
+// 最后更新时间: 2025-12-04 23:00
 
 // 规则集通用配置
 const ruleProviderCommon = {
@@ -129,29 +129,35 @@ config["log-level"] = "debug";
       "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Available.png"
     }, 
 // 链式代理组件 - 修正版本
+    // 1. 前置代理组（手动选单个节点）——保持不变
     {
-       ...groupBaseOption,
-       "name": "✈️ 前置代理",
-       "type": "select", 
-       "proxies": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇸🇬 狮城节点"],
-       "include-all": true,
-       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"
+      ...groupBaseOption,
+      "name": "✈️ 前置代理",
+      "type": "select",
+      "include-all": true,
+      "filter": "(?i)🇭🇰|香港|🇯🇵|日本|🇸🇬|新加坡|狮城",   // 只包含你想要做前置的地区
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"
     },
+
+    // 2. 落地代理组（手动选单个节点）——保持不变
     {
-        ...groupBaseOption,
-        "name": "🛬 落地代理", 
-        "type": "select",
-        "proxies": ["🇺🇸 美国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇹🇼 台湾节点"], 
-        "include-all": true,
-        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Domestic.png"
+      ...groupBaseOption,
+      "name": "🛬 落地代理",
+      "type": "select",
+      "include-all": true,
+      //"filter": "(?i)🇺🇸|美国|🇯🇵|日本|🇸🇬|新加坡|🇹🇼|台湾",   // 只包含你想要做落地的地区
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Domestic.png"
     },
+
+    // 3. 关键：真正的动态链式组（重点在这里！）
     {
-        ...groupBaseOption,
-        "name": "🔗 链式代理",
-        "type": "relay",
-        "proxies": ["✈️ 前置代理", "🛬 落地代理"],
-        "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Loop.png"
-    },    
+      ...groupBaseOption,
+      "name": "🔗 链式代理",
+      "type": "select",                     // 必须是 select（用户要手动点）
+      "proxies": ["🛬 落地代理"],           // 只放落地组
+      "dialer-proxy": "✈️ 前置代理",        // 关键字段！所有从这个组出去的流量，都强制先走前置代理组当前选中的节点
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Loop.png"
+    },  
          
     {
       ...groupBaseOption,
