@@ -134,6 +134,7 @@ config["log-level"] = "debug";
       ...groupBaseOption,
       "name": "✈️ 前置代理",
       "type": "select",
+      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点"],
       "include-all": true,
       "filter": "(?i)🇭🇰|香港|🇯🇵|日本|🇸🇬|新加坡|狮城",   // 只包含你想要做前置的地区
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"
