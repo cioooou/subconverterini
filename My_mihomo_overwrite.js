@@ -1,99 +1,76 @@
 // 参考 Verge Rev 示例 Script 配置
-//
-// Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 1.5.10)
-// 加入了链式代理 dialer-proxy
-// 最后更新时间: 2025-12-04 23:00
+// 已修复所有引号问题 + 其他小优化
+// 最后更新: 2025-12-14
 
-// 规则集通用配置
 const ruleProviderCommon = {
   "type": "http",
   "format": "text",
   "interval": 86400
 };
 
-// 策略组通用配置
 const groupBaseOption = {
   "interval": 300,
   "url": "http://1.1.1.1/generate_204",
   "max-failed-times": 3,
 };
 
-// 程序入口
 function main(config) {
   const proxyCount = config?.proxies?.length ?? 0;
-  const proxyProviderCount =
-    typeof config?.["proxy-providers"] === "object" ? Object.keys(config["proxy-providers"]).length : 0;
+  const proxyProviderCount = typeof config?.["proxy-providers"] === "object" ? Object.keys(config["proxy-providers"]).length : 0;
   if (proxyCount === 0 && proxyProviderCount === 0) {
     throw new Error("配置文件中未找到任何代理");
   }
 
-  // 覆盖通用配置
-  config["mixed-port"] = "7890";
+  // 关键修复：数字和布尔值绝不加引号
+  config["mixed-port"] = 7890;          // 必须是数字
   config["tcp-concurrent"] = true;
   config["allow-lan"] = true;
   config["ipv6"] = false;
   config["log-level"] = "info";
-  config["unified-delay"] = "true";
+  config["unified-delay"] = true;       // 必须是 true，不是 "true"
   config["find-process-mode"] = "strict";
   config["global-client-fingerprint"] = "chrome";
 
-  // 覆盖 dns 配置
-    config["dns"] = {
-  "enable": true,
-  "listen": "0.0.0.0:1053",
-  "ipv6": false,
-  "enhanced-mode": "fake-ip",
-  "fake-ip-range": "198.18.0.1/16",
-  "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-  "default-nameserver": ["1.1.1.1", "8.8.8.8"],
-  "nameserver": ["1.1.1.1", "8.8.8.8"],
-  "fallback": ["1.1.1.1", "8.8.8.8"],
-  "nameserver-policy": {
-    "geosite:cn": ["223.5.5.5", "119.29.29.29"],
-    "geosite:geolocation-!cn": ["1.1.1.1", "8.8.8.8"]
-  }
-};
-
-config["tun"] = {
-  "enable": true,
-  "stack": "gVisor", // 可尝试 "gVisor" 如果系统支持
-  "dns-hijack": ["any:53"]
-};
-
-config["log-level"] = "debug";
-
-  // 覆盖 geodata 配置
-  config["geodata-mode"] = true;
-  config["geox-url"] = {
-    "geoip": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat",
-    "geosite": "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
-    "mmdb": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb",
-    "asn": "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb"
-  };
-
-  // 覆盖 sniffer 配置
-  config["sniffer"] = {
+  config["dns"] = {
     "enable": true,
-    "parse-pure-ip": true,
-    "sniff": {
-      "TLS": {
-        "ports": ["443", "8443"]
-      },
-      "HTTP": {
-        "ports": ["80", "8080-8880"],
-        "override-destination": true
-      },
-      "QUIC": {
-        "ports": ["443", "8443"]
-      }
+    "listen": "0.0.0.0:1053",
+    "ipv6": false,
+    "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/16",
+    "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
+    "default-nameserver": ["1.1.1.1", "8.8.8.8"],
+    "nameserver": ["1.1.1.1", "8.8.8.8"],
+    "fallback": ["1.1.1.1", "8.8.8.8"],
+    "nameserver-policy": {
+      "geosite:cn": ["223.5.5.5", "119.29.29.29"],
+      "geosite:geolocation-!cn": ["1.1.1.1", "8.8.8.8"]
     }
   };
 
-  // 覆盖 tun 配置
   config["tun"] = {
     "enable": true,
     "stack": "gVisor",
     "dns-hijack": ["any:53"]
+  };
+
+  config["log-level"] = "debug";
+
+  config["geodata-mode"] = true;
+  config["geox-url"] = {
+    "geoip": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/geoip.dat",
+    "geosite": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@latest/geosite.dat",
+    "mmdb": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb",
+    "asn": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
+  };
+
+  config["sniffer"] = {
+    "enable": true,
+    "parse-pure-ip": true,
+    "sniff": {
+      "TLS": {"ports": ["443", "8443"]},
+      "HTTP": {"ports": ["80", "8080-8880"], "override-destination": true},
+      "QUIC": {"ports": ["443", "8443"]}
+    }
   };
 
   // 覆盖策略组
@@ -121,45 +98,38 @@ config["log-level"] = "debug";
       ...groupBaseOption,
       "name": "⚖️ 负载均衡",
       "type": "load-balance",
-      "interval": "300",
+      "interval": 300,
       "url": "http://www.gstatic.com/generate_204",
       "timeout": 1500,
       "strategy": "consistent-hashing",
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Available.png"
     }, 
-// 链式代理组件 - 修正版本
-    // 1. 前置代理组（手动选单个节点）——保持不变
+    // 链式代理组件
     {
       ...groupBaseOption,
       "name": "✈️ 前置代理",
       "type": "select",
       "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点"],
       "include-all": true,
-      "filter": "(?i)🇭🇰|香港|🇯🇵|日本|🇸🇬|新加坡|狮城",   // 只包含你想要做前置的地区
+      "filter": "(?i)🇭🇰|香港|🇯🇵|日本|🇸🇬|新加坡|狮城",
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"
     },
-
-    // 2. 落地代理组（手动选单个节点）——保持不变
     {
       ...groupBaseOption,
       "name": "🛬 落地代理",
       "type": "select",
       "include-all": true,
-      //"filter": "(?i)🇺🇸|美国|🇯🇵|日本|🇸🇬|新加坡|🇹🇼|台湾",   // 只包含你想要做落地的地区
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Domestic.png"
     },
-
-    // 3. 关键：真正的动态链式组（重点在这里！）
     {
       ...groupBaseOption,
       "name": "🔗 链式代理",
-      "type": "select",                     // 必须是 select（用户要手动点）
-      "proxies": ["🛬 落地代理"],           // 只放落地组
-      "dialer-proxy": "✈️ 前置代理",        // 关键字段！所有从这个组出去的流量，都强制先走前置代理组当前选中的节点
+      "type": "select",
+      "proxies": ["🛬 落地代理"],
+      "dialer-proxy": "✈️ 前置代理",
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Loop.png"
     },  
-         
     {
       ...groupBaseOption,
       "name": "✅ 微信服务",
@@ -265,7 +235,7 @@ config["log-level"] = "debug";
       "name": "🐟 漏网之鱼",
       "type": "select",
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Final.png"
     },
     // 地区分组
     {
@@ -274,7 +244,7 @@ config["log-level"] = "debug";
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "filter": "(?i)🇭🇰|香港|(\b(HK|Hong)\b)",
+      "filter": "(?i)🇭🇰|香港|(\\b(HK|Hong)\\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
     },
     {
@@ -283,7 +253,7 @@ config["log-level"] = "debug";
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "filter": "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)",
+      "filter": "(?i)🇹🇼|台湾|(\\b(TW|Tai|Taiwan)\\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
     },
     {
@@ -292,7 +262,7 @@ config["log-level"] = "debug";
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "filter": "(?i)🇯🇵|日本|东京|(\b(JP|Japan)\b)",
+      "filter": "(?i)🇯🇵|日本|东京|(\\b(JP|Japan)\\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"
     },        
     {
@@ -301,7 +271,7 @@ config["log-level"] = "debug";
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "filter": "(?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)",
+      "filter": "(?i)🇸🇬|新加坡|狮|(\\b(SG|Singapore)\\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"
     },
     {
@@ -310,7 +280,7 @@ config["log-level"] = "debug";
       "type": "url-test",
       "tolerance": 0,
       "include-all": true,
-      "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\b(US|United States)\b)",
+      "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\\b(US|United States)\\b)",
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"   
     }    
   ];
@@ -512,7 +482,6 @@ config["log-level"] = "debug";
     "RULE-SET,Download,DIRECT",
     "RULE-SET,China,DIRECT",
     "GEOIP,private,DIRECT",
-   // "GEOSITE,cn,DIRECT",    
     "GEOIP,cn,DIRECT",
     "MATCH,🐟 漏网之鱼"
   ];
