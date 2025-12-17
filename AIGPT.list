@@ -42,3 +42,7 @@ DOMAIN-SUFFIX,livekit.io
 
 # === Other ===
 DOMAIN,ct.palcloud.top
+
+# === Lihi.io 短网址服务 ===
+DOMAIN-SUFFIX,lihi.io
+DOMAIN-SUFFIX,lihi.cc
