@@ -1,24 +1,24 @@
 // 海外托管中国资源站直连补充（精简版，重点下载/镜像/Mac站）
-"DOMAIN-SUFFIX,pc528.net,DIRECT",
-"DOMAIN-SUFFIX,pc521.net,DIRECT",
-"DOMAIN-SUFFIX,cr173.com,DIRECT",
-"DOMAIN-SUFFIX,xz7.com,DIRECT",
-"DOMAIN-SUFFIX,downcc.com,DIRECT",
-"DOMAIN-SUFFIX,orsoon.com,DIRECT",
-"DOMAIN-SUFFIX,digit77.com,DIRECT",
-"DOMAIN-SUFFIX,waitsun.com,DIRECT",
-"DOMAIN-SUFFIX,maczapp.com,DIRECT",
-"DOMAIN-SUFFIX,xclient.info,DIRECT",
-"DOMAIN-SUFFIX,liqucn.com,DIRECT",
-"DOMAIN-SUFFIX,pc6.com,DIRECT",
-"DOMAIN-SUFFIX,downza.cn,DIRECT",
-"DOMAIN-SUFFIX,macapp.org.cn,DIRECT",
-"DOMAIN-SUFFIX,macx.cn,DIRECT",
-"DOMAIN-SUFFIX,iplaysoft.com,DIRECT",
-"DOMAIN-SUFFIX,appinn.com,DIRECT",
-"DOMAIN-SUFFIX,uupdump.net,DIRECT",
-"DOMAIN-SUFFIX,next.itellyou.cn,DIRECT",
-"DOMAIN-SUFFIX,portablesoft.org,DIRECT",
-"DOMAIN-SUFFIX,macbl.com,DIRECT",  // 可选，保险加
-"DOMAIN-SUFFIX,feng.com,DIRECT",  // 威锋网
-"DOMAIN-SUFFIX,luobou.com,DIRECT",  // 萝卜家园
+DOMAIN-SUFFIX,pc528.net
+DOMAIN-SUFFIX,pc521.net
+DOMAIN-SUFFIX,cr173.com
+DOMAIN-SUFFIX,xz7.com
+DOMAIN-SUFFIX,downcc.com
+DOMAIN-SUFFIX,orsoon.com
+DOMAIN-SUFFIX,digit77.com
+DOMAIN-SUFFIX,waitsun.com
+DOMAIN-SUFFIX,maczapp.com
+DOMAIN-SUFFIX,xclient.info
+DOMAIN-SUFFIX,liqucn.com
+DOMAIN-SUFFIX,pc6.com
+DOMAIN-SUFFIX,downza.cn
+DOMAIN-SUFFIX,macapp.org.cn
+DOMAIN-SUFFIX,macx.cn
+DOMAIN-SUFFIX,iplaysoft.com
+DOMAIN-SUFFIX,appinn.com
+DOMAIN-SUFFIX,uupdump.net
+DOMAIN-SUFFIX,next.itellyou.cn
+DOMAIN-SUFFIX,portablesoft.org
+DOMAIN-SUFFIX,macbl.com
+DOMAIN-SUFFIX,feng.com
+DOMAIN-SUFFIX,luobou.com
