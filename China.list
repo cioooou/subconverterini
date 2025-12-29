@@ -22,3 +22,36 @@ DOMAIN-SUFFIX,portablesoft.org
 DOMAIN-SUFFIX,macbl.com
 DOMAIN-SUFFIX,feng.com
 DOMAIN-SUFFIX,luobou.com
+
+// 国内远程控制/远程桌面软件 - 必须直连（低延迟、不卡顿）
+DOMAIN-SUFFIX,anyviewer.com
+DOMAIN-SUFFIX,anyviewer.cn
+DOMAIN-SUFFIX,aomeitech.com          // AnyViewer 母公司
+
+DOMAIN-SUFFIX,todesk.com
+DOMAIN-SUFFIX,todesk.cn             // ToDesk（国产，国内服务器）
+
+DOMAIN-SUFFIX,sunlogin.oray.com
+DOMAIN-SUFFIX,oray.com              // 向日葵远程控制
+
+DOMAIN-SUFFIX,teamviewer.cn
+DOMAIN-SUFFIX,teamviewer.com.cn     // TeamViewer 中国节点（部分流量走国内）
+
+DOMAIN-SUFFIX,remotedesktop.baidu.com
+DOMAIN-SUFFIX,pan.baidu.com         // 百度网盘远程下载有时涉及（可选）
+
+DOMAIN-SUFFIX,qq.com                // 腾讯系远程协助（如 QQ 远程桌面）
+DOMAIN-SUFFIX,tencent.com
+
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,bytedance.net         // 飞书远程（字节跳动国内服务器）
+
+DOMAIN-SUFFIX,dingtalk.com
+DOMAIN-SUFFIX,alibaba-inc.com       // 钉钉远程
+
+DOMAIN-SUFFIX,weiyun.com            // 腾讯微云远程相关（可选）
+
+// 其他国产远程工具（较小众但国内服务器）
+DOMAIN-SUFFIX,getscreen.me          // GetScreen（部分用户反馈国内节点）
+DOMAIN-SUFFIX,cloudroom.com         // 云屋远程
+DOMAIN-SUFFIX,beylink.com           // Beylink 远程
