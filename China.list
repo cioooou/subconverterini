@@ -1,4 +1,60 @@
-// 海外托管中国资源站直连补充（精简版，重点下载/镜像/Mac站）
+// --- [1. 系统与工具] 解决测速、登录转圈 ---
+DOMAIN-KEYWORD,digrun
+DOMAIN-KEYWORD,speedtest
+DOMAIN-SUFFIX,p14-buy.itunes.apple.com
+
+// --- [2. 远程控制] 低延迟不卡顿 ---
+DOMAIN-SUFFIX,anyviewer.com
+DOMAIN-SUFFIX,anyviewer.cn
+DOMAIN-SUFFIX,aomeitech.com
+DOMAIN-SUFFIX,todesk.com
+DOMAIN-SUFFIX,todesk.cn
+DOMAIN-SUFFIX,oray.com
+DOMAIN-SUFFIX,sunlogin.oray.com
+DOMAIN-SUFFIX,teamviewer.cn
+DOMAIN-SUFFIX,teamviewer.com.cn
+DOMAIN-SUFFIX,remotedesktop.baidu.com
+DOMAIN-SUFFIX,getscreen.me
+DOMAIN-SUFFIX,cloudroom.com
+DOMAIN-SUFFIX,beylink.com
+
+// --- [3. 金融支付] 防止安全检测报错 ---
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,unionpay.com
+DOMAIN-SUFFIX,upay.com
+DOMAIN-SUFFIX,abchina.com
+DOMAIN-SUFFIX,abchina.com.cn
+DOMAIN-SUFFIX,bankcomm.com
+DOMAIN-SUFFIX,bankofchina.com
+DOMAIN-SUFFIX,boc.cn
+DOMAIN-SUFFIX,ccb.com
+DOMAIN-SUFFIX,ccb.com.cn
+DOMAIN-SUFFIX,cebbank.com
+DOMAIN-SUFFIX,cib.com.cn
+DOMAIN-SUFFIX,cmbchina.com
+DOMAIN-SUFFIX,cmbi.com
+DOMAIN-SUFFIX,icbc.com.cn
+DOMAIN-SUFFIX,psbc.com
+DOMAIN-SUFFIX,spdb.com.cn
+
+// --- [4. 社交与办公] 消息图片加速 ---
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,tencent.com
+DOMAIN-SUFFIX,gtimg.com
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,weiyun.com
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,bytedance.net
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,dingtalk.com
+DOMAIN-SUFFIX,alibaba-inc.com
+DOMAIN-SUFFIX,larksuite.com
+DOMAIN-SUFFIX,sinaimg.cn
+DOMAIN-SUFFIX,mshome.net
+
+// --- [5. 资源站与下载] 海外托管国内资源 ---
 DOMAIN-SUFFIX,pc528.net
 DOMAIN-SUFFIX,pc521.net
 DOMAIN-SUFFIX,cr173.com
@@ -22,36 +78,4 @@ DOMAIN-SUFFIX,portablesoft.org
 DOMAIN-SUFFIX,macbl.com
 DOMAIN-SUFFIX,feng.com
 DOMAIN-SUFFIX,luobou.com
-
-// 国内远程控制/远程桌面软件 - 必须直连（低延迟、不卡顿）
-DOMAIN-SUFFIX,anyviewer.com
-DOMAIN-SUFFIX,anyviewer.cn
-DOMAIN-SUFFIX,aomeitech.com          // AnyViewer 母公司
-
-DOMAIN-SUFFIX,todesk.com
-DOMAIN-SUFFIX,todesk.cn             // ToDesk（国产，国内服务器）
-
-DOMAIN-SUFFIX,sunlogin.oray.com
-DOMAIN-SUFFIX,oray.com              // 向日葵远程控制
-
-DOMAIN-SUFFIX,teamviewer.cn
-DOMAIN-SUFFIX,teamviewer.com.cn     // TeamViewer 中国节点（部分流量走国内）
-
-DOMAIN-SUFFIX,remotedesktop.baidu.com
-DOMAIN-SUFFIX,pan.baidu.com         // 百度网盘远程下载有时涉及（可选）
-
-DOMAIN-SUFFIX,qq.com                // 腾讯系远程协助（如 QQ 远程桌面）
-DOMAIN-SUFFIX,tencent.com
-
-DOMAIN-SUFFIX,feishu.cn
-DOMAIN-SUFFIX,bytedance.net         // 飞书远程（字节跳动国内服务器）
-
-DOMAIN-SUFFIX,dingtalk.com
-DOMAIN-SUFFIX,alibaba-inc.com       // 钉钉远程
-
-DOMAIN-SUFFIX,weiyun.com            // 腾讯微云远程相关（可选）
-
-// 其他国产远程工具（较小众但国内服务器）
-DOMAIN-SUFFIX,getscreen.me          // GetScreen（部分用户反馈国内节点）
-DOMAIN-SUFFIX,cloudroom.com         // 云屋远程
-DOMAIN-SUFFIX,beylink.com           // Beylink 远程
+DOMAIN-SUFFIX,pan.baidu.com
