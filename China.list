@@ -15,11 +15,6 @@ DOMAIN-SUFFIX,xiaomi.com
 DOMAIN-SUFFIX,mi-img.com
 DOMAIN-SUFFIX,miui.com
 
-# 核心端口防护 (保持不变)
-DEST-PORT,8451-8453
-DEST-PORT,3478
-DEST-PORT,5223
-
 # --- [2. 顶级域名后缀规范化] ---
 # 腾讯
 DOMAIN-SUFFIX,tencent.com
