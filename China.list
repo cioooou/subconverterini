@@ -1,9 +1,47 @@
-// --- [1. 系统与工具] 解决测速、登录转圈 ---
-DOMAIN-KEYWORD,digrun
-DOMAIN-KEYWORD,speedtest
-DOMAIN-SUFFIX,p14-buy.itunes.apple.com
+# --- [1. 核心协议与端口防护] 钉钉 8452 报错与通话质量 ---
+DOMAIN-KEYWORD,dingtalk,no-resolve
+DOMAIN-KEYWORD,alicdn,no-resolve
+DOMAIN-KEYWORD,aliyun,no-resolve
+DOMAIN-KEYWORD,xiaomi,no-resolve
+DOMAIN-KEYWORD,mi-img,no-resolve
+DEST-PORT,8451-8453
+DEST-PORT,3478
+DEST-PORT,5223
 
-// --- [2. 远程控制] 低延迟不卡顿 ---
+# --- [2. 顶级关键词暴力压制] ---
+DOMAIN-KEYWORD,tencent,no-resolve
+DOMAIN-KEYWORD,alipay,no-resolve
+DOMAIN-KEYWORD,taobao,no-resolve
+DOMAIN-KEYWORD,baidu,no-resolve
+DOMAIN-KEYWORD,bytedance,no-resolve
+DOMAIN-KEYWORD,pstatp,no-resolve
+DOMAIN-KEYWORD,feishu,no-resolve
+DOMAIN-KEYWORD,amap,no-resolve
+DOMAIN-KEYWORD,autonavi,no-resolve
+DOMAIN-KEYWORD,jd,no-resolve
+DOMAIN-KEYWORD,netease,no-resolve
+DOMAIN-KEYWORD,sf-express,no-resolve
+DOMAIN-KEYWORD,huawei,no-resolve
+DOMAIN-KEYWORD,vivo,no-resolve
+DOMAIN-KEYWORD,oppo,no-resolve
+DOMAIN-KEYWORD,speedtest,no-resolve
+DOMAIN-KEYWORD,digrun,no-resolve
+
+# --- [3. 隐性 CDN 与流氓后缀补漏] ---
+DOMAIN-SUFFIX,gtimg.com,no-resolve
+DOMAIN-SUFFIX,qlogo.cn,no-resolve
+DOMAIN-SUFFIX,qpic.cn,no-resolve
+DOMAIN-SUFFIX,qhimg.com,no-resolve
+DOMAIN-SUFFIX,qhres.com,no-resolve
+DOMAIN-SUFFIX,sankuai.com,no-resolve
+DOMAIN-SUFFIX,meituan.net,no-resolve
+DOMAIN-SUFFIX,bdstatic.com,no-resolve
+DOMAIN-SUFFIX,byteimg.com,no-resolve
+DOMAIN-SUFFIX,jmodm.com,no-resolve
+DOMAIN-SUFFIX,mshome.net,no-resolve
+DOMAIN-SUFFIX,p14-buy.itunes.apple.com,no-resolve
+
+# --- [4. 远程控制 低延迟通道] ---
 DOMAIN-SUFFIX,anyviewer.com
 DOMAIN-SUFFIX,anyviewer.cn
 DOMAIN-SUFFIX,aomeitech.com
@@ -18,11 +56,10 @@ DOMAIN-SUFFIX,getscreen.me
 DOMAIN-SUFFIX,cloudroom.com
 DOMAIN-SUFFIX,beylink.com
 
-// --- [3. 金融支付] 防止安全检测报错 ---
-DOMAIN-SUFFIX,alipay.com
-DOMAIN-SUFFIX,alipayobjects.com
+# --- [5. 金融支付 风控白名单] ---
 DOMAIN-SUFFIX,unionpay.com
 DOMAIN-SUFFIX,upay.com
+DOMAIN-SUFFIX,95516.com
 DOMAIN-SUFFIX,abchina.com
 DOMAIN-SUFFIX,abchina.com.cn
 DOMAIN-SUFFIX,bankcomm.com
@@ -38,23 +75,15 @@ DOMAIN-SUFFIX,icbc.com.cn
 DOMAIN-SUFFIX,psbc.com
 DOMAIN-SUFFIX,spdb.com.cn
 
-// --- [4. 社交与办公] 消息图片加速 ---
+# --- [6. 社交办公补漏] ---
 DOMAIN-SUFFIX,qq.com
 DOMAIN-SUFFIX,tencent.com
-DOMAIN-SUFFIX,gtimg.com
-DOMAIN-SUFFIX,qpic.cn
 DOMAIN-SUFFIX,weiyun.com
-DOMAIN-SUFFIX,feishu.cn
-DOMAIN-SUFFIX,bytedance.net
-DOMAIN-SUFFIX,pstatp.com
-DOMAIN-SUFFIX,byteimg.com
-DOMAIN-SUFFIX,dingtalk.com
-DOMAIN-SUFFIX,alibaba-inc.com
 DOMAIN-SUFFIX,larksuite.com
 DOMAIN-SUFFIX,sinaimg.cn
-DOMAIN-SUFFIX,mshome.net
+DOMAIN-SUFFIX,alibaba-inc.com
 
-// --- [5. 资源站与下载] 海外托管国内资源 ---
+# --- [7. 资源站与下载 海外托管国内资源加速] ---
 DOMAIN-SUFFIX,pc528.net
 DOMAIN-SUFFIX,pc521.net
 DOMAIN-SUFFIX,cr173.com
@@ -79,3 +108,7 @@ DOMAIN-SUFFIX,macbl.com
 DOMAIN-SUFFIX,feng.com
 DOMAIN-SUFFIX,luobou.com
 DOMAIN-SUFFIX,pan.baidu.com
+DOMAIN-SUFFIX,123pan.com
+DOMAIN-SUFFIX,lanzou.com
+DOMAIN-SUFFIX,lanzoui.com
+DOMAIN-SUFFIX,lanzoux.com
