@@ -1,45 +1,45 @@
 # --- [1. 核心协议与端口防护] 钉钉 8452 报错与通话质量 ---
-DOMAIN-KEYWORD,dingtalk,no-resolve
-DOMAIN-KEYWORD,alicdn,no-resolve
-DOMAIN-KEYWORD,aliyun,no-resolve
-DOMAIN-KEYWORD,xiaomi,no-resolve
-DOMAIN-KEYWORD,mi-img,no-resolve
+DOMAIN-KEYWORD,dingtalk
+DOMAIN-KEYWORD,alicdn
+DOMAIN-KEYWORD,aliyun
+DOMAIN-KEYWORD,xiaomi
+DOMAIN-KEYWORD,mi-img
 DEST-PORT,8451-8453
 DEST-PORT,3478
 DEST-PORT,5223
 
 # --- [2. 顶级关键词暴力压制] ---
-DOMAIN-KEYWORD,tencent,no-resolve
-DOMAIN-KEYWORD,alipay,no-resolve
-DOMAIN-KEYWORD,taobao,no-resolve
-DOMAIN-KEYWORD,baidu,no-resolve
-DOMAIN-KEYWORD,bytedance,no-resolve
-DOMAIN-KEYWORD,pstatp,no-resolve
-DOMAIN-KEYWORD,feishu,no-resolve
-DOMAIN-KEYWORD,amap,no-resolve
-DOMAIN-KEYWORD,autonavi,no-resolve
-DOMAIN-KEYWORD,jd,no-resolve
-DOMAIN-KEYWORD,netease,no-resolve
-DOMAIN-KEYWORD,sf-express,no-resolve
-DOMAIN-KEYWORD,huawei,no-resolve
-DOMAIN-KEYWORD,vivo,no-resolve
-DOMAIN-KEYWORD,oppo,no-resolve
-DOMAIN-KEYWORD,speedtest,no-resolve
-DOMAIN-KEYWORD,digrun,no-resolve
+DOMAIN-KEYWORD,tencent
+DOMAIN-KEYWORD,alipay
+DOMAIN-KEYWORD,taobao
+DOMAIN-KEYWORD,baidu
+DOMAIN-KEYWORD,bytedance
+DOMAIN-KEYWORD,pstatp
+DOMAIN-KEYWORD,feishu
+DOMAIN-KEYWORD,amap
+DOMAIN-KEYWORD,autonavi
+DOMAIN-KEYWORD,jd
+DOMAIN-KEYWORD,netease
+DOMAIN-KEYWORD,sf-express
+DOMAIN-KEYWORD,huawei
+DOMAIN-KEYWORD,vivo
+DOMAIN-KEYWORD,oppo
+DOMAIN-KEYWORD,speedtest
+DOMAIN-KEYWORD,digrun
 
 # --- [3. 隐性 CDN 与流氓后缀补漏] ---
-DOMAIN-SUFFIX,gtimg.com,no-resolve
-DOMAIN-SUFFIX,qlogo.cn,no-resolve
-DOMAIN-SUFFIX,qpic.cn,no-resolve
-DOMAIN-SUFFIX,qhimg.com,no-resolve
-DOMAIN-SUFFIX,qhres.com,no-resolve
-DOMAIN-SUFFIX,sankuai.com,no-resolve
-DOMAIN-SUFFIX,meituan.net,no-resolve
-DOMAIN-SUFFIX,bdstatic.com,no-resolve
-DOMAIN-SUFFIX,byteimg.com,no-resolve
-DOMAIN-SUFFIX,jmodm.com,no-resolve
-DOMAIN-SUFFIX,mshome.net,no-resolve
-DOMAIN-SUFFIX,p14-buy.itunes.apple.com,no-resolve
+DOMAIN-SUFFIX,gtimg.com
+DOMAIN-SUFFIX,qlogo.cn
+DOMAIN-SUFFIX,qpic.cn
+DOMAIN-SUFFIX,qhimg.com
+DOMAIN-SUFFIX,qhres.com
+DOMAIN-SUFFIX,sankuai.com
+DOMAIN-SUFFIX,meituan.net
+DOMAIN-SUFFIX,bdstatic.com
+DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,jmodm.com
+DOMAIN-SUFFIX,mshome.net
+DOMAIN-SUFFIX,p14-buy.itunes.apple.com
 
 # --- [4. 远程控制 低延迟通道] ---
 DOMAIN-SUFFIX,anyviewer.com
