@@ -1,32 +1,71 @@
-# --- [1. 核心协议与端口防护] 钉钉 8452 报错与通话质量 ---
-DOMAIN-KEYWORD,dingtalk
-DOMAIN-KEYWORD,alicdn
-DOMAIN-KEYWORD,aliyun
-DOMAIN-KEYWORD,xiaomi
-DOMAIN-KEYWORD,mi-img
+# --- [1. 核心协议与端口防护] 钉钉、大厂 CDN 与通话质量 ---
+# 钉钉相关 (解决 8452 报错及视频通话)
+DOMAIN-SUFFIX,dingtalk.com
+DOMAIN-SUFFIX,dingtalk.net
+DOMAIN-SUFFIX,dg-work.com
+
+# 阿里云与 CDN (核心基础设施)
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,aliyun.com
+DOMAIN-SUFFIX,aliyuncs.com
+
+# 小米相关
+DOMAIN-SUFFIX,mi.com
+DOMAIN-SUFFIX,xiaomi.com
+DOMAIN-SUFFIX,mi-img.com
+DOMAIN-SUFFIX,miui.com
+
+# 核心端口防护 (保持不变)
 DEST-PORT,8451-8453
 DEST-PORT,3478
 DEST-PORT,5223
 
-# --- [2. 顶级关键词暴力压制] ---
-DOMAIN-KEYWORD,tencent
-DOMAIN-KEYWORD,alipay
-DOMAIN-KEYWORD,taobao
-DOMAIN-KEYWORD,baidu
-DOMAIN-KEYWORD,bytedance
-DOMAIN-KEYWORD,pstatp
-DOMAIN-KEYWORD,feishu
-DOMAIN-KEYWORD,amap
-DOMAIN-KEYWORD,autonavi
-DOMAIN-KEYWORD,jd
-DOMAIN-KEYWORD,netease
-DOMAIN-KEYWORD,sf-express
-DOMAIN-KEYWORD,huawei
-DOMAIN-KEYWORD,vivo
-DOMAIN-KEYWORD,oppo
-DOMAIN-KEYWORD,speedtest
-DOMAIN-KEYWORD,digrun
+# --- [2. 顶级域名后缀规范化] ---
+# 腾讯
+DOMAIN-SUFFIX,tencent.com
+DOMAIN-SUFFIX,qq.com
 
+# 支付宝与淘宝 (阿里系)
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,tmall.com
+
+# 百度
+DOMAIN-SUFFIX,baidu.com
+DOMAIN-SUFFIX,bdstatic.com
+
+# 字节跳动 (抖音/头条/飞书)
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,larksuite.com
+
+# 高德地图
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,autonavi.com
+
+# 京东
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,360buyimg.com
+
+# 网易
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,126.net
+
+# 顺丰
+DOMAIN-SUFFIX,sf-express.com
+
+# 手机厂商 (推送通道防护)
+DOMAIN-SUFFIX,huawei.com
+DOMAIN-SUFFIX,dbankcdn.com
+DOMAIN-SUFFIX,vivo.com
+DOMAIN-SUFFIX,oppo.com
+
+# 测速与诊断
+DOMAIN-SUFFIX,speedtest.net
+DOMAIN-SUFFIX,digrun.com
 # --- [3. 隐性 CDN 与流氓后缀补漏] ---
 DOMAIN-SUFFIX,gtimg.com
 DOMAIN-SUFFIX,qlogo.cn
