@@ -3,12 +3,10 @@
 DOMAIN-SUFFIX,dingtalk.com
 DOMAIN-SUFFIX,dingtalk.net
 DOMAIN-SUFFIX,dg-work.com
-
 # 阿里云与 CDN (核心基础设施)
 DOMAIN-SUFFIX,alicdn.com
 DOMAIN-SUFFIX,aliyun.com
 DOMAIN-SUFFIX,aliyuncs.com
-
 # 小米相关
 DOMAIN-SUFFIX,mi.com
 DOMAIN-SUFFIX,xiaomi.com
@@ -19,48 +17,40 @@ DOMAIN-SUFFIX,miui.com
 # 腾讯
 DOMAIN-SUFFIX,tencent.com
 DOMAIN-SUFFIX,qq.com
-
 # 支付宝与淘宝 (阿里系)
 DOMAIN-SUFFIX,alipay.com
 DOMAIN-SUFFIX,alipayobjects.com
 DOMAIN-SUFFIX,taobao.com
 DOMAIN-SUFFIX,tmall.com
-
 # 百度
 DOMAIN-SUFFIX,baidu.com
 DOMAIN-SUFFIX,bdstatic.com
-
 # 字节跳动 (抖音/头条/飞书)
 DOMAIN-SUFFIX,bytedance.com
 DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,snssdk.com
 DOMAIN-SUFFIX,feishu.cn
 DOMAIN-SUFFIX,larksuite.com
-
 # 高德地图
 DOMAIN-SUFFIX,amap.com
 DOMAIN-SUFFIX,autonavi.com
-
 # 京东
 DOMAIN-SUFFIX,jd.com
 DOMAIN-SUFFIX,360buyimg.com
-
 # 网易
 DOMAIN-SUFFIX,163.com
 DOMAIN-SUFFIX,126.net
-
 # 顺丰
 DOMAIN-SUFFIX,sf-express.com
-
 # 手机厂商 (推送通道防护)
 DOMAIN-SUFFIX,huawei.com
 DOMAIN-SUFFIX,dbankcdn.com
 DOMAIN-SUFFIX,vivo.com
 DOMAIN-SUFFIX,oppo.com
-
 # 测速与诊断
 DOMAIN-SUFFIX,speedtest.net
 DOMAIN-SUFFIX,digrun.com
+
 # --- [3. 隐性 CDN 与流氓后缀补漏] ---
 DOMAIN-SUFFIX,gtimg.com
 DOMAIN-SUFFIX,qlogo.cn
@@ -146,3 +136,60 @@ DOMAIN-SUFFIX,123pan.com
 DOMAIN-SUFFIX,lanzou.com
 DOMAIN-SUFFIX,lanzoui.com
 DOMAIN-SUFFIX,lanzoux.com
+
+# --- [生鲜配送] ---
+# 朴朴超市 (补齐)
+DOMAIN-SUFFIX,pupufz.com
+DOMAIN-SUFFIX,pupuapp.com
+DOMAIN-KEYWORD,pupu
+# 叮咚买菜
+DOMAIN-SUFFIX,ddmc.com.cn
+DOMAIN-SUFFIX,maicai.com
+# 盒马鲜生
+DOMAIN-SUFFIX,freshhema.com
+DOMAIN-SUFFIX,freshippo.com
+# 美团/大众点评 (核心下单逻辑)
+DOMAIN-SUFFIX,meituan.com
+DOMAIN-SUFFIX,meituan.net
+DOMAIN-SUFFIX,dianping.com
+DOMAIN-SUFFIX,dpfile.com
+
+# --- [金融支付] ---
+# 支付宝
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,alipay.net
+# 银联/云闪付
+DOMAIN-SUFFIX,unionpay.com
+DOMAIN-SUFFIX,95516.com
+DOMAIN-SUFFIX,unionpaysecure.com
+# 微信支付核心
+DOMAIN-SUFFIX,pay.weixin.qq.com
+DOMAIN-SUFFIX,tenpay.com
+# 京东支付/白条
+DOMAIN-SUFFIX,jdpay.com
+
+# --- [电商购物] ---
+# 京东 (图片 CDN 极多)
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,jdmall.com
+# 闲鱼 (阿里系私有协议)
+DOMAIN-SUFFIX,idlefish.com
+DOMAIN-SUFFIX,xianyu.com
+# 菜鸟裹裹 (查快递必选)
+DOMAIN-SUFFIX,cainiao.com
+DOMAIN-SUFFIX,cainiao.com.cn
+
+# --- [品牌服务] ---
+# 小米/米家 (补全底层长连)
+DOMAIN-SUFFIX,mi-img.com
+DOMAIN-SUFFIX,xiaomiyoupin.com
+DOMAIN-KEYWORD,mi-dns
+# 华为 (针对部分系统推送)
+DOMAIN-SUFFIX,huawei.com
+DOMAIN-SUFFIX,dbankcloud.cn
+DOMAIN-SUFFIX,dbankcloud.com
+# Vivo (针对你的 reject 规则里对应的官方组件)
+DOMAIN-SUFFIX,vivo.com.cn
+DOMAIN-SUFFIX,vivoglobal.com
