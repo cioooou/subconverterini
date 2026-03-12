@@ -43,7 +43,6 @@ DOMAIN-SUFFIX,dependabot.com
 DOMAIN-SUFFIX,ghcr.io
 DOMAIN-SUFFIX,git.io
 DOMAIN-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net
-DOMAIN-SUFFIX,github-avatars.oss-cn-hongkong.aliyuncs.com
 DOMAIN-SUFFIX,github-cloud.s3.amazonaws.com
 DOMAIN-SUFFIX,github.blog
 DOMAIN-SUFFIX,github.com
@@ -80,7 +79,7 @@ DOMAIN-SUFFIX,storage.live.com
 DOMAIN-SUFFIX,skydrive.wns.windows.com
 DOMAIN-SUFFIX,spoprod-a.akamaihd.net      # Akamai CDN，文件分发/预览
 DOMAIN-SUFFIX,login.live.com              # 登录认证必须
-DOMAIN-SUFFIX,*.files.1drv.com            # 文件核心存储（强烈推荐通配）
+DOMAIN-SUFFIX,files.1drv.com            # 文件核心存储（强烈推荐通配）
 DOMAIN-SUFFIX,odc.officeapps.live.com     # Office 集成相关
 
 # ── 关键词匹配（增强覆盖） ────────────────────────────────────────
