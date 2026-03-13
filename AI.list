@@ -81,3 +81,43 @@ DOMAIN-SUFFIX,g.ai
 DOMAIN,ct.palcloud.top
 DOMAIN-SUFFIX,lihi.io
 DOMAIN-SUFFIX,lihi.cc
+
+# === LobeChat & 同步服务 (针对你目前的软件需求) ===
+DOMAIN-SUFFIX,lobehub.com
+DOMAIN-SUFFIX,lobechat.com
+DOMAIN-SUFFIX,clerk.com
+DOMAIN,api.clerk.dev
+
+# === OpenRouter & API 增强 (确保 API 响应更稳) ===
+DOMAIN-SUFFIX,openrouter.ai
+DOMAIN-SUFFIX,chathub.gg
+
+# === 绘图 & 视觉 AI (针对改图需求补充) ===
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,fal.ai
+DOMAIN-SUFFIX,fal.run
+DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,replicate.delivery
+DOMAIN-SUFFIX,bfl.ml
+
+# === 音乐 & 多媒体 AI (主流补充) ===
+DOMAIN-SUFFIX,suno.com
+DOMAIN-SUFFIX,suno.ai
+DOMAIN-SUFFIX,udio.com
+DOMAIN-SUFFIX,runwayml.com
+DOMAIN-SUFFIX,luma.ai
+
+# === 其它开发者常用 AI 补充 (针对代码分析) ===
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,v0.dev
+DOMAIN-SUFFIX,kinde.com
+DOMAIN-SUFFIX,tally.so
+
+# === 支付与风控支持 (确保充值顺利) ===
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
