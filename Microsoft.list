@@ -1,93 +1,103 @@
-# NAME: Microsoft 全家桶 + OneDrive 同步 + GitHub（无客户端更新通道）
-# DESCRIPTION: 微软核心服务 + OneDrive 文件同步必需（排除软件更新相关） + GitHub（微软子公司）域名
-# 注意: 已移除 g.live.com、oneclient.sfx.ms 等，避免 OneDrive 客户端自动更新
-# 来源: 基于 blackmatrix7 ios_rule_script + 用户自定义整合
+# NAME: Microsoft + OneDrive Sync + GitHub (No Client Update)
 # UPDATED: 2026-03
+# 说明: 微软核心服务 + OneDrive 同步 + GitHub
+# 已移除 OneDrive 客户端更新通道
 
-# ── 微软核心 & 通用域名 ────────────────────────────────────────
-DOMAIN,vsmarketplacebadge.apphb.com
+# ── Microsoft 核心服务 ─────────────────────────
+
 DOMAIN-SUFFIX,1drv.ms
 DOMAIN-SUFFIX,aka.ms
 DOMAIN-SUFFIX,a-msedge.net
-DOMAIN-SUFFIX,azure
+
 DOMAIN-SUFFIX,azure.cn
 DOMAIN-SUFFIX,azure.com
 DOMAIN-SUFFIX,azure.net
 DOMAIN-SUFFIX,azureedge.net
 DOMAIN-SUFFIX,azurewebsites.net
-DOMAIN-SUFFIX,bing
+
 DOMAIN-SUFFIX,bing.com
+
 DOMAIN-SUFFIX,hotmail.com
 DOMAIN-SUFFIX,live.cn
 DOMAIN-SUFFIX,live.com
+
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,microsoft.net
 DOMAIN-SUFFIX,microsoft365.com
 DOMAIN-SUFFIX,microsoftonline.com
 DOMAIN-SUFFIX,microsoftonline.cn
+
 DOMAIN-SUFFIX,msedge.net
+
 DOMAIN-SUFFIX,office.com
 DOMAIN-SUFFIX,office365.com
+
 DOMAIN-SUFFIX,outlook.com
+
 DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,sharepointonline.com
+
 DOMAIN-SUFFIX,skype.com
 DOMAIN-SUFFIX,windows.com
 DOMAIN-SUFFIX,xbox.com
+
 DOMAIN-SUFFIX,visualstudio.com
 DOMAIN-SUFFIX,minecraft.net
 DOMAIN-SUFFIX,microsoftstore.com
 
-# ── GitHub 相关域名（微软子公司，代码托管/开发者服务） ────────────────
+# ── GitHub（微软子公司）────────────────────────
+
 DOMAIN-SUFFIX,atom.io
 DOMAIN-SUFFIX,dependabot.com
 DOMAIN-SUFFIX,ghcr.io
 DOMAIN-SUFFIX,git.io
-DOMAIN-SUFFIX,github-atom-io-herokuapp-com.freetls.fastly.net
-DOMAIN-SUFFIX,github-cloud.s3.amazonaws.com
-DOMAIN-SUFFIX,github.blog
+
 DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,github.community
 DOMAIN-SUFFIX,github.dev
 DOMAIN-SUFFIX,github.io
-DOMAIN-SUFFIX,githubapp.com
 DOMAIN-SUFFIX,githubassets.com
-DOMAIN-SUFFIX,githubcopilot.com
-DOMAIN-SUFFIX,githubhackathon.com
-DOMAIN-SUFFIX,githubnext.com
-DOMAIN-SUFFIX,githubpreview.dev
-DOMAIN-SUFFIX,githubstatus.com
-DOMAIN-SUFFIX,githubuniverse.com
 DOMAIN-SUFFIX,githubusercontent.com
-DOMAIN-SUFFIX,myoctocat.com
-DOMAIN-SUFFIX,npm.community
+DOMAIN-SUFFIX,githubapp.com
+
+DOMAIN-SUFFIX,github.blog
+DOMAIN-SUFFIX,github.community
+DOMAIN-SUFFIX,githubstatus.com
+DOMAIN-SUFFIX,githubpreview.dev
+
 DOMAIN-SUFFIX,npmjs.com
 DOMAIN-SUFFIX,npmjs.org
-DOMAIN-SUFFIX,opensource.guide
-DOMAIN-SUFFIX,rawgit.com
-DOMAIN-SUFFIX,rawgithub.com
-DOMAIN-SUFFIX,repo.new
-DOMAIN-SUFFIX,thegithubshop.com
 
-# ── OneDrive 文件同步核心（官方必需，不含更新通道） ────────
+DOMAIN-SUFFIX,opensource.guide
+
+# ── OneDrive 同步核心（无更新通道）──────────────
+
 DOMAIN-SUFFIX,1drv.com
 DOMAIN-SUFFIX,livefilestore.com
 DOMAIN-SUFFIX,onedrive.com
 DOMAIN-SUFFIX,onedrive.live.com
 DOMAIN-SUFFIX,photos.live.com
-DOMAIN-SUFFIX,sharepointonline.com
+
 DOMAIN-SUFFIX,storage.live.com
-DOMAIN-SUFFIX,skydrive.wns.windows.com
-DOMAIN-SUFFIX,spoprod-a.akamaihd.net
-DOMAIN-SUFFIX,login.live.com
+
 DOMAIN-SUFFIX,files.1drv.com
 DOMAIN-SUFFIX,odc.officeapps.live.com
 
-# ── 关键词匹配（增强覆盖） ────────────────────────────────────────
+DOMAIN-SUFFIX,skydrive.wns.windows.com
+
+DOMAIN,spoprod-a.akamaihd.net
+
+DOMAIN-SUFFIX,login.live.com
+
+DOMAIN-SUFFIX,sharepoint-df.com
+
+# ── 关键词增强匹配 ─────────────────────────
+
 DOMAIN-KEYWORD,microsoft
-DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,onedrive
+DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,skydrive
 DOMAIN-KEYWORD,github
 
-# ── 允许 OneDrive 主进程联网（同步最关键） ────────────────────────────────
+# ── OneDrive 进程允许联网 ─────────────────────
+
 PROCESS-NAME,OneDrive
