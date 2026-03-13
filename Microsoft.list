@@ -1,9 +1,9 @@
-# NAME: Microsoft + OneDrive Sync + GitHub (No Client Update)
+# NAME: Microsoft + OneDrive Sync + GitHub
 # UPDATED: 2026-03
-# 说明: 微软核心服务 + OneDrive 同步 + GitHub
-# 已移除 OneDrive 客户端更新通道
+# 说明：微软核心服务 + OneDrive 文件同步 + GitHub
+# 已排除 OneDrive 客户端更新域名
 
-# ── Microsoft 核心服务 ─────────────────────────
+# ───────── Microsoft 核心服务 ─────────
 
 DOMAIN-SUFFIX,1drv.ms
 DOMAIN-SUFFIX,aka.ms
@@ -24,6 +24,7 @@ DOMAIN-SUFFIX,live.com
 DOMAIN-SUFFIX,microsoft.com
 DOMAIN-SUFFIX,microsoft.net
 DOMAIN-SUFFIX,microsoft365.com
+
 DOMAIN-SUFFIX,microsoftonline.com
 DOMAIN-SUFFIX,microsoftonline.cn
 
@@ -45,7 +46,7 @@ DOMAIN-SUFFIX,visualstudio.com
 DOMAIN-SUFFIX,minecraft.net
 DOMAIN-SUFFIX,microsoftstore.com
 
-# ── GitHub（微软子公司）────────────────────────
+# ───────── GitHub ─────────
 
 DOMAIN-SUFFIX,atom.io
 DOMAIN-SUFFIX,dependabot.com
@@ -66,10 +67,9 @@ DOMAIN-SUFFIX,githubpreview.dev
 
 DOMAIN-SUFFIX,npmjs.com
 DOMAIN-SUFFIX,npmjs.org
-
 DOMAIN-SUFFIX,opensource.guide
 
-# ── OneDrive 同步核心（无更新通道）──────────────
+# ───────── OneDrive 同步核心 ─────────
 
 DOMAIN-SUFFIX,1drv.com
 DOMAIN-SUFFIX,livefilestore.com
@@ -78,7 +78,6 @@ DOMAIN-SUFFIX,onedrive.live.com
 DOMAIN-SUFFIX,photos.live.com
 
 DOMAIN-SUFFIX,storage.live.com
-
 DOMAIN-SUFFIX,files.1drv.com
 DOMAIN-SUFFIX,odc.officeapps.live.com
 
@@ -90,7 +89,7 @@ DOMAIN-SUFFIX,login.live.com
 
 DOMAIN-SUFFIX,sharepoint-df.com
 
-# ── 关键词增强匹配 ─────────────────────────
+# ───────── 关键词增强 ─────────
 
 DOMAIN-KEYWORD,microsoft
 DOMAIN-KEYWORD,onedrive
@@ -98,6 +97,6 @@ DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,skydrive
 DOMAIN-KEYWORD,github
 
-# ── OneDrive 进程允许联网 ─────────────────────
+# ───────── OneDrive 进程 ─────────
 
 PROCESS-NAME,OneDrive
