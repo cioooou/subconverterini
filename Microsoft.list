@@ -77,10 +77,10 @@ DOMAIN-SUFFIX,photos.live.com
 DOMAIN-SUFFIX,sharepointonline.com
 DOMAIN-SUFFIX,storage.live.com
 DOMAIN-SUFFIX,skydrive.wns.windows.com
-DOMAIN-SUFFIX,spoprod-a.akamaihd.net      # Akamai CDN，文件分发/预览
-DOMAIN-SUFFIX,login.live.com              # 登录认证必须
-DOMAIN-SUFFIX,files.1drv.com            # 文件核心存储（强烈推荐通配）
-DOMAIN-SUFFIX,odc.officeapps.live.com     # Office 集成相关
+DOMAIN-SUFFIX,spoprod-a.akamaihd.net      
+DOMAIN-SUFFIX,login.live.com              
+DOMAIN-SUFFIX,files.1drv.com            
+DOMAIN-SUFFIX,odc.officeapps.live.com     
 
 # ── 关键词匹配（增强覆盖） ────────────────────────────────────────
 DOMAIN-KEYWORD,microsoft
