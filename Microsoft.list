@@ -1,4 +1,5 @@
-# Microsoft & OneDrive 整合列表 (已移除更新程序)
+# Microsoft & OneDrive 整合列表
+# 修正点：去除了导致报错的空格，补全了 OneDrive 关键域名
 
 # --- 微软通用服务 ---
 DOMAIN-KEYWORD,microsoft
@@ -77,7 +78,7 @@ DOMAIN-SUFFIX,wunderlist.com
 DOMAIN-SUFFIX,yammer.com
 DOMAIN-SUFFIX,yammerusercontent.com
 
-# --- OneDrive 核心同步 (仅保留进程与同步域名) ---
+# --- OneDrive 核心同步 ---
 PROCESS-NAME,OneDrive
 DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,onedrive
@@ -93,6 +94,9 @@ DOMAIN-SUFFIX,spoprod-a.akamaihd.net
 DOMAIN-SUFFIX,storage.live.com
 DOMAIN-SUFFIX,storage.msn.com
 DOMAIN-SUFFIX,microsoftpersonalcontent.com
+DOMAIN-SUFFIX,login.live.com
+DOMAIN-SUFFIX,files.1drv.com
+DOMAIN-SUFFIX,odc.officeapps.live.com
 
 # --- GitHub ---
 DOMAIN-KEYWORD,github
