@@ -180,6 +180,8 @@ DOMAIN-SUFFIX,xianyu.com
 # 菜鸟裹裹 (查快递必选)
 DOMAIN-SUFFIX,cainiao.com
 DOMAIN-SUFFIX,cainiao.com.cn
+# scm321 旗下所有二级域名
+DOMAIN-SUFFIX,scm321.com
 
 # --- [品牌服务] ---
 # 小米/米家 (补全底层长连)
