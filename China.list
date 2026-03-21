@@ -1,3 +1,5 @@
+# 只要是 .cn 结尾，直接走本地，不查 DNS，不走代理
+DOMAIN-SUFFIX,cn
 # --- [1. 核心协议与端口防护] 钉钉、大厂 CDN 与通话质量 ---
 # 钉钉相关 (解决 8452 报错及视频通话)
 DOMAIN-SUFFIX,dingtalk.com
@@ -182,6 +184,8 @@ DOMAIN-SUFFIX,cainiao.com
 DOMAIN-SUFFIX,cainiao.com.cn
 # scm321 旗下所有二级域名
 DOMAIN-SUFFIX,scm321.com
+# 知小布
+DOMAIN-SUFFIX,zhiyitech.cn
 
 # --- [品牌服务] ---
 # 小米/米家 (补全底层长连)
