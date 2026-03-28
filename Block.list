@@ -53,8 +53,8 @@ IP-CIDR,104.40.0.0/13,no-resolve
 # 如果发现还有其他更新域名，可以在这里添加
 # DOMAIN-SUFFIX,update.microsoft.com
 
-
-
+# 屏蔽windowtop更新
+DOMAIN-SUFFIX,windowtop.info
 
 # CorelDraw 反验证
 DOMAIN-SUFFIX,apps.corel.com
