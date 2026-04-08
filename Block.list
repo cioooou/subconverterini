@@ -1,10 +1,25 @@
-# --- CorelDraw / MindJet 反验证 ---
+#Corel 专区（解决 2018 假死核心）：
+# --- CorelDraw / MindJet 深度补全 ---
 DOMAIN-SUFFIX,apps.corel.com
 DOMAIN-SUFFIX,mc.corel.com
+DOMAIN-SUFFIX,product.corel.com
 DOMAIN-SUFFIX,origin-mc.corel.com
 DOMAIN-SUFFIX,iws.corel.com
 DOMAIN-SUFFIX,ipm.corel.com
-DOMAIN-SUFFIX,mindjet.com
+DOMAIN-SUFFIX,content.corel.com
+DOMAIN-SUFFIX,whale.corel.com
+DOMAIN-SUFFIX,status.corel.com
+DOMAIN-SUFFIX,dev1.ip-api.com
+DOMAIN-SUFFIX,compute-1.amazonaws.com
+DOMAIN-SUFFIX,idp.corel.com
+DOMAIN-SUFFIX,secure.corel.com
+DOMAIN-SUFFIX,ppsc7S.corel.com
+DOMAIN-SUFFIX,config.corel.com
+DOMAIN-SUFFIX,corel.demdex.net
+DOMAIN-SUFFIX,sc.omtrdc.net
+DOMAIN-SUFFIX,ip-api.com
+DOMAIN-SUFFIX,corel.com
+DOMAIN-SUFFIX,www.corel.com
 
 # --- OneDrive 软件更新屏蔽 ---
 DOMAIN-SUFFIX,oneclient.sfx.ms
@@ -100,6 +115,13 @@ DOMAIN-SUFFIX,pdfexpert.cc
 DOMAIN-SUFFIX,zhzzx.com
 DOMAIN-SUFFIX,yihuifu.cn
 DOMAIN-SUFFIX,4009997658.com
+DOMAIN-SUFFIX,makeding.com
+DOMAIN-SUFFIX,mairuan.com
+DOMAIN-SUFFIX,coreldrawchina.com
+DOMAIN-SUFFIX,huishenghuiying.com.cn
+DOMAIN-SUFFIX,xmindchina.net
+DOMAIN-SUFFIX,ntfsformac.cc
+DOMAIN-SUFFIX,parallelsdesktop.cn
 
 # --- 迅雷敏感资源与 WindowTop ---
 DOMAIN-SUFFIX,hub5btmain.sandai.net
