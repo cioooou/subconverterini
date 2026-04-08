@@ -1,187 +1,27 @@
-#屏蔽OneDrive软件更新
-DOMAIN-SUFFIX,oneclient.sfx.ms
-DOMAIN-SUFFIX,cdn.onenote.net
-DOMAIN-SUFFIX,ieonline.Microsoft.com
-
-# OneDrive 软件更新屏蔽规则集
-# 用途：阻止 OneDrive 自动检查和下载更新
-# 不影响 OneDrive 正常文件同步功能
-# 适用于：Clash / Clash for Windows / Clash Premium
-
-# ============================================================
-# OneDrive 更新服务器域名（核心）
-# ============================================================
-DOMAIN-SUFFIX,oneclient.sfx.ms
-DOMAIN-SUFFIX,oneclient.azureedge.net
-DOMAIN,oneclient.sfx.ms
-DOMAIN,oneclient.azureedge.net
-
-# ============================================================
-# Office/OneDrive 更新相关域名
-# ============================================================
-DOMAIN-SUFFIX,cdn.onenote.net
-DOMAIN-SUFFIX,ieonline.microsoft.com
-DOMAIN,officeclient.microsoft.com
-DOMAIN-SUFFIX,officeclient.microsoft.com
-
-# ============================================================
-# Microsoft 通用更新服务（可选，可能影响其他产品）
-# ============================================================
-# 注意：以下规则可能影响 Office、Edge 等其他微软产品的更新
-# 如果只想屏蔽 OneDrive，可以注释掉这部分
-# DOMAIN-SUFFIX,download.microsoft.com
-# DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com
-
-# ============================================================
-# OneDrive 更新服务器 IP 段（直接阻断）
-# ============================================================
-IP-CIDR,13.107.42.0/24,no-resolve
-IP-CIDR,13.107.43.0/24,no-resolve
-IP-CIDR,40.90.65.0/24,no-resolve
-IP-CIDR,13.107.0.0/16,no-resolve
-
-# ============================================================
-# Azure CDN 更新节点（OneDrive 使用）
-# ============================================================
-IP-CIDR,104.40.0.0/13,no-resolve
-
-
-
-# ============================================================
-# 备用更新域名（根据需要添加）
-# ============================================================
-# 如果发现还有其他更新域名，可以在这里添加
-# DOMAIN-SUFFIX,update.microsoft.com
-
-# 屏蔽windowtop更新
-DOMAIN-SUFFIX,windowtop.info
-
-# CorelDraw 反验证
+# --- CorelDraw / MindJet 反验证 ---
 DOMAIN-SUFFIX,apps.corel.com
 DOMAIN-SUFFIX,mc.corel.com
 DOMAIN-SUFFIX,origin-mc.corel.com
 DOMAIN-SUFFIX,iws.corel.com
-
-
-# 迅雷敏感资源屏蔽
-DOMAIN-SUFFIX,hub5btmain.sandai.net
-DOMAIN-SUFFIX,hub5emu.sandai.net
-DOMAIN-SUFFIX,upgrade.xl9.xunlei.com
-
-
-## MindJet
-DOMAIN-SUFFIX,mindjet.com
-DOMAIN-SUFFIX,mindjet.com
 DOMAIN-SUFFIX,ipm.corel.com
+DOMAIN-SUFFIX,mindjet.com
 
-#思杰马克丁
-DOMAIN-SUFFIX,xmindchina.net
-DOMAIN-SUFFIX,xmindchina.net
-DOMAIN-SUFFIX,ntfsformac.cc
-DOMAIN-SUFFIX,makeding.com
-DOMAIN-SUFFIX,makeding.com
-DOMAIN-SUFFIX,vm.makeding.com
-DOMAIN-SUFFIX,bingdianhuanyuan.cn
-DOMAIN-SUFFIX,xia.bingdianhuanyuan.cn
-DOMAIN-SUFFIX,bingdianhuanyuan.cn
-DOMAIN-SUFFIX,huishenghuiying.com.cn
-DOMAIN-SUFFIX,huishenghuiying.com.cn
-DOMAIN-SUFFIX,xia.huishenghuiying.com.cn
-DOMAIN-SUFFIX,coreldrawchina.com
-DOMAIN-SUFFIX,xia.coreldrawchina.com
-DOMAIN-SUFFIX,coreldrawchina.com
-DOMAIN-SUFFIX,shankejingling.com
-DOMAIN-SUFFIX,shankejingling.com
-DOMAIN-SUFFIX,xia.shankejingling.com
-DOMAIN-SUFFIX,mairuan.com
-DOMAIN-SUFFIX,mairuan.com
-DOMAIN-SUFFIX,xia.mairuan.com
-DOMAIN-SUFFIX,logoshejishi.com
-DOMAIN-SUFFIX,logoshejishi.com
-DOMAIN-SUFFIX,xia.logoshejishi.com
-DOMAIN-SUFFIX,keyshot.cc
-DOMAIN-SUFFIX,xia.keyshot.cc
-DOMAIN-SUFFIX,keyshot.cc
-DOMAIN-SUFFIX,flstudiochina.com
-DOMAIN-SUFFIX,flstudiochina.com
-DOMAIN-SUFFIX,xia.flstudiochina.com
-DOMAIN-SUFFIX,ediuschina.com
-DOMAIN-SUFFIX,ediuschina.com
-DOMAIN-SUFFIX,xia.ediuschina.com
-DOMAIN-SUFFIX,vegaschina.cn
-DOMAIN-SUFFIX,vegaschina.cn
-DOMAIN-SUFFIX,xia.vegaschina.cn
-DOMAIN-SUFFIX,guitarpro.cc
-DOMAIN-SUFFIX,guitarpro.cc
-DOMAIN-SUFFIX,xia.guitarpro.cc
-DOMAIN-SUFFIX,xmindchina.cn
-DOMAIN-SUFFIX,xia.xmindchina.cn
-DOMAIN-SUFFIX,xmindchina.cn
-DOMAIN-SUFFIX,xmindchina.net
-DOMAIN-SUFFIX,xmindchina.net
-DOMAIN-SUFFIX,xia.xmindchina.net
-DOMAIN-SUFFIX,mindmanager.cc
-DOMAIN-SUFFIX,mindmanager.cc
-DOMAIN-SUFFIX,xia.mindmanager.cc
-DOMAIN-SUFFIX,kingdeecn.cn
-DOMAIN-SUFFIX,www.kingdeecn.cn
-DOMAIN-SUFFIX,xia.kingdeecn.cn
-DOMAIN-SUFFIX,xshellcn.com
-DOMAIN-SUFFIX,xshellcn.com
-DOMAIN-SUFFIX,xia.xshellcn.com
-DOMAIN-SUFFIX,imindmap.cc
-DOMAIN-SUFFIX,imindmap.cc
-DOMAIN-SUFFIX,xia.imindmap.cc
-DOMAIN-SUFFIX,abbyychina.com
-DOMAIN-SUFFIX,abbyychina.com
-DOMAIN-SUFFIX,xia.abbyychina.com
-DOMAIN-SUFFIX,bartender.cc
-DOMAIN-SUFFIX,bartender.cc
-DOMAIN-SUFFIX,xia.bartender.cc
-DOMAIN-SUFFIX,jihehuaban.com.cn
-DOMAIN-SUFFIX,jihehuaban.com.cn
-DOMAIN-SUFFIX,xia.jihehuaban.com.cn
-DOMAIN-SUFFIX,mathtype.cn
-DOMAIN-SUFFIX,mathtype.cn
-DOMAIN-SUFFIX,xia.mathtype.cn
-DOMAIN-SUFFIX,chemdraw.com.cn
-DOMAIN-SUFFIX,chemdraw.com.cn
-DOMAIN-SUFFIX,xia.chemdraw.com.cn
-DOMAIN-SUFFIX,mycleanmymac.com
-DOMAIN-SUFFIX,mycleanmymac.com
-DOMAIN-SUFFIX,xia.mycleanmymac.com
-DOMAIN-SUFFIX,ntfsformac.cn
-DOMAIN-SUFFIX,ntfsformac.cn
-DOMAIN-SUFFIX,xia.ntfsformac.cn
-DOMAIN-SUFFIX,parallelsdesktop.cn
-DOMAIN-SUFFIX,parallelsdesktop.cn
-DOMAIN-SUFFIX,xia.parallelsdesktop.cn
-DOMAIN-SUFFIX,beyondcompare.cc
-DOMAIN-SUFFIX,beyondcompare.cc
-DOMAIN-SUFFIX,xia.beyondcompare.cc
-DOMAIN-SUFFIX,easyrecoverychina.com
-DOMAIN-SUFFIX,easyrecoverychina.com
-DOMAIN-SUFFIX,xia.easyrecoverychina.com
-DOMAIN-SUFFIX,bingdianhuanyuan.cn
-DOMAIN-SUFFIX,bingdianhuanyuan.cn
-DOMAIN-SUFFIX,xia.bingdianhuanyuan.cn
-DOMAIN-SUFFIX,hypersnap.mairuan.com
-DOMAIN-SUFFIX,iconworkshop.cn
-DOMAIN-SUFFIX,iconworkshop.cn
-DOMAIN-SUFFIX,pdfexpert.cc
-DOMAIN-SUFFIX,xiazai.pdfexpert.cc
-DOMAIN-SUFFIX,zhzzx.com
-DOMAIN-SUFFIX,yihuifu.cn
-DOMAIN-SUFFIX,4009997658.com
-DOMAIN-SUFFIX,4009997658.com
-DOMAIN-SUFFIX,mairuanwang.com
-DOMAIN-SUFFIX,mairuanwang.com
-DOMAIN-SUFFIX,mairuan.com
-DOMAIN-SUFFIX,mairuan.cn
-DOMAIN-SUFFIX,mairuan.net
-DOMAIN-SUFFIX,mairuan.com.cn
+# --- OneDrive 软件更新屏蔽 ---
+DOMAIN-SUFFIX,oneclient.sfx.ms
+DOMAIN-SUFFIX,oneclient.azureedge.net
+DOMAIN,oneclient.sfx.ms
+DOMAIN,oneclient.azureedge.net
+DOMAIN-SUFFIX,cdn.onenote.net
+DOMAIN-SUFFIX,ieonline.microsoft.com
+DOMAIN,officeclient.microsoft.com
+DOMAIN-SUFFIX,officeclient.microsoft.com
+IP-CIDR,13.107.42.0/24,no-resolve
+IP-CIDR,13.107.43.0/24,no-resolve
+IP-CIDR,40.90.65.0/24,no-resolve
+IP-CIDR,13.107.0.0/16,no-resolve
+IP-CIDR,104.40.0.0/13,no-resolve
 
-# 超全 Adobe 联网屏蔽列表
+# --- Adobe 全系列联网屏蔽 ---
 DOMAIN-SUFFIX,adobe.com
 DOMAIN-SUFFIX,adobe.io
 DOMAIN-SUFFIX,adobelogin.com
@@ -220,4 +60,49 @@ DOMAIN-SUFFIX,wip3.adobe.com
 DOMAIN-SUFFIX,adobedocs.azureedge.net
 DOMAIN-SUFFIX,cdn-ffc.adobe.io
 
+# --- 思杰马克丁 / 商业软件反验证 ---
+DOMAIN-SUFFIX,xmindchina.net
+DOMAIN-SUFFIX,ntfsformac.cc
+DOMAIN-SUFFIX,makeding.com
+DOMAIN-SUFFIX,vm.makeding.com
+DOMAIN-SUFFIX,bingdianhuanyuan.cn
+DOMAIN-SUFFIX,huishenghuiying.com.cn
+DOMAIN-SUFFIX,coreldrawchina.com
+DOMAIN-SUFFIX,shankejingling.com
+DOMAIN-SUFFIX,mairuan.com
+DOMAIN-SUFFIX,mairuan.cn
+DOMAIN-SUFFIX,mairuan.net
+DOMAIN-SUFFIX,mairuan.com.cn
+DOMAIN-SUFFIX,mairuanwang.com
+DOMAIN-SUFFIX,logoshejishi.com
+DOMAIN-SUFFIX,keyshot.cc
+DOMAIN-SUFFIX,flstudiochina.com
+DOMAIN-SUFFIX,ediuschina.com
+DOMAIN-SUFFIX,vegaschina.cn
+DOMAIN-SUFFIX,guitarpro.cc
+DOMAIN-SUFFIX,xmindchina.cn
+DOMAIN-SUFFIX,mindmanager.cc
+DOMAIN-SUFFIX,kingdeecn.cn
+DOMAIN-SUFFIX,xshellcn.com
+DOMAIN-SUFFIX,imindmap.cc
+DOMAIN-SUFFIX,abbyychina.com
+DOMAIN-SUFFIX,bartender.cc
+DOMAIN-SUFFIX,jihehuaban.com.cn
+DOMAIN-SUFFIX,mathtype.cn
+DOMAIN-SUFFIX,chemdraw.com.cn
+DOMAIN-SUFFIX,mycleanmymac.com
+DOMAIN-SUFFIX,ntfsformac.cn
+DOMAIN-SUFFIX,parallelsdesktop.cn
+DOMAIN-SUFFIX,beyondcompare.cc
+DOMAIN-SUFFIX,easyrecoverychina.com
+DOMAIN-SUFFIX,iconworkshop.cn
+DOMAIN-SUFFIX,pdfexpert.cc
+DOMAIN-SUFFIX,zhzzx.com
+DOMAIN-SUFFIX,yihuifu.cn
+DOMAIN-SUFFIX,4009997658.com
 
+# --- 迅雷敏感资源与 WindowTop ---
+DOMAIN-SUFFIX,hub5btmain.sandai.net
+DOMAIN-SUFFIX,hub5emu.sandai.net
+DOMAIN-SUFFIX,upgrade.xl9.xunlei.com
+DOMAIN-SUFFIX,windowtop.info
