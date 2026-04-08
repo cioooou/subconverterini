@@ -1,5 +1,6 @@
-#Corel 专区（解决 2018 假死核心）：
-# --- CorelDraw / MindJet 深度补全 ---
+# ==========================================================
+# CorelDraw 专区 (深度防护 - 解决 2018 启动与保存假死)
+# ==========================================================
 DOMAIN-SUFFIX,apps.corel.com
 DOMAIN-SUFFIX,mc.corel.com
 DOMAIN-SUFFIX,product.corel.com
@@ -20,23 +21,39 @@ DOMAIN-SUFFIX,sc.omtrdc.net
 DOMAIN-SUFFIX,ip-api.com
 DOMAIN-SUFFIX,corel.com
 DOMAIN-SUFFIX,www.corel.com
+# --- 2026/04 补全 ---
+DOMAIN-SUFFIX,corel.net
+DOMAIN-SUFFIX,corel.org
+DOMAIN-SUFFIX,adobelogin.com
+DOMAIN-SUFFIX,cdgs2018.corel.com
+DOMAIN-SUFFIX,vba.corel.com
 
-# --- OneDrive 软件更新屏蔽 ---
-DOMAIN-SUFFIX,oneclient.sfx.ms
-DOMAIN-SUFFIX,oneclient.azureedge.net
-DOMAIN,oneclient.sfx.ms
-DOMAIN,oneclient.azureedge.net
-DOMAIN-SUFFIX,cdn.onenote.net
-DOMAIN-SUFFIX,ieonline.microsoft.com
-DOMAIN,officeclient.microsoft.com
-DOMAIN-SUFFIX,officeclient.microsoft.com
-IP-CIDR,13.107.42.0/24,no-resolve
-IP-CIDR,13.107.43.0/24,no-resolve
-IP-CIDR,40.90.65.0/24,no-resolve
-IP-CIDR,13.107.0.0/16,no-resolve
-IP-CIDR,104.40.0.0/13,no-resolve
+# ==========================================================
+# 思杰马克丁 / 广州宁美 (反国内代理商验证)
+# ==========================================================
+DOMAIN-SUFFIX,gzningmei.com
+DOMAIN-SUFFIX,www.gzningmei.com
+DOMAIN-SUFFIX,makeding.com
+DOMAIN-SUFFIX,mairuan.com
+DOMAIN-SUFFIX,mairuan.cn
+DOMAIN-SUFFIX,mairuan.net
+DOMAIN-SUFFIX,mairuan.com.cn
+DOMAIN-SUFFIX,mairuanwang.com
+DOMAIN-SUFFIX,coreldrawchina.com
+DOMAIN-SUFFIX,huishenghuiying.com.cn
+DOMAIN-SUFFIX,bingdou.net
+DOMAIN-SUFFIX,yun-id.cn
+DOMAIN-SUFFIX,xmindchina.net
+DOMAIN-SUFFIX,ntfsformac.cc
+DOMAIN-SUFFIX,parallelsdesktop.cn
+DOMAIN-SUFFIX,xshellcn.com
+DOMAIN-SUFFIX,beyondcompare.cc
+DOMAIN-SUFFIX,jihehuaban.com.cn
+DOMAIN-SUFFIX,mathtype.cn
 
-# --- Adobe 全系列联网屏蔽 ---
+# ==========================================================
+# Adobe 全系列联网屏蔽 (包含 Acrobat 2020 补全)
+# ==========================================================
 DOMAIN-SUFFIX,adobe.com
 DOMAIN-SUFFIX,adobe.io
 DOMAIN-SUFFIX,adobelogin.com
@@ -55,75 +72,39 @@ DOMAIN-SUFFIX,adobesign.com
 DOMAIN-SUFFIX,omtrdc.net
 DOMAIN-SUFFIX,omtrdc.adobe.com
 DOMAIN-SUFFIX,adobev6.com
-DOMAIN-SUFFIX,ccmdls.adobe.com
-DOMAIN-SUFFIX,creativecloud.adobe.com
 DOMAIN-SUFFIX,cc-api-data.adobe.io
-DOMAIN-SUFFIX,ccmdl.adobe.com
-DOMAIN-SUFFIX,helpx.adobe.com
 DOMAIN-SUFFIX,ereg.adobe.com
 DOMAIN-SUFFIX,acrobat.adobe.com
-DOMAIN-SUFFIX,acroipm.adobe.com
 DOMAIN-SUFFIX,activation.adobe.com
 DOMAIN-SUFFIX,practivate.adobe.com
 DOMAIN-SUFFIX,lcs-cops.adobe.io
 DOMAIN-SUFFIX,cdn.adobe.com
 DOMAIN-SUFFIX,assets.adobedtm.com
-DOMAIN-SUFFIX,update.adobe.com
-DOMAIN-SUFFIX,acroipm2.adobe.com
-DOMAIN-SUFFIX,hlrcv.stage.adobe.com
-DOMAIN-SUFFIX,wip3.adobe.com
-DOMAIN-SUFFIX,adobedocs.azureedge.net
-DOMAIN-SUFFIX,cdn-ffc.adobe.io
+# --- Acrobat 2020 专用补全 ---
+DOMAIN-SUFFIX,p13n.adobe.io
+DOMAIN-SUFFIX,ims-na1-it.adobelogin.com
+DOMAIN-SUFFIX,adobenotifications.adobe.com
 
-# --- 思杰马克丁 / 商业软件反验证 ---
-DOMAIN-SUFFIX,xmindchina.net
-DOMAIN-SUFFIX,ntfsformac.cc
-DOMAIN-SUFFIX,makeding.com
-DOMAIN-SUFFIX,vm.makeding.com
-DOMAIN-SUFFIX,bingdianhuanyuan.cn
-DOMAIN-SUFFIX,huishenghuiying.com.cn
-DOMAIN-SUFFIX,coreldrawchina.com
-DOMAIN-SUFFIX,shankejingling.com
-DOMAIN-SUFFIX,mairuan.com
-DOMAIN-SUFFIX,mairuan.cn
-DOMAIN-SUFFIX,mairuan.net
-DOMAIN-SUFFIX,mairuan.com.cn
-DOMAIN-SUFFIX,mairuanwang.com
-DOMAIN-SUFFIX,logoshejishi.com
-DOMAIN-SUFFIX,keyshot.cc
-DOMAIN-SUFFIX,flstudiochina.com
-DOMAIN-SUFFIX,ediuschina.com
-DOMAIN-SUFFIX,vegaschina.cn
-DOMAIN-SUFFIX,guitarpro.cc
-DOMAIN-SUFFIX,xmindchina.cn
-DOMAIN-SUFFIX,mindmanager.cc
-DOMAIN-SUFFIX,kingdeecn.cn
-DOMAIN-SUFFIX,xshellcn.com
-DOMAIN-SUFFIX,imindmap.cc
-DOMAIN-SUFFIX,abbyychina.com
-DOMAIN-SUFFIX,bartender.cc
-DOMAIN-SUFFIX,jihehuaban.com.cn
-DOMAIN-SUFFIX,mathtype.cn
-DOMAIN-SUFFIX,chemdraw.com.cn
-DOMAIN-SUFFIX,mycleanmymac.com
-DOMAIN-SUFFIX,ntfsformac.cn
-DOMAIN-SUFFIX,parallelsdesktop.cn
-DOMAIN-SUFFIX,beyondcompare.cc
-DOMAIN-SUFFIX,easyrecoverychina.com
-DOMAIN-SUFFIX,iconworkshop.cn
-DOMAIN-SUFFIX,pdfexpert.cc
-DOMAIN-SUFFIX,zhzzx.com
-DOMAIN-SUFFIX,yihuifu.cn
-DOMAIN-SUFFIX,4009997658.com
-DOMAIN-SUFFIX,makeding.com
-DOMAIN-SUFFIX,mairuan.com
-DOMAIN-SUFFIX,coreldrawchina.com
-DOMAIN-SUFFIX,huishenghuiying.com.cn
-DOMAIN-SUFFIX,xmindchina.net
-DOMAIN-SUFFIX,ntfsformac.cc
-DOMAIN-SUFFIX,parallelsdesktop.cn
+# ==========================================================
+# OneDrive 软件更新与微软探测 (防系统干扰)
+# ==========================================================
+DOMAIN-SUFFIX,oneclient.sfx.ms
+DOMAIN-SUFFIX,oneclient.azureedge.net
+DOMAIN-SUFFIX,cdn.onenote.net
+DOMAIN-SUFFIX,ieonline.microsoft.com
+DOMAIN-SUFFIX,officeclient.microsoft.com
+# --- 关键补全：防止 CDR 通过微软探测判断网络 ---
+DOMAIN-SUFFIX,msftconnecttest.com
+DOMAIN-SUFFIX,msftncsi.com
+IP-CIDR,13.107.42.0/24,no-resolve
+IP-CIDR,13.107.43.0/24,no-resolve
+IP-CIDR,40.90.65.0/24,no-resolve
+IP-CIDR,13.107.0.0/16,no-resolve
+IP-CIDR,104.40.0.0/13,no-resolve
 
-# --- 迅雷敏感资源与 WindowTop ---
+# ==========================================================
+# 迅雷敏感资源与 WindowTop
+# ==========================================================
 DOMAIN-SUFFIX,hub5btmain.sandai.net
 DOMAIN-SUFFIX,hub5emu.sandai.net
 DOMAIN-SUFFIX,upgrade.xl9.xunlei.com
