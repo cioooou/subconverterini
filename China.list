@@ -172,18 +172,30 @@ DOMAIN-SUFFIX,tenpay.com
 DOMAIN-SUFFIX,jdpay.com
 
 # --- [电商购物] ---
+# SHEIN 希音 (国内供应链/面料商场/SCM)
+# 专门解决面料商场卡顿及后台登录风控问题
+DOMAIN-SUFFIX,sheinfmall.com
+DOMAIN-SUFFIX,sheincorp.com
+DOMAIN-SUFFIX,shein.com.cn
+DOMAIN-SUFFIX,sheingroup.com
+DOMAIN-SUFFIX,gecl.com
+
 # 京东 (图片 CDN 极多)
 DOMAIN-SUFFIX,jd.com
 DOMAIN-SUFFIX,360buyimg.com
 DOMAIN-SUFFIX,jdmall.com
+
 # 闲鱼 (阿里系私有协议)
 DOMAIN-SUFFIX,idlefish.com
 DOMAIN-SUFFIX,xianyu.com
+
 # 菜鸟裹裹 (查快递必选)
 DOMAIN-SUFFIX,cainiao.com
 DOMAIN-SUFFIX,cainiao.com.cn
+
 # scm321 旗下所有二级域名
 DOMAIN-SUFFIX,scm321.com
+
 # 知小布
 DOMAIN-SUFFIX,zhiyitech.cn
 
