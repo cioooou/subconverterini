@@ -24,7 +24,6 @@ DOMAIN-SUFFIX,www.corel.com
 # --- 2026/04 补全 ---
 DOMAIN-SUFFIX,corel.net
 DOMAIN-SUFFIX,corel.org
-DOMAIN-SUFFIX,adobelogin.com
 DOMAIN-SUFFIX,cdgs2018.corel.com
 DOMAIN-SUFFIX,vba.corel.com
 
@@ -50,40 +49,6 @@ DOMAIN-SUFFIX,xshellcn.com
 DOMAIN-SUFFIX,beyondcompare.cc
 DOMAIN-SUFFIX,jihehuaban.com.cn
 DOMAIN-SUFFIX,mathtype.cn
-
-# ==========================================================
-# Adobe 全系列联网屏蔽 (包含 Acrobat 2020 补全)
-# ==========================================================
-DOMAIN-SUFFIX,adobe.com
-DOMAIN-SUFFIX,adobe.io
-DOMAIN-SUFFIX,adobelogin.com
-DOMAIN-SUFFIX,adobesc.com
-DOMAIN-SUFFIX,adobecc.com
-DOMAIN-SUFFIX,adobedns.com
-DOMAIN-SUFFIX,adobeoobe.com
-DOMAIN-SUFFIX,adobeconnect.com
-DOMAIN-SUFFIX,adobestats.com
-DOMAIN-SUFFIX,adobeid.com
-DOMAIN-SUFFIX,adobereader.com
-DOMAIN-SUFFIX,adobe-services.com
-DOMAIN-SUFFIX,adobe-prod.adobe.io
-DOMAIN-SUFFIX,adobe-sandbox.com
-DOMAIN-SUFFIX,adobesign.com
-DOMAIN-SUFFIX,omtrdc.net
-DOMAIN-SUFFIX,omtrdc.adobe.com
-DOMAIN-SUFFIX,adobev6.com
-DOMAIN-SUFFIX,cc-api-data.adobe.io
-DOMAIN-SUFFIX,ereg.adobe.com
-DOMAIN-SUFFIX,acrobat.adobe.com
-DOMAIN-SUFFIX,activation.adobe.com
-DOMAIN-SUFFIX,practivate.adobe.com
-DOMAIN-SUFFIX,lcs-cops.adobe.io
-DOMAIN-SUFFIX,cdn.adobe.com
-DOMAIN-SUFFIX,assets.adobedtm.com
-# --- Acrobat 2020 专用补全 ---
-DOMAIN-SUFFIX,p13n.adobe.io
-DOMAIN-SUFFIX,ims-na1-it.adobelogin.com
-DOMAIN-SUFFIX,adobenotifications.adobe.com
 
 # ==========================================================
 # OneDrive 软件更新与微软探测 (防系统干扰)
