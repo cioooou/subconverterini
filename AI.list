@@ -121,3 +121,10 @@ DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
+
+# === 海外SHEIN ===
+DOMAIN-SUFFIX,sheimg.com
+DOMAIN-SUFFIX,sheinsq.com
+DOMAIN-SUFFIX,sheinassets.com
+DOMAIN,us.shein.com
+DOMAIN-SUFFIX,shein.com
