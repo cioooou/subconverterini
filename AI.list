@@ -21,7 +21,6 @@ DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,servd-anthropic-website.b-cdn.net
 
 # === Google AI (Gemini, Bard, DeepMind) ===
-DOMAIN,accounts.google.com
 DOMAIN,aida.googleapis.com
 DOMAIN,aisandbox-pa.googleapis.com
 DOMAIN,alkalicore-pa.clients6.google.com
@@ -117,7 +116,5 @@ DOMAIN-SUFFIX,kinde.com
 DOMAIN-SUFFIX,tally.so
 
 # === 支付与风控支持 (确保充值顺利) ===
-DOMAIN-SUFFIX,stripe.com
-DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
