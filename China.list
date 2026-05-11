@@ -1,73 +1,66 @@
-# 只要是 .cn 结尾，直接走本地，不查 DNS，不走代理
-DOMAIN-SUFFIX,cn
-# --- [1. 核心协议与端口防护] 钉钉、大厂 CDN 与通话质量 ---
-# 钉钉相关 (解决 8452 报错及视频通话)
-DOMAIN-SUFFIX,dingtalk.com
-DOMAIN-SUFFIX,dingtalk.net
-DOMAIN-SUFFIX,dg-work.com
-# 阿里云与 CDN (核心基础设施)
+# ======================================================
+# [1] 核心外贸业务：卖家后台与供应链 (防封号/防风控)
+# ======================================================
+# SHEIN 希音 (国内供应链/面料商场/SCM/内部办公)
+DOMAIN-SUFFIX,sheinfmall.com
+DOMAIN-SUFFIX,sheincorp.com
+DOMAIN-SUFFIX,sheingroup.com
+DOMAIN-SUFFIX,shein.com.cn
+DOMAIN-SUFFIX,gecl.com
+DOMAIN-SUFFIX,geiwohui.com
+# TEMU & 拼多多跨境 (卖家中心/卖家课堂)
+DOMAIN-SUFFIX,kuajingmaihuo.com
+DOMAIN,seller.temu.com
+DOMAIN,agentseller.temu.com
+DOMAIN-SUFFIX,pinduoduo.com
+DOMAIN-SUFFIX,yangkeduo.com
+DOMAIN-SUFFIX,pdduo.com
+# 垂直供应链与工具 (知小布/SCM321)
+DOMAIN-SUFFIX,scm321.com
+DOMAIN-SUFFIX,zhiyitech.cn
+
+# ======================================================
+# [2] 拿货、物流、海关与支付 (外贸生产力)
+# ======================================================
+DOMAIN-SUFFIX,1688.com
+DOMAIN-SUFFIX,alibaba.com.cn
+DOMAIN-SUFFIX,alibaba-inc.com
+DOMAIN-SUFFIX,taobao.com
+DOMAIN-SUFFIX,tmall.com
 DOMAIN-SUFFIX,alicdn.com
 DOMAIN-SUFFIX,aliyun.com
 DOMAIN-SUFFIX,aliyuncs.com
-# 小米相关
-DOMAIN-SUFFIX,mi.com
-DOMAIN-SUFFIX,xiaomi.com
-DOMAIN-SUFFIX,mi-img.com
-DOMAIN-SUFFIX,miui.com
+DOMAIN-SUFFIX,idlefish.com
+DOMAIN-SUFFIX,xianyu.com
+DOMAIN-SUFFIX,sf-express.com
+DOMAIN-SUFFIX,kuaidi100.com
+DOMAIN-SUFFIX,cainiao.com
+DOMAIN-SUFFIX,cainiao.com.cn
 
-# --- [2. 顶级域名后缀规范化] ---
-# 腾讯
-DOMAIN-SUFFIX,tencent.com
-DOMAIN-SUFFIX,qq.com
-# 支付宝与淘宝 (阿里系)
-DOMAIN-SUFFIX,alipay.com
-DOMAIN-SUFFIX,alipayobjects.com
-DOMAIN-SUFFIX,taobao.com
-DOMAIN-SUFFIX,tmall.com
-# 百度
-DOMAIN-SUFFIX,baidu.com
-DOMAIN-SUFFIX,bdstatic.com
-# 字节跳动 (抖音/头条/飞书)
+# ======================================================
+# [3] 通讯办公、远程控制 (低延迟/通话质量保障)
+# ======================================================
+# 字节/飞书/抖音
+DOMAIN-SUFFIX,feishu.cn
+DOMAIN-SUFFIX,larksuite.com
 DOMAIN-SUFFIX,bytedance.com
 DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,feishu.cn
-DOMAIN-SUFFIX,larksuite.com
-# 高德地图
-DOMAIN-SUFFIX,amap.com
-DOMAIN-SUFFIX,autonavi.com
-# 京东
-DOMAIN-SUFFIX,jd.com
-DOMAIN-SUFFIX,360buyimg.com
-# 网易
-DOMAIN-SUFFIX,163.com
-DOMAIN-SUFFIX,126.net
-# 顺丰
-DOMAIN-SUFFIX,sf-express.com
-# 手机厂商 (推送通道防护)
-DOMAIN-SUFFIX,huawei.com
-DOMAIN-SUFFIX,dbankcdn.com
-DOMAIN-SUFFIX,vivo.com
-DOMAIN-SUFFIX,oppo.com
-# 测速与诊断
-DOMAIN-SUFFIX,speedtest.net
-DOMAIN-SUFFIX,digrun.com
-
-# --- [3. 隐性 CDN 与流氓后缀补漏] ---
+DOMAIN-SUFFIX,byteimg.com
+# 钉钉/阿里办公
+DOMAIN-SUFFIX,dingtalk.com
+DOMAIN-SUFFIX,dingtalk.net
+DOMAIN-SUFFIX,dg-work.com
+# 腾讯/QQ/微信支付
+DOMAIN-SUFFIX,qq.com
+DOMAIN-SUFFIX,tencent.com
 DOMAIN-SUFFIX,gtimg.com
+DOMAIN-SUFFIX,tenpay.com
 DOMAIN-SUFFIX,qlogo.cn
 DOMAIN-SUFFIX,qpic.cn
-DOMAIN-SUFFIX,qhimg.com
-DOMAIN-SUFFIX,qhres.com
-DOMAIN-SUFFIX,sankuai.com
-DOMAIN-SUFFIX,meituan.net
-DOMAIN-SUFFIX,bdstatic.com
-DOMAIN-SUFFIX,byteimg.com
-DOMAIN-SUFFIX,jmodm.com
-DOMAIN-SUFFIX,mshome.net
-DOMAIN-SUFFIX,p14-buy.itunes.apple.com
-
-# --- [4. 远程控制 低延迟通道] ---
+DOMAIN-SUFFIX,weiyun.com
+DOMAIN-SUFFIX,pay.weixin.qq.com
+# 远程控制 (绝对不能走代理)
 DOMAIN-SUFFIX,anyviewer.com
 DOMAIN-SUFFIX,anyviewer.cn
 DOMAIN-SUFFIX,aomeitech.com
@@ -82,34 +75,9 @@ DOMAIN-SUFFIX,getscreen.me
 DOMAIN-SUFFIX,cloudroom.com
 DOMAIN-SUFFIX,beylink.com
 
-# --- [5. 金融支付 风控白名单] ---
-DOMAIN-SUFFIX,unionpay.com
-DOMAIN-SUFFIX,upay.com
-DOMAIN-SUFFIX,95516.com
-DOMAIN-SUFFIX,abchina.com
-DOMAIN-SUFFIX,abchina.com.cn
-DOMAIN-SUFFIX,bankcomm.com
-DOMAIN-SUFFIX,bankofchina.com
-DOMAIN-SUFFIX,boc.cn
-DOMAIN-SUFFIX,ccb.com
-DOMAIN-SUFFIX,ccb.com.cn
-DOMAIN-SUFFIX,cebbank.com
-DOMAIN-SUFFIX,cib.com.cn
-DOMAIN-SUFFIX,cmbchina.com
-DOMAIN-SUFFIX,cmbi.com
-DOMAIN-SUFFIX,icbc.com.cn
-DOMAIN-SUFFIX,psbc.com
-DOMAIN-SUFFIX,spdb.com.cn
-
-# --- [6. 社交办公补漏] ---
-DOMAIN-SUFFIX,qq.com
-DOMAIN-SUFFIX,tencent.com
-DOMAIN-SUFFIX,weiyun.com
-DOMAIN-SUFFIX,larksuite.com
-DOMAIN-SUFFIX,sinaimg.cn
-DOMAIN-SUFFIX,alibaba-inc.com
-
-# --- [7. 资源站与下载 海外托管国内资源加速] ---
+# ======================================================
+# [4] 资源站与下载 (你最关心的内容补齐)
+# ======================================================
 DOMAIN-SUFFIX,pc528.net
 DOMAIN-SUFFIX,pc521.net
 DOMAIN-SUFFIX,cr173.com
@@ -139,75 +107,87 @@ DOMAIN-SUFFIX,lanzou.com
 DOMAIN-SUFFIX,lanzoui.com
 DOMAIN-SUFFIX,lanzoux.com
 
-# --- [生鲜配送] ---
-# 朴朴超市 (补齐)
-DOMAIN-SUFFIX,pupufz.com
-DOMAIN-SUFFIX,pupuapp.com
-DOMAIN-KEYWORD,pupu
-# 叮咚买菜
-DOMAIN-SUFFIX,ddmc.com.cn
-DOMAIN-SUFFIX,maicai.com
-# 盒马鲜生
-DOMAIN-SUFFIX,freshhema.com
-DOMAIN-SUFFIX,freshippo.com
-# 美团/大众点评 (核心下单逻辑)
+# ======================================================
+# [5] 金融支付、银行与白名单 (风控防护)
+# ======================================================
+DOMAIN-SUFFIX,alipay.com
+DOMAIN-SUFFIX,alipayobjects.com
+DOMAIN-SUFFIX,alipay.net
+DOMAIN-SUFFIX,unionpay.com
+DOMAIN-SUFFIX,upay.com
+DOMAIN-SUFFIX,95516.com
+DOMAIN-SUFFIX,unionpaysecure.com
+DOMAIN-SUFFIX,abchina.com
+DOMAIN-SUFFIX,abchina.com.cn
+DOMAIN-SUFFIX,bankcomm.com
+DOMAIN-SUFFIX,bankofchina.com
+DOMAIN-SUFFIX,boc.cn
+DOMAIN-SUFFIX,ccb.com
+DOMAIN-SUFFIX,ccb.com.cn
+DOMAIN-SUFFIX,cebbank.com
+DOMAIN-SUFFIX,cib.com.cn
+DOMAIN-SUFFIX,cmbchina.com
+DOMAIN-SUFFIX,cmbi.com
+DOMAIN-SUFFIX,icbc.com.cn
+DOMAIN-SUFFIX,psbc.com
+DOMAIN-SUFFIX,spdb.com.cn
+
+# ======================================================
+# [6] 品牌服务、开发者工具与网络测试
+# ======================================================
+DOMAIN-SUFFIX,mi.com
+DOMAIN-SUFFIX,xiaomi.com
+DOMAIN-SUFFIX,mi-img.com
+DOMAIN-SUFFIX,miui.com
+DOMAIN-SUFFIX,xiaomiyoupin.com
+DOMAIN-KEYWORD,mi-dns
+DOMAIN-SUFFIX,huawei.com
+DOMAIN-SUFFIX,dbankcdn.com
+DOMAIN-SUFFIX,dbankcloud.cn
+DOMAIN-SUFFIX,dbankcloud.com
+DOMAIN-SUFFIX,vivo.com
+DOMAIN-SUFFIX,vivo.com.cn
+DOMAIN-SUFFIX,vivoglobal.com
+DOMAIN-SUFFIX,oppo.com
+DOMAIN-SUFFIX,csdn.net
+DOMAIN-SUFFIX,cnblogs.com
+DOMAIN-SUFFIX,runoob.com
+DOMAIN-SUFFIX,ip138.com
+DOMAIN-SUFFIX,speedtest.net
+DOMAIN-SUFFIX,digrun.com
+DOMAIN-SUFFIX,amap.com
+DOMAIN-SUFFIX,autonavi.com
+
+# ======================================================
+# [7] 生活服务与电商补漏
+# ======================================================
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,jdmall.com
+DOMAIN-SUFFIX,jdpay.com
 DOMAIN-SUFFIX,meituan.com
 DOMAIN-SUFFIX,meituan.net
 DOMAIN-SUFFIX,dianping.com
 DOMAIN-SUFFIX,dpfile.com
+DOMAIN-SUFFIX,sankuai.com
+DOMAIN-SUFFIX,pupufz.com
+DOMAIN-SUFFIX,pupuapp.com
+DOMAIN-KEYWORD,pupu
+DOMAIN-SUFFIX,ddmc.com.cn
+DOMAIN-SUFFIX,maicai.com
+DOMAIN-SUFFIX,freshhema.com
+DOMAIN-SUFFIX,freshippo.com
+DOMAIN-SUFFIX,baidu.com
+DOMAIN-SUFFIX,bdstatic.com
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,126.net
 
-# --- [金融支付] ---
-# 支付宝
-DOMAIN-SUFFIX,alipay.com
-DOMAIN-SUFFIX,alipayobjects.com
-DOMAIN-SUFFIX,alipay.net
-# 银联/云闪付
-DOMAIN-SUFFIX,unionpay.com
-DOMAIN-SUFFIX,95516.com
-DOMAIN-SUFFIX,unionpaysecure.com
-# 微信支付核心
-DOMAIN-SUFFIX,pay.weixin.qq.com
-DOMAIN-SUFFIX,tenpay.com
-# 京东支付/白条
-DOMAIN-SUFFIX,jdpay.com
-
-# --- [电商购物] ---
-# SHEIN 希音 (国内供应链/面料商场/SCM)
-# 专门解决面料商场卡顿及后台登录风控问题
-DOMAIN-SUFFIX,sheinfmall.com
-DOMAIN-SUFFIX,sheincorp.com
-DOMAIN-SUFFIX,shein.com.cn
-DOMAIN-SUFFIX,sheingroup.com
-DOMAIN-SUFFIX,gecl.com
-
-# 京东 (图片 CDN 极多)
-DOMAIN-SUFFIX,jd.com
-DOMAIN-SUFFIX,360buyimg.com
-DOMAIN-SUFFIX,jdmall.com
-
-# 闲鱼 (阿里系私有协议)
-DOMAIN-SUFFIX,idlefish.com
-DOMAIN-SUFFIX,xianyu.com
-
-# 菜鸟裹裹 (查快递必选)
-DOMAIN-SUFFIX,cainiao.com
-DOMAIN-SUFFIX,cainiao.com.cn
-
-# scm321 旗下所有二级域名
-DOMAIN-SUFFIX,scm321.com
-
-# 知小布
-DOMAIN-SUFFIX,zhiyitech.cn
-
-# --- [品牌服务] ---
-# 小米/米家 (补全底层长连)
-DOMAIN-SUFFIX,mi-img.com
-DOMAIN-SUFFIX,xiaomiyoupin.com
-DOMAIN-KEYWORD,mi-dns
-# 华为 (针对部分系统推送)
-DOMAIN-SUFFIX,huawei.com
-DOMAIN-SUFFIX,dbankcloud.cn
-DOMAIN-SUFFIX,dbankcloud.com
-# Vivo (针对你的 reject 规则里对应的官方组件)
-DOMAIN-SUFFIX,vivo.com.cn
-DOMAIN-SUFFIX,vivoglobal.com
+# ======================================================
+# [8] 协议防护与兜底 (最后防线)
+# ======================================================
+# 只要是 .cn 结尾，直接走本地
+DOMAIN-SUFFIX,cn
+DOMAIN-SUFFIX,mshome.net
+DOMAIN-SUFFIX,jmodm.com
+DOMAIN-SUFFIX,sinaimg.cn
+DOMAIN-SUFFIX,p14-buy.itunes.apple.com
