@@ -1,28 +1,33 @@
 # === [1. 跨境电商前台：根治翻页空白与识图报错] ===
-# 核心逻辑：解决 SHEIN/Temu 识图没网、翻页 No item matched、分类图空白
+# 核心逻辑：精简第三方脚本，防止 403 报错，保留核心翻页与图片加载
 
-# --- [SHEIN 深度修复专区] ---
+# --- [SHEIN 核心数据与翻页] ---
 DOMAIN-KEYWORD,shein
 DOMAIN-SUFFIX,shein.com
 DOMAIN-SUFFIX,sheinapi.com     
-DOMAIN-SUFFIX,sheimg.com      
-DOMAIN-SUFFIX,sheinsv.com     
-DOMAIN-SUFFIX,sheingroup.com   
+DOMAIN-SUFFIX,sheimg.com        
+DOMAIN-SUFFIX,sheinsv.com       
+DOMAIN-SUFFIX,sheingroup.com    
 DOMAIN-SUFFIX,sheinapi-cloud.com
-DOMAIN-SUFFIX,staticimg.com    
-DOMAIN-SUFFIX,imgix.net       
-DOMAIN-SUFFIX,algolia.net     
-DOMAIN-SUFFIX,algolianet.com  
-DOMAIN-SUFFIX,algolia.io      
-DOMAIN-SUFFIX,ordercloud.io   
 
-# 4. 环境伪装 (重点：防止地理位置泄露)
+# --- [SHEIN 核心算法（翻页不白屏的关键）] ---
+DOMAIN-SUFFIX,algolia.net       
+DOMAIN-SUFFIX,algolianet.com
+DOMAIN-SUFFIX,algolia.io
+DOMAIN-SUFFIX,ordercloud.io
+
+# --- [图片分类与图标修复] ---
+DOMAIN-SUFFIX,staticimg.com    
+DOMAIN-SUFFIX,imgix.net        
+
+# --- [环境修复：仅保留 SHEIN 内部接口] ---
+# 删除了 googletagmanager/google-analytics/sentry 以彻底解决 403 报错
 DOMAIN-SUFFIX,geo-location.shein.com
 DOMAIN-SUFFIX,api-geo.shein.com
-# 将这三行放在这里，确保它们和 SHEIN 走同一个节点组，解决 403
-DOMAIN-SUFFIX,googletagmanager.com
-DOMAIN-SUFFIX,google-analytics.com
-DOMAIN-SUFFIX,sentry.io
+
+# --- [通用 CDN 支持] ---
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,akamaihd.net
 
 # 5. 辅助加载 (解决白屏最后死角)
 DOMAIN-SUFFIX,cloudfront.net
