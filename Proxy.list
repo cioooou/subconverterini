@@ -16,6 +16,12 @@ DOMAIN-SUFFIX,algolianet.com
 DOMAIN-SUFFIX,algolia.io      
 DOMAIN-SUFFIX,ordercloud.io   
 
+# === [SHEIN 强制环境补丁] ===
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN-SUFFIX,google-analytics.com
+DOMAIN-KEYWORD,geo-location
+DOMAIN-KEYWORD,tracking
+
 # --- [TEMU 专项修复] ---
 DOMAIN-KEYWORD,temu
 DOMAIN-SUFFIX,temu.com
