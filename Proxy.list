@@ -1,27 +1,30 @@
-# === [1. 跨境电商前台] ===
-# 逻辑：整合 SHEIN/Temu 
+# === [1. 跨境电商前台：识图、翻页、全功能修复] ===
+# 核心逻辑：修复 SHEIN 美国节点图片空白、翻页白屏及手机识图
 
-# --- [SHEIN 专项] ---
+# --- [SHEIN 专项修复：设计师与买家端] ---
 DOMAIN-KEYWORD,shein
 DOMAIN-SUFFIX,shein.com
-DOMAIN-SUFFIX,sheinapi.com     
-DOMAIN-SUFFIX,sheimg.com       
-DOMAIN-SUFFIX,sheinsv.com     
+DOMAIN-SUFFIX,sheinapi.com
+DOMAIN-SUFFIX,sheimg.com        
+DOMAIN-SUFFIX,sheinsv.com       
 DOMAIN-SUFFIX,sheingroup.com
 DOMAIN-SUFFIX,sheinapi-cloud.com
-DOMAIN-SUFFIX,staticimg.com    
-DOMAIN-SUFFIX,imgix.net        
-DOMAIN-SUFFIX,algolia.net      
-DOMAIN-SUFFIX,algolianet.com
-DOMAIN-SUFFIX,algolia.io
+DOMAIN-SUFFIX,staticimg.com     
+DOMAIN-SUFFIX,imgix.net         
+DOMAIN-SUFFIX,qh-img.com        
 DOMAIN-SUFFIX,ordercloud.io
 
-# --- [TEMU 专项：识图、App 全功能] ---
+# --- [SHEIN 核心算法：解决翻页 No item matched] ---
+DOMAIN-SUFFIX,algolia.net       
+DOMAIN-SUFFIX,algolianet.com
+DOMAIN-SUFFIX,algolia.io
+
+# --- [TEMU 专项：识图与 App 接口] ---
 DOMAIN-KEYWORD,temu
 DOMAIN-SUFFIX,temu.com
 DOMAIN-SUFFIX,pinduoduo.net     
 DOMAIN-SUFFIX,pddpic.com       
-DOMAIN-SUFFIX,temu-image.com  
+DOMAIN-SUFFIX,temu-image.com
 
 # --- [通用外贸平台与视觉 AI 补丁] ---
 DOMAIN-SUFFIX,aliexpress.com
@@ -30,26 +33,15 @@ DOMAIN-SUFFIX,dhgate.com
 DOMAIN-SUFFIX,made-in-china.com
 DOMAIN-SUFFIX,imagerecognition.io 
 DOMAIN-KEYWORD,visual-search
-DOMAIN-KEYWORD,kuaimai         
+DOMAIN-KEYWORD,kuaimai
 
-# --- [环境修复与 CDN（解决 403 与白屏）] ---
+# --- [环境修复与核心 CDN（解决美国节点加载失败）] ---
 DOMAIN-SUFFIX,geo-location.shein.com
 DOMAIN-SUFFIX,api-geo.shein.com
-DOMAIN-SUFFIX,cloudfront.net
-DOMAIN-SUFFIX,akamaihd.net
-DOMAIN-SUFFIX,qh-img.com
-
-
-# 5. 辅助加载 (解决白屏最后死角)
-DOMAIN-SUFFIX,cloudfront.net
-DOMAIN-SUFFIX,akamaihd.net
-
-# --- [TEMU 专项修复] ---
-DOMAIN-KEYWORD,temu
-DOMAIN-SUFFIX,temu.com
-DOMAIN-SUFFIX,pinduoduo.net    
-DOMAIN-SUFFIX,pddpic.com       
-DOMAIN-SUFFIX,temu-image.com   
+DOMAIN-SUFFIX,cloudfront.net     
+DOMAIN-SUFFIX,akamaihd.net      
+DOMAIN-SUFFIX,fastly.net         
+DOMAIN-SUFFIX,googletagmanager.com 
 
 # --- [辅助加载与通用 CDN] (确保脚本/图片 100% 走代理) ---
 DOMAIN-SUFFIX,cloudfront.net   
