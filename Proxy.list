@@ -16,11 +16,17 @@ DOMAIN-SUFFIX,algolianet.com
 DOMAIN-SUFFIX,algolia.io      
 DOMAIN-SUFFIX,ordercloud.io   
 
-# === [SHEIN 强制环境补丁] ===
+# 4. 环境伪装 (重点：防止地理位置泄露)
+DOMAIN-SUFFIX,geo-location.shein.com
+DOMAIN-SUFFIX,api-geo.shein.com
+# 将这三行放在这里，确保它们和 SHEIN 走同一个节点组，解决 403
 DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,google-analytics.com
-DOMAIN-KEYWORD,geo-location
-DOMAIN-KEYWORD,tracking
+DOMAIN-SUFFIX,sentry.io
+
+# 5. 辅助加载 (解决白屏最后死角)
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,akamaihd.net
 
 # --- [TEMU 专项修复] ---
 DOMAIN-KEYWORD,temu
