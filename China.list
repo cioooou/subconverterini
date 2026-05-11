@@ -1,21 +1,25 @@
 # ======================================================
 # [1] 核心外贸业务：卖家后台与供应链 (防封号/防风控)
 # ======================================================
-# SHEIN 希音 (国内供应链/面料商场/SCM/内部办公)
+# --- SHEIN 卖家/供应链专区 (必须直连) ---
 DOMAIN-SUFFIX,sheinfmall.com
 DOMAIN-SUFFIX,sheincorp.com
-DOMAIN-SUFFIX,sheingroup.com
 DOMAIN-SUFFIX,shein.com.cn
 DOMAIN-SUFFIX,gecl.com
 DOMAIN-SUFFIX,geiwohui.com
-# TEMU & 拼多多跨境 (卖家中心/卖家课堂)
+# 注意：移除了 sheingroup.com，为了保证前台翻页，该域名已移至代理
+
+# --- TEMU & 拼多多跨境卖家专区 (必须直连) ---
 DOMAIN-SUFFIX,kuajingmaihuo.com
 DOMAIN,seller.temu.com
 DOMAIN,agentseller.temu.com
-DOMAIN-SUFFIX,pinduoduo.com
+# 针对卖家后台精准直连，防止干扰手机 App 识图
+DOMAIN,mms.pinduoduo.com
+DOMAIN,huasheng.pinduoduo.com
 DOMAIN-SUFFIX,yangkeduo.com
 DOMAIN-SUFFIX,pdduo.com
-# 垂直供应链与工具 (知小布/SCM321)
+
+# --- 垂直供应链与工具 ---
 DOMAIN-SUFFIX,scm321.com
 DOMAIN-SUFFIX,zhiyitech.cn
 
