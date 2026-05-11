@@ -1,17 +1,28 @@
-# === [1. 跨境电商前台] ===
-# 逻辑：只要是买家端调研，全量走代理
+# === [1. 跨境电商前台：识图、翻页、全功能修复] ===
+# 核心逻辑：买家端调研/识图/App接口全量代理，根治 No item matched 与识图报错
+# --- SHEIN 专项 (修复识图没网) ---
 DOMAIN-KEYWORD,shein
-DOMAIN-KEYWORD,temu
-DOMAIN-KEYWORD,kuaimai
-DOMAIN-SUFFIX,sheimg.com
 DOMAIN-SUFFIX,shein.com
+DOMAIN-SUFFIX,sheimg.com       # SHEIN 图片、识图上传、大图加载核心
+DOMAIN-SUFFIX,sheinapi.com     # SHEIN 手机 App 专用核心接口
+DOMAIN-SUFFIX,sheinsv.com      # SHEIN 视频与流媒体服务
+# --- TEMU 专项 (修复识图没网) ---
+DOMAIN-KEYWORD,temu
 DOMAIN-SUFFIX,temu.com
+DOMAIN-SUFFIX,pinduoduo.net     # TEMU 手机 App 专用 API 接口
+DOMAIN-SUFFIX,pddpic.com        # TEMU 拍照识图图片上传服务器
+DOMAIN-SUFFIX,temu-image.com    # TEMU 图像处理专项
+# --- 其他外贸平台补丁 ---
+DOMAIN-KEYWORD,kuaimai
 DOMAIN-SUFFIX,aliexpress.com
 DOMAIN-SUFFIX,alibaba.com
 DOMAIN-SUFFIX,dhgate.com
 DOMAIN-SUFFIX,made-in-china.com
 DOMAIN-SUFFIX,terabox.com
 DOMAIN-SUFFIX,teraboxcdn.com
+# --- 视觉识别底层 (电商通用识图接口) ---
+DOMAIN-SUFFIX,imagerecognition.io
+DOMAIN-KEYWORD,visual-search
 
 # === [2. 外贸通讯] ===
 # 逻辑：覆盖全球主流客户通讯工具，加入 IP 段强制纠偏，防止 DNS 污染
