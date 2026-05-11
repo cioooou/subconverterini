@@ -1,0 +1,141 @@
+# === [1. 跨境电商前台] ===
+# 逻辑：只要是买家端调研，全量走代理
+DOMAIN-KEYWORD,shein
+DOMAIN-KEYWORD,temu
+DOMAIN-KEYWORD,kuaimai
+DOMAIN-SUFFIX,sheimg.com
+DOMAIN-SUFFIX,shein.com
+DOMAIN-SUFFIX,temu.com
+DOMAIN-SUFFIX,aliexpress.com
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,dhgate.com
+DOMAIN-SUFFIX,made-in-china.com
+DOMAIN-SUFFIX,terabox.com
+DOMAIN-SUFFIX,teraboxcdn.com
+
+# === [2. 外贸通讯] ===
+# 逻辑：覆盖全球主流客户通讯工具，加入 IP 段强制纠偏，防止 DNS 污染
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discord.gg
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,lin.ee
+DOMAIN-SUFFIX,line.me
+DOMAIN-SUFFIX,kakao.com
+DOMAIN-SUFFIX,kakaocdn.net
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,t.co
+# WhatsApp & Line 核心 IP 段 (no-resolve 强制代理)
+IP-CIDR,18.194.0.0/15,no-resolve
+IP-CIDR,34.224.0.0/12,no-resolve
+IP-CIDR,54.242.0.0/15,no-resolve
+IP-CIDR,108.168.174.0/16,no-resolve
+IP-CIDR,103.2.28.0/24,no-resolve
+
+# === [3. 设计师素材库] ===
+# 逻辑：补全了设计师常用的高清图库和它们的图片服务器 (CDN)
+DOMAIN-SUFFIX,pinterest.com
+DOMAIN-SUFFIX,pinimg.com      # 核心：Pinterest 图片加载全靠它
+DOMAIN-SUFFIX,behance.net
+DOMAIN-SUFFIX,dribbble.com
+DOMAIN-SUFFIX,unsplash.com
+DOMAIN-SUFFIX,freepik.com
+DOMAIN-SUFFIX,shutterstock.com
+DOMAIN-SUFFIX,vectorstock.com
+DOMAIN-SUFFIX,pixiv.net
+DOMAIN-SUFFIX,pximg.net
+DOMAIN-SUFFIX,fanbox.cc
+
+# === [4. 核心基础设施] ===
+# 逻辑：补全所有主流 CDN 和验证服务，确保脚本和样式表 100% 走代理加载
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,cloudfront.net
+DOMAIN-SUFFIX,akamaihd.net
+DOMAIN-SUFFIX,edgekey.net
+DOMAIN-SUFFIX,edgesuite.net
+DOMAIN-SUFFIX,fastly.net
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,amazon.com
+DOMAIN-SUFFIX,amazonaws.com
+# AWS 核心 IP 段补漏
+IP-CIDR,13.32.0.0/15,no-resolve
+IP-CIDR,52.58.0.0/15,no-resolve
+
+# === [5. 外贸生产力、开发与论坛] ===
+DOMAIN-SUFFIX,adspower.com
+DOMAIN-SUFFIX,hubstudio.com
+DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,linkedin.com
+DOMAIN-SUFFIX,licdn.com
+DOMAIN-SUFFIX,zoom.us
+DOMAIN-SUFFIX,wikipedia.org
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,v2ex.com
+DOMAIN-SUFFIX,medium.com
+DOMAIN-SUFFIX,stackoverflow.com
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,gitlab.com
+
+# === [6. 国外域名] ===
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steampowered.com
+DOMAIN-SUFFIX,twitch.tv
+DOMAIN-KEYWORD,porn
+DOMAIN-SUFFIX,t66y.com
+DOMAIN-SUFFIX,pornhub.com
+DOMAIN-SUFFIX,iwara.tv
+DOMAIN-SUFFIX,vikacg.com
+DOMAIN-SUFFIX,eu
+DOMAIN-SUFFIX,hk
+DOMAIN-SUFFIX,jp
+DOMAIN-SUFFIX,kr
+DOMAIN-SUFFIX,sg
+DOMAIN-SUFFIX,tw
+DOMAIN-SUFFIX,uk
+DOMAIN-KEYWORD,javbus
+DOMAIN-SUFFIX,javbus.com
+DOMAIN-SUFFIX,buscdn.me
+DOMAIN-SUFFIX,busfan.me
+DOMAIN-SUFFIX,javdb.com
+DOMAIN-SUFFIX,javlibrary.com
+DOMAIN-SUFFIX,jav321.com
+DOMAIN-SUFFIX,javme.net
+DOMAIN-SUFFIX,btsow.pw
+DOMAIN-SUFFIX,sukebei.nyaa.si
+DOMAIN-SUFFIX,t66y.com
+DOMAIN-SUFFIX,south-plus.net
+DOMAIN-SUFFIX,level-plus.net
+DOMAIN-SUFFIX,white-plus.net
+DOMAIN-SUFFIX,pornhub.com
+DOMAIN-SUFFIX,phncdn.com       
+DOMAIN-SUFFIX,phprcdn.com
+DOMAIN-SUFFIX,missav.com
+DOMAIN-SUFFIX,missav.net
+DOMAIN-SUFFIX,jable.tv
+DOMAIN-SUFFIX,7mmtv.tv
+DOMAIN-SUFFIX,xvideos.com
+DOMAIN-SUFFIX,xnxx.com
+DOMAIN-SUFFIX,spankbang.com
+DOMAIN-SUFFIX,hanime1.me
+DOMAIN-SUFFIX,iwara.tv
+DOMAIN-SUFFIX,vikacg.com
+DOMAIN-SUFFIX,nhentai.net
+DOMAIN-SUFFIX,hitomi.la
+DOMAIN-SUFFIX,exhentai.org
+DOMAIN-SUFFIX,e-hentai.org
+DOMAIN-SUFFIX,wnacg.com
+DOMAIN-SUFFIX,rule34.xxx
+DOMAIN-SUFFIX,hcaptcha.com    
+DOMAIN-SUFFIX,recaptcha.net    
+DOMAIN-SUFFIX,cloudflare.com  
+DOMAIN-SUFFIX,ajay.app     
+DOMAIN-SUFFIX,disqus.com   
+DOMAIN-SUFFIX,gravatar.com  
+DOMAIN-KEYWORD,porn
+DOMAIN-KEYWORD,sex
+DOMAIN-KEYWORD,adult
+DOMAIN-KEYWORD,hentai
