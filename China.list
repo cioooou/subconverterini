@@ -7,7 +7,7 @@ DOMAIN-SUFFIX,sheincorp.com
 DOMAIN-SUFFIX,shein.com.cn
 DOMAIN-SUFFIX,gecl.com
 DOMAIN-SUFFIX,geiwohui.com
-# 注意：移除了 sheingroup.com，为了保证前台翻页，该域名已移至代理
+# 注意：移除了 sheingroup.com   为了保证前台翻页该域名已移至代理
 
 # --- TEMU & 拼多多跨境卖家专区 (必须直连) ---
 DOMAIN-SUFFIX,kuajingmaihuo.com
