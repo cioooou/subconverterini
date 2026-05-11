@@ -1,63 +1,49 @@
-# === [1. 跨境电商前台：识图、翻页、全功能修复] ===
-# 核心逻辑：修复 SHEIN 美国节点图片空白、翻页白屏及手机识图
+# === [1. 跨境电商] ===
+# 核心逻辑：修复 SHEIN/TEMU 图片空白、翻页报错、App 识图没网
 
-# --- [SHEIN 专项修复：设计师与买家端] ---
+# --- [SHEIN & 设计师素材专区] ---
 DOMAIN-KEYWORD,shein
 DOMAIN-SUFFIX,shein.com
-DOMAIN-SUFFIX,sheinapi.com
-DOMAIN-SUFFIX,sheimg.com        
-DOMAIN-SUFFIX,sheinsv.com       
-DOMAIN-SUFFIX,sheingroup.com
+DOMAIN-SUFFIX,sheinapi.com       
+DOMAIN-SUFFIX,sheimg.com         
+DOMAIN-SUFFIX,sheinsv.com        
+DOMAIN-SUFFIX,sheingroup.com     
 DOMAIN-SUFFIX,sheinapi-cloud.com
-DOMAIN-SUFFIX,staticimg.com     
-DOMAIN-SUFFIX,imgix.net         
-DOMAIN-SUFFIX,qh-img.com        
-DOMAIN-SUFFIX,ordercloud.io
+DOMAIN-SUFFIX,staticimg.com      
+DOMAIN-SUFFIX,imgix.net           
+DOMAIN-SUFFIX,qh-img.com          
+DOMAIN-SUFFIX,ordercloud.io       
 
-# --- [SHEIN 核心算法：解决翻页 No item matched] ---
-DOMAIN-SUFFIX,algolia.net       
+# --- [SHEIN & TEMU 核心算法] ---
+DOMAIN-SUFFIX,algolia.net        
 DOMAIN-SUFFIX,algolianet.com
 DOMAIN-SUFFIX,algolia.io
 
-# --- [TEMU 专项：识图与 App 接口] ---
+# --- [TEMU & 拼多多海外版专项] ---
 DOMAIN-KEYWORD,temu
 DOMAIN-SUFFIX,temu.com
-DOMAIN-SUFFIX,pinduoduo.net     
-DOMAIN-SUFFIX,pddpic.com       
+DOMAIN-SUFFIX,pinduoduo.net       
+DOMAIN-SUFFIX,pddpic.com         
 DOMAIN-SUFFIX,temu-image.com
 
-# --- [通用外贸平台与视觉 AI 补丁] ---
+# --- [通用视觉 AI 与 其它电商平台] ---
+DOMAIN-SUFFIX,imagerecognition.io  
+DOMAIN-KEYWORD,visual-search
 DOMAIN-SUFFIX,aliexpress.com
 DOMAIN-SUFFIX,alibaba.com
 DOMAIN-SUFFIX,dhgate.com
 DOMAIN-SUFFIX,made-in-china.com
-DOMAIN-SUFFIX,imagerecognition.io 
-DOMAIN-KEYWORD,visual-search
+DOMAIN-SUFFIX,terabox.com         
+DOMAIN-SUFFIX,teraboxcdn.com
 DOMAIN-KEYWORD,kuaimai
 
-# --- [环境修复与核心 CDN（解决美国节点加载失败）] ---
+# --- [环境修复与核心加速] ---
 DOMAIN-SUFFIX,geo-location.shein.com
 DOMAIN-SUFFIX,api-geo.shein.com
-DOMAIN-SUFFIX,cloudfront.net     
-DOMAIN-SUFFIX,akamaihd.net      
-DOMAIN-SUFFIX,fastly.net         
 DOMAIN-SUFFIX,googletagmanager.com 
-
-# --- [辅助加载与通用 CDN] (确保脚本/图片 100% 走代理) ---
-DOMAIN-SUFFIX,cloudfront.net   
-DOMAIN-SUFFIX,akamaihd.net     
-DOMAIN-SUFFIX,fastly.net     
-DOMAIN-SUFFIX,imagerecognition.io
-DOMAIN-KEYWORD,visual-search
-
-# --- [其他外贸平台补丁] ---
-DOMAIN-KEYWORD,kuaimai
-DOMAIN-SUFFIX,aliexpress.com
-DOMAIN-SUFFIX,alibaba.com
-DOMAIN-SUFFIX,dhgate.com
-DOMAIN-SUFFIX,made-in-china.com
-DOMAIN-SUFFIX,terabox.com
-DOMAIN-SUFFIX,teraboxcdn.com
+DOMAIN-SUFFIX,cloudfront.net       
+DOMAIN-SUFFIX,akamaihd.net         
+DOMAIN-SUFFIX,fastly.net          
 
 # === [2. 外贸通讯] ===
 # 逻辑：覆盖全球主流客户通讯工具，加入 IP 段强制纠偏，防止 DNS 污染
