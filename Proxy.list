@@ -1,33 +1,44 @@
-# === [1. 跨境电商前台：根治翻页空白与识图报错] ===
-# 核心逻辑：精简第三方脚本，防止 403 报错，保留核心翻页与图片加载
+# === [1. 跨境电商前台] ===
+# 逻辑：整合 SHEIN/Temu 
 
-# --- [SHEIN 核心数据与翻页] ---
+# --- [SHEIN 专项] ---
 DOMAIN-KEYWORD,shein
 DOMAIN-SUFFIX,shein.com
 DOMAIN-SUFFIX,sheinapi.com     
-DOMAIN-SUFFIX,sheimg.com        
-DOMAIN-SUFFIX,sheinsv.com       
-DOMAIN-SUFFIX,sheingroup.com    
+DOMAIN-SUFFIX,sheimg.com       
+DOMAIN-SUFFIX,sheinsv.com     
+DOMAIN-SUFFIX,sheingroup.com
 DOMAIN-SUFFIX,sheinapi-cloud.com
-
-# --- [SHEIN 核心算法（翻页不白屏的关键）] ---
-DOMAIN-SUFFIX,algolia.net       
+DOMAIN-SUFFIX,staticimg.com    
+DOMAIN-SUFFIX,imgix.net        
+DOMAIN-SUFFIX,algolia.net      
 DOMAIN-SUFFIX,algolianet.com
 DOMAIN-SUFFIX,algolia.io
 DOMAIN-SUFFIX,ordercloud.io
 
-# --- [图片分类与图标修复] ---
-DOMAIN-SUFFIX,staticimg.com    
-DOMAIN-SUFFIX,imgix.net        
+# --- [TEMU 专项：识图、App 全功能] ---
+DOMAIN-KEYWORD,temu
+DOMAIN-SUFFIX,temu.com
+DOMAIN-SUFFIX,pinduoduo.net     
+DOMAIN-SUFFIX,pddpic.com       
+DOMAIN-SUFFIX,temu-image.com  
 
-# --- [环境修复：仅保留 SHEIN 内部接口] ---
-# 删除了 googletagmanager/google-analytics/sentry 以彻底解决 403 报错
+# --- [通用外贸平台与视觉 AI 补丁] ---
+DOMAIN-SUFFIX,aliexpress.com
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,dhgate.com
+DOMAIN-SUFFIX,made-in-china.com
+DOMAIN-SUFFIX,imagerecognition.io 
+DOMAIN-KEYWORD,visual-search
+DOMAIN-KEYWORD,kuaimai         
+
+# --- [环境修复与 CDN（解决 403 与白屏）] ---
 DOMAIN-SUFFIX,geo-location.shein.com
 DOMAIN-SUFFIX,api-geo.shein.com
-
-# --- [通用 CDN 支持] ---
 DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,akamaihd.net
+DOMAIN-SUFFIX,qh-img.com
+
 
 # 5. 辅助加载 (解决白屏最后死角)
 DOMAIN-SUFFIX,cloudfront.net
