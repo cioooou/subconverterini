@@ -19,6 +19,7 @@ DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,servd-anthropic-website.b-cdn.net
+DOMAIN-SUFFIX,anthropic.com.cdn.cloudflare.net
 
 # === Google AI (Gemini, Bard, DeepMind) ===
 DOMAIN,aida.googleapis.com
@@ -40,7 +41,7 @@ DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,googlecloud.com
+DOMAIN,console.cloud.google.com
 DOMAIN-SUFFIX,cloudcode-pa.googleapis.com
 DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
