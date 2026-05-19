@@ -51,10 +51,24 @@ DOMAIN-SUFFIX,bytedance.com
 DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,snssdk.com
 DOMAIN-SUFFIX,byteimg.com
-# 钉钉/阿里办公
+# ---- 钉钉 (DingTalk) 全家桶直连 ----
 DOMAIN-SUFFIX,dingtalk.com
 DOMAIN-SUFFIX,dingtalk.net
+DOMAIN-SUFFIX,dingtalkcs.com
+DOMAIN-SUFFIX,dingtalkapps.com
+DOMAIN-SUFFIX,dingtalk.cn
+DOMAIN-SUFFIX,dingtalk-inc.com
+# 专属钉钉与政企办公
 DOMAIN-SUFFIX,dg-work.com
+DOMAIN-SUFFIX,saas-work.com
+# 钉钉音视频会议与直播（保障低延迟/不卡顿）
+DOMAIN-SUFFIX,ddurl.to
+DOMAIN-SUFFIX,lwurl.to
+DOMAIN-SUFFIX,dingtalk21.com
+DOMAIN-SUFFIX,dingtalk-open.com
+# 钉钉网页版及开放平台
+DOMAIN-SUFFIX,ddocr.com
+DOMAIN-SUFFIX,im.dingtalk.com
 # 腾讯/QQ/微信支付
 DOMAIN-SUFFIX,qq.com
 DOMAIN-SUFFIX,tencent.com
