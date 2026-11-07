@@ -82,7 +82,7 @@ function main(config) {
   }
 
   // ── DNS ──────────────────────────────────────────────
-  config["dns"] = {
+config["dns"] = {
     "enable": true,
     "ipv6": false,
     "use-hosts": true,
@@ -92,7 +92,7 @@ function main(config) {
     "listen": "127.0.0.1:1053",
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": ["+.lan", "+.local", "+.localdomain", "time.apple.com", "time.windows.com", "time.cloudflare.com", "+.pool.ntp.org", "+.ntp.org", "ntp.aliyun.com", "ntp1.aliyun.com", "+.stun.*", "stun.*", "+.msftconnecttest.com", "+.msftncsi.com", "captive.apple.com", "*.apple.com.cn", "localhost.ptlogin2.qq.com", "+.wechat.com", "+.weixin.qq.com", "+.wx.qq.com", "+.servicewechat.com", "+.qq.com", "+.tencent.com", "+.xiaohongshu.com", "+.xhscdn.com", "+.xhslink.com", "+.xhsamy.com", "+.qy.net", "+.taobao.com", "+.tmall.com", "+.alipay.com", "+.alipayobjects.com", "+.alibaba.com", "+.alicdn.com", "+.xiami.com", "+.jd.com", "+.jd.id", "+.360buy.com", "+.baidu.com", "+.bdimg.com", "+.bdstatic.com", "+.meituan.com", "+.dianping.com", "+.bilibili.com", "+.biligame.com", "+.hdslb.com", "+.163.com", "+.netease.com", "+.unionpay.com", "+.unionpaysecure.com"],
+    "fake-ip-filter": ["+.lan", "+.local", "+.localdomain", "time.apple.com", "time.windows.com", "time.cloudflare.com", "+.pool.ntp.org", "+.ntp.org", "ntp.aliyun.com", "ntp1.aliyun.com", "+.stun.*", "stun.*", "+.msftconnecttest.com", "+.msftncsi.com", "captive.apple.com", "*.apple.com.cn", "localhost.ptlogin2.qq.com", "+.wechat.com", "+.weixin.qq.com", "+.wx.qq.com", "+.servicewechat.com", "+.qq.com", "+.tencent.com", "+.xiaohongshu.com", "+.xhscdn.com", "+.xhslink.com", "+.xhsamy.com", "+.qy.net", "+.taobao.com", "+.tmall.com", "+.alipay.com", "+.alipayobjects.com", "+.alibaba.com", "+.alicdn.com", "+.xiami.com", "+.jd.com", "+.jd.id", "+.360buy.com", "+.baidu.com", "+.bdimg.com", "+.bdstatic.com", "+.meituan.com", "+.dianping.com", "+.bilibili.com", "+.biligame.com", "+.hdslb.com", "+.163.com", "+.netease.com", "+.unionpay.com", "+.unionpaysecure.com", "+.pupu.com", "+.pupucdn.com", "+.feishu.cn", "+.larksuite.com", "+.dingtalk.com", "+.douyin.com", "+.snssdk.com", "+.ixigua.com", "+.toutiao.com", "+.pinduoduo.com", "+.yangkeduoduo.com", "+.kuaishou.com", "+.gifshow.com", "+.weibo.com", "+.weibocdn.com", "+.icbc.com.cn", "+.cmbchina.com", "+.ccb.com"],
     "default-nameserver": ["223.5.5.5", "119.29.29.29"],
     "nameserver": ["https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query"],
     "direct-nameserver": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"],
@@ -111,7 +111,7 @@ function main(config) {
   };
 
   // ── Sniffer ───────────────────────────────────────────
-  config["sniffer"] = {
+config["sniffer"] = {
     "enable": true,
     "force-dns-mapping": true,
     "parse-pure-ip": true,
