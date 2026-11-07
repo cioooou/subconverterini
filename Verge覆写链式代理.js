@@ -1,220 +1,232 @@
+// 深度参考 AnYiEE & mwmi 大佬配置，适配 Mac
+//https://gist.github.com/AnYiEE/fdce3f476dbdc1a905c9255d71c131f7
+//https://github.com/mwmi/ClashVergeGlobalScript
 // 参考 Verge Rev 示例 Script 配置
-// 已修复所有引号问题 + 其他小优化
-// 最后更新: 2025-12-14
 
-const ruleProviderCommon = {
+// 🟢 针对 .list 文本规则：万能兼容模式
+const txtProvider = {
   "type": "http",
   "format": "text",
+  "behavior": "classical", // 设为 classical 以兼容 DOMAIN-KEYWORD 和 IP-CIDR  
+  "interval": 86400
+};
+
+// 🔵 针对 .mrs 二进制规则：极致性能模式
+const mrsProvider = {
+  "type": "http",
+  "format": "mrs",
+  "behavior": "domain",    // MRS 核心优势是 Domain 树匹配，设为 domain 性能最高
   "interval": 86400
 };
 
 const groupBaseOption = {
+  "url": "https://cp.cloudflare.com/generate_204",
   "interval": 300,
-  "url": "http://1.1.1.1/generate_204",
-  "max-failed-times": 3,
+  "tolerance": 80,
+  "timeout": 5000,
+  "lazy": true  // 新增：懒加载，减少启动压力
 };
+
+const excludeFilter = "(?i)Traffic|Expire|Premium|GB|流量|到期|过期|剩余|已用|余额|订阅|官网|网址|地址|获取|更新|版本|备用|通知|提示|说明|教程|联系|客服|工单|频道|群|邀请|关注|返利|公益|机场|禁止|无法|超时|企业|通路|本站|失联|⚠️|@";
 
 function main(config) {
   const proxyCount = config?.proxies?.length ?? 0;
-  const proxyProviderCount = typeof config?.["proxy-providers"] === "object" ? Object.keys(config["proxy-providers"]).length : 0;
+  const proxyProviderCount =
+    typeof config?.["proxy-providers"] === "object"
+      ? Object.keys(config["proxy-providers"]).length
+      : 0;
   if (proxyCount === 0 && proxyProviderCount === 0) {
     throw new Error("配置文件中未找到任何代理");
   }
 
-  // 关键修复：数字和布尔值绝不加引号
-  config["mixed-port"] = 7890;          // 必须是数字
-  config["tcp-concurrent"] = true;
-  config["allow-lan"] = true;
+  // ── 基础设置 ──────────────────────────────────────────
+  config["mixed-port"] = 7890;
+  config["allow-lan"] = false;          // 修复：Mac 个人使用改为 false，true 会暴露局域网
   config["ipv6"] = false;
-  config["log-level"] = "info";
-  config["unified-delay"] = true;       // 必须是 true，不是 "true"
-  config["find-process-mode"] = "strict";
+  config["log-level"] = "warning";      // 修复：error 级别太低会漏掉有用日志，改 warning
+  config["find-process-mode"] = "off";  // 修复：strict 在 Mac 需要完整磁盘权限，改为 off
+  config["keep-alive-idle"] = 120;      // 有效：120秒无数据才开始探测
+  config["keep-alive-interval"] = 30;   // 有效：探测包间隔30秒
+  config["tcp-concurrent"] = true;
+  config["unified-delay"] = true;
+  config["profile"] = {
+    "store-selected": true,
+    "store-fake-ip": true
+  };
+  config["ntp"] = {
+    "enable": true,
+    "write-to-system": false,
+    "server": "time.apple.com",
+    "server-port": 123
+  };
+  config["hosts"] = {
+    "dns.alidns.com": ["223.5.5.5", "223.6.6.6"],
+    "doh.pub":        ["1.12.12.21", "120.53.53.53"],
+    "dns.google":     ["8.8.8.8", "8.8.4.4"]
+  };
   config["global-client-fingerprint"] = "chrome";
+  if (config["proxy-providers"]) {
+    Object.values(config["proxy-providers"]).forEach(p => {
+      p.override = {
+        ...(p.override || {}),
+        "client-fingerprint": "chrome"
+      };
+    });
+  }
+  if (config["proxies"]) {
+    config.proxies.forEach(p => {
+      if (["vmess", "vless", "trojan", "anytls"].includes(p.type)) {
+        p["client-fingerprint"] = p["client-fingerprint"] || "chrome";
+      }
+    });
+  }
 
+  // ── DNS ──────────────────────────────────────────────
   config["dns"] = {
     "enable": true,
-    "listen": "0.0.0.0:1053",
     "ipv6": false,
+    "use-hosts": true,
+    "use-system-hosts": true,
+    "respect-rules": true,
+    "cache-algorithm": "arc",
+    "listen": "127.0.0.1:1053",
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": ["*", "+.lan", "+.local", "+.direct", "+.msftconnecttest.com", "+.msftncsi.com"],
-    "default-nameserver": ["1.1.1.1", "8.8.8.8"],
-    "nameserver": ["1.1.1.1", "8.8.8.8"],
-    "fallback": ["1.1.1.1", "8.8.8.8"],
-    "nameserver-policy": {
-      "geosite:cn": ["223.5.5.5", "119.29.29.29"],
-      "geosite:geolocation-!cn": ["1.1.1.1", "8.8.8.8"]
-    }
+    "fake-ip-filter": ["+.lan", "+.local", "+.localdomain", "time.apple.com", "time.windows.com", "time.cloudflare.com", "+.pool.ntp.org", "+.ntp.org", "ntp.aliyun.com", "ntp1.aliyun.com", "+.stun.*", "stun.*", "+.msftconnecttest.com", "+.msftncsi.com", "captive.apple.com", "*.apple.com.cn", "localhost.ptlogin2.qq.com", "+.wechat.com", "+.weixin.qq.com", "+.wx.qq.com", "+.servicewechat.com", "+.qq.com", "+.tencent.com", "+.xiaohongshu.com", "+.xhscdn.com", "+.xhslink.com", "+.xhsamy.com", "+.qy.net", "+.taobao.com", "+.tmall.com", "+.alipay.com", "+.alipayobjects.com", "+.alibaba.com", "+.alicdn.com", "+.xiami.com", "+.jd.com", "+.jd.id", "+.360buy.com", "+.baidu.com", "+.bdimg.com", "+.bdstatic.com", "+.meituan.com", "+.dianping.com", "+.bilibili.com", "+.biligame.com", "+.hdslb.com", "+.163.com", "+.netease.com", "+.unionpay.com", "+.unionpaysecure.com"],
+    "default-nameserver": ["223.5.5.5", "119.29.29.29"],
+    "nameserver": ["https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query"],
+    "direct-nameserver": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"],
+    "proxy-server-nameserver": ["223.5.5.5", "119.29.29.29"],
+    "fallback": []
   };
-
-  config["tun"] = {
-    "enable": true,
-    "stack": "gVisor",
-    "dns-hijack": ["any:53"]
-  };
-
-  config["log-level"] = "debug";
-
+  // ── GeoData ───────────────────────────────────────────
   config["geodata-mode"] = true;
+  config["geodata-loader"] = "standard";   // 有效：Mac 内存充足推荐
+  config["geosite-matcher"] = "succinct";  // 有效：更快域名匹配算法
   config["geox-url"] = {
-    "geoip": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/geoip.dat",
-    "geosite": "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@latest/geosite.dat",
-    "mmdb": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb",
-    "asn": "https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
+    "geoip":   "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat",
+    "geosite": "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat",
+    "mmdb":    "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb",
+    "asn":     "https://fastly.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb"
   };
 
+  // ── Sniffer ───────────────────────────────────────────
   config["sniffer"] = {
     "enable": true,
+    "force-dns-mapping": true,
     "parse-pure-ip": true,
     "sniff": {
-      "TLS": {"ports": ["443", "8443"]},
-      "HTTP": {"ports": ["80", "8080-8880"], "override-destination": true},
-      "QUIC": {"ports": ["443", "8443"]}
-    }
+      "TLS":  { "ports": ["443", "8443"] },
+      "HTTP": { "ports": ["80", "8080", "8880"], "override-destination": true }
+    },
+    "skip-domain": ["time.apple.com", "ntp.aliyun.com", "captive.apple.com", "msftconnecttest.com", "msftncsi.com", "*.github.com", "+.rules.dat", "+.rules.mrs"]
   };
 
-  // 覆盖策略组
+  // ── 代理组 ────────────────────────────────────────────
   config["proxy-groups"] = [
     {
-      ...groupBaseOption,   
+      ...groupBaseOption,
       "name": "🔰 节点选择",
       "type": "select",
-      "proxies": ["🔯 故障转移", "⚖️ 负载均衡", "🔗 链式代理", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],     
+      "proxies": ["🔯 故障转移", "🌊 低载链路", "⚖️ 负载均衡", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"], 
       "include-all": true,
-      "exclude-filter": "(?i)GB|Traffic|Expire|Premium|频道|订阅|ISP|流量|到期|企业",
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"   
-    },  
+      "exclude-filter": excludeFilter,
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Proxy.png"
+    },
     {
       ...groupBaseOption,
       "name": "🔯 故障转移",
       "type": "fallback",
-      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "⚖️ 负载均衡"],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": 60,
-      "timeout": 1500,
+      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "exclude-filter": excludeFilter,
+      "interval": 500,  
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Find_My.png"
-    },  
+    },
+    {
+      ...groupBaseOption,
+      "name": "🌊 低载链路",
+      "type": "url-test",
+      "include-all": true,
+      "filter": "(?i)0\\.|低倍|宽带|流量|⁶|实验",
+      "exclude-filter": excludeFilter,
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Available_1.png"
+    },
     {
       ...groupBaseOption,
       "name": "⚖️ 负载均衡",
       "type": "load-balance",
-      "interval": 300,
-      "url": "http://www.gstatic.com/generate_204",
-      "timeout": 1500,
+      "interval": 900,   
       "strategy": "consistent-hashing",
       "include-all": true,
-      "icon": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Available.png"
-    }, 
-    // 链式代理组件
-    {
-      ...groupBaseOption,
-      "name": "✈️ 前置代理",
-      "type": "select",
-      "proxies": ["🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点"],
-      "include-all": true,
-      "filter": "(?i)🇭🇰|香港|🇯🇵|日本|🇸🇬|新加坡|狮城",
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Airport.png"
+      "exclude-filter": excludeFilter,
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Round_Robin.png"
     },
-    {
-      ...groupBaseOption,
-      "name": "🛬 落地代理",
-      "type": "select",
-      "include-all": true,
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Domestic.png"
-    },
-    {
-      ...groupBaseOption,
-      "name": "🔗 链式代理",
-      "type": "select",
-      "proxies": ["🛬 落地代理"],
-      "dialer-proxy": "✈️ 前置代理",
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Loop.png"
-    },  
     {
       ...groupBaseOption,
       "name": "✅ 微信服务",
       "type": "select",
       "proxies": ["DIRECT", "🇭🇰 香港节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/WeChat.png"
-    },    
+    },
     {
       ...groupBaseOption,
       "name": "😀 脸书服务",
       "type": "select",
-      "proxies": ["🔰 节点选择", "🔗 链式代理", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "proxies": ["🔰 节点选择", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "include-all": true,
+      "filter": "(?i)US|美国|JP|日本|TW|台湾|SG|新加坡",  
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Facebook.png"
-    },         
+    },
     {
       ...groupBaseOption,
       "name": "🤖 AI服务",
       "type": "select",
-      "proxies": ["🔰 节点选择", "🔗 链式代理","🇺🇸 美国节点", "🇸🇬 狮城节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点"],      
+      "proxies": ["🇺🇸 美国节点", "🇸🇬 狮城节点", "🇹🇼 台湾节点", "🇯🇵 日本节点"],      
       "include-all": true,
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/ChatGPT.png"
-    }, 
-    {
-      ...groupBaseOption,
-      "name": "🎶 TikTok服务",
-      "type": "select",
-      "proxies": ["🔰 节点选择", "🔗 链式代理", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
-      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png"
-    },       
-    {
-      ...groupBaseOption,
-      "name": "🍎 苹果服务",
-      "type": "select",
-      "proxies": ["🔰 节点选择", "🔗 链式代理", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png"
-    },
-    {
-      ...groupBaseOption,
-      "name": "⌨️ GitHub",
-      "type": "select",
-      "proxies": ["🔰 节点选择", "🔗 链式代理", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/refs/heads/master/IconSet/Color/GitHub.png"
-    },
-    {
-      ...groupBaseOption,
-      "name": "Ⓜ️ 微软服务",
-      "type": "select",
-      "proxies": ["🔰 节点选择", "🔗 链式代理", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"
+      "exclude-filter": "(?i)香港|HK|港|澳门|MO|Russia|俄|Iran|伊朗|KP|朝鲜|Cuba|古巴|Syria|叙利亚|Venezuela|委内瑞拉|Afghanistan|阿富汗|Myanmar|缅甸|Sudan|苏丹|Turkey|TR|Argentina|AR",
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Bot.png"
     },
     {
       ...groupBaseOption,
       "name": "📢 谷歌服务",
       "type": "select",
-      "proxies": ["🔰 节点选择", "🔗 链式代理", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "proxies": ["🇺🇸 美国节点", "🇸🇬 狮城节点", "🇹🇼 台湾节点", "🇯🇵 日本节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"
     },
     {
       ...groupBaseOption,
-      "name": "📲 电报SG",
+      "name": "📹 油管视频",
       "type": "select",
-      "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点", "🔰 节点选择"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/YouTube.png"
     },
     {
       ...groupBaseOption,
-      "name": "📲 电报US",
+      "name": "🎵 TikTok服务",
       "type": "select",
-      "proxies": ["🇺🇸 美国节点", "🇸🇬 狮城节点", "🔰 节点选择"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
-    },    
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TikTok.png"
+    },
     {
       ...groupBaseOption,
-      "name": "📲 电报NL",
+      "name": "🍎 苹果服务",
       "type": "select",
-      "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点", "🔰 节点选择"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
-    },       
+      "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点", "DIRECT"],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png"
+    },
     {
       ...groupBaseOption,
-      "name": "📺️ Emby影视",
+      "name": "Ⓜ️ 微软服务",
       "type": "select",
-      "proxies": ["DIRECT", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
+      "proxies": ["🌊 低载链路", "🔰 节点选择", "🇭🇰 香港节点", "🇺🇸 美国节点", "DIRECT"],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png"
+    },
+    {
+      ...groupBaseOption,
+      "name": "📲 电报消息",
+      "type": "select",
+      "proxies": ["🌊 低载链路", "🔰 节点选择", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
     },
     {
       ...groupBaseOption,
@@ -222,14 +234,14 @@ function main(config) {
       "type": "select",
       "proxies": ["🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Spotify.png"
-    },    
+    },
     {
       ...groupBaseOption,
       "name": "🛑 广告拦截",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"
-    },   
+    },
     {
       ...groupBaseOption,
       "name": "🐟 漏网之鱼",
@@ -237,255 +249,173 @@ function main(config) {
       "proxies": ["🔰 节点选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇸 美国节点"],
       "icon": "https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Final.png"
     },
-    // 地区分组
     {
       ...groupBaseOption,
       "name": "🇭🇰 香港节点",
       "type": "url-test",
-      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇭🇰|香港|(\\b(HK|Hong)\\b)",
+      "exclude-filter": excludeFilter,  
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
     },
     {
       ...groupBaseOption,
       "name": "🇹🇼 台湾节点",
       "type": "url-test",
-      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇹🇼|台湾|(\\b(TW|Tai|Taiwan)\\b)",
+      "exclude-filter": excludeFilter,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png"
     },
     {
       ...groupBaseOption,
       "name": "🇯🇵 日本节点",
       "type": "url-test",
-      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇯🇵|日本|东京|(\\b(JP|Japan)\\b)",
+      "exclude-filter": excludeFilter,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"
-    },        
+    },
     {
       ...groupBaseOption,
       "name": "🇸🇬 狮城节点",
       "type": "url-test",
-      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇸🇬|新加坡|狮|(\\b(SG|Singapore)\\b)",
+      "exclude-filter": excludeFilter,
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"
     },
     {
       ...groupBaseOption,
       "name": "🇺🇸 美国节点",
       "type": "url-test",
-      "tolerance": 0,
       "include-all": true,
       "filter": "(?i)🇺🇸|美国|洛杉矶|圣何塞|(\\b(US|United States)\\b)",
-      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"   
-    }    
+      "exclude-filter": excludeFilter,
+      "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"
+    }
   ];
 
-  // 覆盖规则集
+  // ── Rule Providers ────────────────────────────────────
   config["rule-providers"] = {
     "Block": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
+      ...txtProvider,
       "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/Block.list",
       "path": "./rules/Block.list"
-    },       
-    "WeChat": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Surge/Rules/WeChat.list",
-      "path": "./rules/WeChat.list"      
-    },
-    "Facebook": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Facebook/Facebook.list",
-      "path": "./rules/Facebook.list"  
-    },
-    "Instagram": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Instagram/Instagram.list",
-      "path": "./rules/Instagram.list"           
-    },    
-    "AI": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/AI.list",
-      "path": "./rules/AI.list"
-    },  
-    "AIGPT": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/main/AIGPT.list",
-      "path": "./rules/AIGPT.list"
-    },      
-    "Apple": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Ruleset/Apple.list",
-      "path": "./rules/Apple.list"
-    },
-    "GoogleCN": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCN.list",
-      "path": "./rules/GoogleCN.list"
-    },
-    "Google": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Google.list",
-      "path": "./rules/Google.list"
-    },
-    "GoogleCNProxyIP": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleCNProxyIP.list",
-      "path": "./rules/GoogleCNProxyIP.list"
-    },
-    "GoogleFCM": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list",
-      "path": "./rules/GoogleFCM.list"
-    },                
-    "TelegramSG": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramSG/TelegramSG.list",
-      "path": "./rules/TelegramSG.list"
-    },
-    "TelegramUS": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramUS/TelegramUS.list",
-      "path": "./rules/TelegramUS.list"
-    },
-    "TelegramNL": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TelegramNL/TelegramNL.list",
-      "path": "./rules/TelegramNL.list"
-    },        
-    "TikTok": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/TikTok/TikTok.list",
-      "path": "./rules/TikTok.list"
-    },    
-    "Emby": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/Repcz/Tool/X/Loon/Rules/Emby.list",
-      "path": "./rules/Emby.list"
-    },
-    "Spotify": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Shopify/Shopify.list",
-      "path": "./rules/Spotify.list"
-    },
-    "GitHub": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list",
-      "path": "./rules/GitHub.list"
-    },
-    "OneDrive": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/OneDrive.list",
-      "path": "./rules/OneDrive.list"
-    },
-    "Microsoft": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Microsoft.list",
-      "path": "./rules/Microsoft.list"
-    },
-    "Lan": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Lan/Lan.list",
-      "path": "./rules/Lan.list"
     },
     "UnBan": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
+      ...txtProvider,
       "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list",
       "path": "./rules/UnBan.list"
     },
+    "WeChat": {
+      ...txtProvider,
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Wechat.list",
+      "path": "./rules/WeChat.list"
+    },
+    "AI": {
+      ...txtProvider,
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/AI.list",
+      "path": "./rules/AI.list"
+    },
+    "GoogleFCM": {
+      ...txtProvider,
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list",
+      "path": "./rules/GoogleFCM.list"
+    },
+    "YouTube": {
+      ...mrsProvider,
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/youtube.mrs",
+      "path": "./rules/youtube.mrs"
+    },
+    "Google": {
+      ...mrsProvider,
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google.mrs",   
+      "path": "./rules/google.mrs"
+    },
+    "Facebook": {
+      ...mrsProvider,
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/facebook.mrs",
+      "path": "./rules/facebook.mrs"
+    },
+    "Instagram": {
+      ...mrsProvider,
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/instagram.mrs",
+      "path": "./rules/instagram.mrs"
+    },
+    "Apple": {
+      ...mrsProvider,
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/apple.mrs",
+      "path": "./rules/apple.mrs"
+    },
+    "Telegram": {
+      ...txtProvider,
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list",
+      "path": "./rules/Telegram.list"
+    },
+    "TikTok": {
+      ...mrsProvider,
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/tiktok.mrs",
+      "path": "./rules/tiktok.mrs"
+    },
+    "Spotify": {
+      ...mrsProvider,
+      "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/spotify.mrs",
+      "path": "./rules/spotify.mrs"
+    },
+    "Microsoft": {
+      ...txtProvider,
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Microsoft.list",
+      "path": "./rules/Microsoft.list"
+    },
+    "Proxy": {
+      ...txtProvider,
+      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Proxy.list",
+      "path": "./rules/Proxy.list"
+    },
+    "Lan": {
+      ...txtProvider,
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Lan/Lan.list",
+      "path": "./rules/Lan.list"
+    },
     "Download": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
+      ...txtProvider,
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.list",
       "path": "./rules/Download.list"
-    },              
-    "Proxy": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/ProxyLite.list",
-      "path": "./rules/ProxyLite.list"
     },
-    "Mozilla": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://gcore.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Mozilla/Mozilla.list",
-      "path": "./rules/Mozilla.list"
-    },    
     "China": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
+      ...txtProvider,
       "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/China.list",
       "path": "./rules/China.list"
-    },     
-    "prevent_dns_leak": {
-      ...ruleProviderCommon,
-      "behavior": "domain",
-      "url": "https://raw.githubusercontent.com/cioooou/subconverterini/refs/heads/main/Prevent_dns.list",
-      "path": "./rules/prevent_dns_leak_domain.list"
     }
   };
 
-  // 覆盖规则
+  // ── Rules ─────────────────────────────────────────────
   config["rules"] = [
-    "RULE-SET,prevent_dns_leak,🔰 节点选择",    
-    "RULE-SET,Block,🛑 广告拦截", 
-    "RULE-SET,WeChat,✅ 微信服务",
-    "RULE-SET,Facebook,😀 脸书服务",
-    "RULE-SET,Instagram,😀 脸书服务",    
-    "RULE-SET,AI,🤖 AI服务",
-    "RULE-SET,AIGPT,🤖 AI服务",    
-    "RULE-SET,TikTok,🎶 TikTok服务",
-    "RULE-SET,Apple,🍎 苹果服务",
-    "RULE-SET,GoogleCN,📢 谷歌服务",
-    "RULE-SET,Google,📢 谷歌服务",
-    "RULE-SET,GoogleCNProxyIP,📢 谷歌服务",
-    "RULE-SET,GoogleFCM,📢 谷歌服务",
-    "RULE-SET,TelegramSG,📲 电报SG",
-    "RULE-SET,TelegramUS,📲 电报US",
-    "RULE-SET,TelegramNL,📲 电报NL",        
-    "RULE-SET,Emby,📺️ Emby影视",
-    "RULE-SET,Spotify,🎧 Spotify音乐",
-    "RULE-SET,GitHub,⌨️ GitHub",
-    "GEOSITE,onedrive,Ⓜ️ 微软服务",
-    "GEOSITE,github,Ⓜ️ 微软服务",
-    "GEOSITE,microsoft,Ⓜ️ 微软服务",  
-    "RULE-SET,Proxy,🔰 节点选择",
-    "RULE-SET,Mozilla,🔰 节点选择",    
-    "RULE-SET,Lan,DIRECT",    
     "RULE-SET,UnBan,DIRECT",
+    "RULE-SET,WeChat,✅ 微信服务",
+    "RULE-SET,Block,🛑 广告拦截",
+    "RULE-SET,AI,🤖 AI服务",
+    "RULE-SET,GoogleFCM,📢 谷歌服务",
+    "RULE-SET,YouTube,📹 油管视频",
+    "RULE-SET,Google,📢 谷歌服务",
+    "RULE-SET,Facebook,😀 脸书服务",
+    "RULE-SET,Instagram,😀 脸书服务",
+    "RULE-SET,TikTok,🎵 TikTok服务",
+    "RULE-SET,Apple,🍎 苹果服务",
+    "RULE-SET,Telegram,📲 电报消息",
+    "RULE-SET,Spotify,🎧 Spotify音乐",
+    "RULE-SET,Microsoft,Ⓜ️ 微软服务",
+    "RULE-SET,Lan,DIRECT",
+    "GEOSITE,private,DIRECT",
+    "GEOIP,private,DIRECT,no-resolve",
     "RULE-SET,Download,DIRECT",
     "RULE-SET,China,DIRECT",
-    "GEOIP,private,DIRECT",
-    "GEOIP,cn,DIRECT",
+    "GEOSITE,cn,DIRECT",
+    "GEOIP,CN,DIRECT",
+    "RULE-SET,Proxy,🔰 节点选择",
     "MATCH,🐟 漏网之鱼"
   ];
 
-  // 返回修改后的配置
   return config;
 }
