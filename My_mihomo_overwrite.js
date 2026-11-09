@@ -42,7 +42,7 @@ function main(config) {
   // ── 基础设置 ──────────────────────────────────────────
   config["mixed-port"] = 7890;
   config["allow-lan"] = false;          // 修复：Mac 个人使用改为 false，true 会暴露局域网
-  config["ipv6"] = false;
+  config["ipv6"] = true;
   config["log-level"] = "warning";      // 修复：error 级别太低会漏掉有用日志，改 warning
   config["find-process-mode"] = "off";  // 修复：strict 在 Mac 需要完整磁盘权限，改为 off
   config["keep-alive-idle"] = 120;      // 有效：120秒无数据才开始探测
@@ -61,7 +61,6 @@ function main(config) {
   };
   config["hosts"] = {
     "dns.alidns.com": ["223.5.5.5", "223.6.6.6"],
-    "doh.pub":        ["1.12.12.21", "120.53.53.53"],
     "dns.google":     ["8.8.8.8", "8.8.4.4"]
   };
   config["global-client-fingerprint"] = "chrome";
@@ -84,7 +83,7 @@ function main(config) {
   // ── DNS ──────────────────────────────────────────────
 config["dns"] = {
     "enable": true,
-    "ipv6": false,
+    "ipv6": true,
     "use-hosts": true,
     "use-system-hosts": true,
     "respect-rules": true,
@@ -92,7 +91,7 @@ config["dns"] = {
     "listen": "127.0.0.1:1053",
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": ["+.lan", "+.local", "+.localdomain", "time.apple.com", "time.windows.com", "time.cloudflare.com", "+.pool.ntp.org", "+.ntp.org", "ntp.aliyun.com", "ntp1.aliyun.com", "+.stun.*", "stun.*", "+.msftconnecttest.com", "+.msftncsi.com", "captive.apple.com", "*.apple.com.cn", "localhost.ptlogin2.qq.com", "+.wechat.com", "+.weixin.qq.com", "+.wx.qq.com", "+.servicewechat.com", "+.qq.com", "+.tencent.com", "+.xiaohongshu.com", "+.xhscdn.com", "+.xhslink.com", "+.xhsamy.com", "+.qy.net", "+.taobao.com", "+.tmall.com", "+.alipay.com", "+.alipayobjects.com", "+.alibaba.com", "+.alicdn.com", "+.xiami.com", "+.jd.com", "+.jd.id", "+.360buy.com", "+.baidu.com", "+.bdimg.com", "+.bdstatic.com", "+.meituan.com", "+.dianping.com", "+.bilibili.com", "+.biligame.com", "+.hdslb.com", "+.163.com", "+.netease.com", "+.unionpay.com", "+.unionpaysecure.com", "+.pupu.com", "+.pupucdn.com", "+.feishu.cn", "+.larksuite.com", "+.dingtalk.com", "+.douyin.com", "+.snssdk.com", "+.ixigua.com", "+.toutiao.com", "+.pinduoduo.com", "+.yangkeduoduo.com", "+.kuaishou.com", "+.gifshow.com", "+.weibo.com", "+.weibocdn.com", "+.icbc.com.cn", "+.cmbchina.com", "+.ccb.com"],
+    "fake-ip-filter": ["+.lan", "+.local", "+.localdomain", "localhost", "time.apple.com", "time.windows.com", "time.cloudflare.com", "+.pool.ntp.org", "+.ntp.org", "ntp.aliyun.com", "ntp1.aliyun.com", "+.stun.*", "stun.*", "+.msftconnecttest.com", "+.msftncsi.com", "captive.apple.com", "*.apple.com.cn", "localhost.ptlogin2.qq.com", "+.wechat.com", "+.weixin.qq.com", "+.wx.qq.com", "+.servicewechat.com", "+.qq.com", "+.tencent.com", "+.gtimg.com", "+.qpic.cn", "+.qlogo.cn", "+.tenpay.com", "+.xiaohongshu.com", "+.xhscdn.com", "+.xhslink.com", "+.xhsamy.com", "+.xhesp.com", "+.xhs-ai.com", "+.pupufz.com", "+.pupuapp.com", "+.pupu.com", "+.pupucdn.com", "+.feishu.cn", "+.feishu.net", "+.feishucdn.com", "+.feishuimg.com", "+.feishupkg.com", "+.larksuite.com", "+.dingtalk.com", "+.dingtalk.net", "+.taobao.com", "+.tmall.com", "+.alipay.com", "+.alipayobjects.com", "+.alibaba.com", "+.alicdn.com", "+.aliyun.com", "+.aliyuncs.com", "+.idlefish.com", "+.xianyu.com", "+.jd.com", "+.jd.id", "+.360buy.com", "+.360buyimg.com", "+.jdpay.com", "+.baidu.com", "+.bdimg.com", "+.bdstatic.com", "+.baidupcs.com", "+.meituan.com", "+.meituan.net", "+.dianping.com", "+.dpfile.com", "+.sankuai.com", "+.bilibili.com", "+.biligame.com", "+.bilivideo.com", "+.bilivideo.cn", "+.biliapi.com", "+.biliapi.net", "+.hdslb.com", "+.163.com", "+.163yun.com", "+.126.com", "+.126.net", "+.unionpay.com", "+.unionpaysecure.com", "+.95516.com", "+.icbc.com.cn", "+.cmbchina.com", "+.ccb.com", "+.abchina.com", "+.bankofchina.com", "+.douyin.com", "+.snssdk.com", "+.bytedance.com", "+.byteimg.com", "+.pstatp.com", "+.toutiao.com", "+.ixigua.com", "+.kuaishou.com", "+.gifshow.com", "+.weibo.com", "+.weibocdn.com", "+.pinduoduo.com", "+.yangkeduo.com", "+.amap.com", "+.autonavi.com", "+.ele.me", "+.zhihu.com", "+.zhimg.com", "+.iqiyi.com", "+.youku.com", "+.mgtv.com", "+.wps.cn", "+.wps.com", "+.kdocs.cn", "+.aliyundrive.com", "+.alipan.com", "+.xunlei.com"],
     "default-nameserver": ["223.5.5.5", "119.29.29.29"],
     "nameserver": ["https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query"],
     "direct-nameserver": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"],
@@ -395,6 +394,7 @@ config["sniffer"] = {
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,WeChat,✅ 微信服务",
     "RULE-SET,Block,🛑 广告拦截",
+    "RULE-SET,China,DIRECT",
     "RULE-SET,AI,🤖 AI服务",
     "RULE-SET,GoogleFCM,📢 谷歌服务",
     "RULE-SET,YouTube,📹 油管视频",
@@ -410,7 +410,6 @@ config["sniffer"] = {
     "GEOSITE,private,DIRECT",
     "GEOIP,private,DIRECT,no-resolve",
     "RULE-SET,Download,DIRECT",
-    "RULE-SET,China,DIRECT",
     "GEOSITE,cn,DIRECT",
     "GEOIP,CN,DIRECT",
     "RULE-SET,Proxy,🔰 节点选择",
