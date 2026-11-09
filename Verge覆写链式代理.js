@@ -61,6 +61,7 @@ function main(config) {
   };
   config["hosts"] = {
     "dns.alidns.com": ["223.5.5.5", "223.6.6.6"],
+    "doh.pub": ["1.12.12.12", "120.53.53.53"],
     "dns.google":     ["8.8.8.8", "8.8.4.4"]
   };
   config["global-client-fingerprint"] = "chrome";
