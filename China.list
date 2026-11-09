@@ -149,6 +149,8 @@ DOMAIN-SUFFIX,xiaohongshu.com
 DOMAIN-SUFFIX,xhscdn.com
 DOMAIN-SUFFIX,xhslink.com
 DOMAIN-SUFFIX,xhsamy.com
+DOMAIN-SUFFIX,xhesp.com
+DOMAIN-SUFFIX,xhs-ai.com
 
 # 注意：fengkongcloud.com 是共享风控服务域名，
 # 暂不全局加入，避免影响其他应用的流量分配。
