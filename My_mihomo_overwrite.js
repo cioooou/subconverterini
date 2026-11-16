@@ -42,7 +42,7 @@ function main(config) {
   // ── 基础设置 ──────────────────────────────────────────
   config["mixed-port"] = 7890;
   config["allow-lan"] = false;          // 修复：Mac 个人使用改为 false，true 会暴露局域网
-  config["ipv6"] = true;
+  config["ipv6"] = false;
   config["log-level"] = "warning";      // 修复：error 级别太低会漏掉有用日志，改 warning
   config["find-process-mode"] = "off";  // 修复：strict 在 Mac 需要完整磁盘权限，改为 off
   config["keep-alive-idle"] = 120;      // 有效：120秒无数据才开始探测
@@ -84,7 +84,7 @@ function main(config) {
   // ── DNS ──────────────────────────────────────────────
 config["dns"] = {
     "enable": true,
-    "ipv6": true,
+    "ipv6": false,
     "use-hosts": true,
     "use-system-hosts": true,
     "respect-rules": true,
@@ -121,6 +121,7 @@ config["sniffer"] = {
     },
     "skip-domain": ["time.apple.com", "ntp.aliyun.com", "captive.apple.com", "msftconnecttest.com", "msftncsi.com", "*.github.com", "+.rules.dat", "+.rules.mrs"]
   };
+  (config["rules"] ||= []).unshift("AND,((NETWORK,UDP),(DST-PORT,443)),REJECT");
 
   // ── 代理组 ────────────────────────────────────────────
   config["proxy-groups"] = [
@@ -395,7 +396,6 @@ config["sniffer"] = {
     "RULE-SET,UnBan,DIRECT",
     "RULE-SET,WeChat,✅ 微信服务",
     "RULE-SET,Block,🛑 广告拦截",
-    "RULE-SET,China,DIRECT",
     "RULE-SET,AI,🤖 AI服务",
     "RULE-SET,GoogleFCM,📢 谷歌服务",
     "RULE-SET,YouTube,📹 油管视频",
@@ -411,6 +411,7 @@ config["sniffer"] = {
     "GEOSITE,private,DIRECT",
     "GEOIP,private,DIRECT,no-resolve",
     "RULE-SET,Download,DIRECT",
+    "RULE-SET,China,DIRECT",
     "GEOSITE,cn,DIRECT",
     "GEOIP,CN,DIRECT",
     "RULE-SET,Proxy,🔰 节点选择",
