@@ -83,22 +83,25 @@ function main(config) {
 
   // ── DNS ──────────────────────────────────────────────
 config["dns"] = {
-    "enable": true,
-    "ipv6": false,
-    "use-hosts": true,
-    "use-system-hosts": true,
-    "respect-rules": true,
-    "cache-algorithm": "arc",
-    "listen": "127.0.0.1:1053",
-    "enhanced-mode": "fake-ip",
-    "fake-ip-range": "198.18.0.1/16",
-    "fake-ip-filter": ["+.lan", "+.local", "+.localdomain", "localhost", "time.apple.com", "time.windows.com", "time.cloudflare.com", "+.pool.ntp.org", "+.ntp.org", "ntp.aliyun.com", "ntp1.aliyun.com", "+.stun.*", "stun.*", "+.msftconnecttest.com", "+.msftncsi.com", "captive.apple.com", "*.apple.com.cn", "localhost.ptlogin2.qq.com", "+.wechat.com", "+.weixin.qq.com", "+.wx.qq.com", "+.servicewechat.com", "+.qq.com", "+.tencent.com", "+.gtimg.com", "+.qpic.cn", "+.qlogo.cn", "+.tenpay.com", "+.xiaohongshu.com", "+.xhscdn.com", "+.xhslink.com", "+.xhsamy.com", "+.xhesp.com", "+.xhs-ai.com", "+.pupufz.com", "+.pupuapp.com", "+.pupu.com", "+.pupucdn.com", "+.feishu.cn", "+.feishu.net", "+.feishucdn.com", "+.feishuimg.com", "+.feishupkg.com", "+.larksuite.com", "+.dingtalk.com", "+.dingtalk.net", "+.taobao.com", "+.tmall.com", "+.alipay.com", "+.alipayobjects.com", "+.alibaba.com", "+.alicdn.com", "+.aliyun.com", "+.aliyuncs.com", "+.idlefish.com", "+.xianyu.com", "+.jd.com", "+.jd.id", "+.360buy.com", "+.360buyimg.com", "+.jdpay.com", "+.baidu.com", "+.bdimg.com", "+.bdstatic.com", "+.baidupcs.com", "+.meituan.com", "+.meituan.net", "+.dianping.com", "+.dpfile.com", "+.sankuai.com", "+.bilibili.com", "+.biligame.com", "+.bilivideo.com", "+.bilivideo.cn", "+.biliapi.com", "+.biliapi.net", "+.hdslb.com", "+.163.com", "+.163yun.com", "+.126.com", "+.126.net", "+.unionpay.com", "+.unionpaysecure.com", "+.95516.com", "+.icbc.com.cn", "+.cmbchina.com", "+.ccb.com", "+.abchina.com", "+.bankofchina.com", "+.douyin.com", "+.snssdk.com", "+.bytedance.com", "+.byteimg.com", "+.pstatp.com", "+.toutiao.com", "+.ixigua.com", "+.kuaishou.com", "+.gifshow.com", "+.weibo.com", "+.weibocdn.com", "+.pinduoduo.com", "+.yangkeduo.com", "+.amap.com", "+.autonavi.com", "+.ele.me", "+.zhihu.com", "+.zhimg.com", "+.iqiyi.com", "+.youku.com", "+.mgtv.com", "+.wps.cn", "+.wps.com", "+.kdocs.cn", "+.aliyundrive.com", "+.alipan.com", "+.xunlei.com"],
-    "default-nameserver": ["223.5.5.5", "119.29.29.29"],
-    "nameserver": ["https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query"],
-    "direct-nameserver": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"],
-    "proxy-server-nameserver": ["223.5.5.5", "119.29.29.29"],
-    "fallback": []
-  };
+  "enable": true,
+  "ipv6": false,
+  "use-hosts": true,
+  "use-system-hosts": true,
+  "respect-rules": true,
+  "cache-algorithm": "arc",
+  "listen": "127.0.0.1:1053",
+  "enhanced-mode": "fake-ip",
+  "fake-ip-range": "198.18.0.1/16",
+  "fake-ip-filter": ["+.lan", "+.local", "+.localdomain", "localhost", "time.apple.com", "time.windows.com", "time.cloudflare.com", "+.pool.ntp.org", "+.ntp.org", "ntp.aliyun.com", "ntp1.aliyun.com", "+.stun.*", "stun.*", "+.msftconnecttest.com", "+.msftncsi.com", "captive.apple.com", "*.apple.com.cn", "localhost.ptlogin2.qq.com", "+.xiaohongshu.com", "+.xhscdn.com", "+.xhslink.com", "+.xhsamy.com", "+.xhesp.com", "+.xhs-ai.com", "+.feishu.cn", "+.feishu.net", "+.feishucdn.com", "+.feishuimg.com", "+.feishupkg.com", "+.larksuite.com", "+.pupufz.com", "geosite:cn"],
+  "default-nameserver": ["223.5.5.5", "119.29.29.29"],
+  "proxy-server-nameserver": ["223.5.5.5", "119.29.29.29"],
+  "nameserver": ["https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query"],
+  "direct-nameserver": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"],
+  "nameserver-policy": {
+    "geosite:cn,private": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"]
+  },
+  "fallback": []
+};
   // ── GeoData ───────────────────────────────────────────
   config["geodata-mode"] = true;
   config["geodata-loader"] = "standard";   // 有效：Mac 内存充足推荐
@@ -121,7 +124,6 @@ config["sniffer"] = {
     },
     "skip-domain": ["time.apple.com", "ntp.aliyun.com", "captive.apple.com", "msftconnecttest.com", "msftncsi.com", "*.github.com", "+.rules.dat", "+.rules.mrs"]
   };
-  (config["rules"] ||= []).unshift("AND,((NETWORK,UDP),(DST-PORT,443)),REJECT");
 
   // ── 代理组 ────────────────────────────────────────────
   config["proxy-groups"] = [
